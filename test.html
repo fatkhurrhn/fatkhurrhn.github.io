@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Interaktif</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #282c34;
+            font-family: 'Arial', sans-serif;
+            color: #ffffff;
+        }
+
+        .calculator {
+            background-color: #333;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            width: 320px;
+        }
+
+        .display {
+            background-color: #222;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 2rem;
+            text-align: right;
+            color: #fff;
+            margin-bottom: 10px;
+            box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #61dafb;
+            border: none;
+            border-radius: 10px;
+            padding: 15px;
+            font-size: 1.2rem;
+            color: #333;
+            cursor: pointer;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .button:active {
+            background-color: #21a1f1;
+            transform: scale(0.95);
+        }
+
+        .button.function {
+            background-color: #f06292;
+        }
+
+        .button.function:active {
+            background-color: #e91e63;
+        }
+
+        .button.clear {
+            background-color: #ff7043;
+        }
+
+        .button.clear:active {
+            background-color: #d84315;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <div class="display" id="display">0</div>
+        <div class="buttons">
+            <button class="button clear" onclick="clearDisplay()">C</button>
+            <button class="button function" onclick="deleteLast()">⌫</button>
+            <button class="button function" onclick="appendCharacter('%')">%</button>
+            <button class="button function" onclick="appendCharacter('/')">÷</button>
+
+            <button class="button" onclick="appendCharacter('7')">7</button>
+            <button class="button" onclick="appendCharacter('8')">8</button>
+            <button class="button" onclick="appendCharacter('9')">9</button>
+            <button class="button function" onclick="appendCharacter('*')">×</button>
+
+            <button class="button" onclick="appendCharacter('4')">4</button>
+            <button class="button" onclick="appendCharacter('5')">5</button>
+            <button class="button" onclick="appendCharacter('6')">6</button>
+            <button class="button function" onclick="appendCharacter('-')">−</button>
+
+            <button class="button" onclick="appendCharacter('1')">1</button>
+            <button class="button" onclick="appendCharacter('2')">2</button>
+            <button class="button" onclick="appendCharacter('3')">3</button>
+            <button class="button function" onclick="appendCharacter('+')">+</button>
+
+            <button class="button" onclick="appendCharacter('0')">0</button>
+            <button class="button" onclick="appendCharacter('.')">.</button>
+            <button class="button function" style="grid-column: span 2;" onclick="calculateResult()">=</button>
+        </div>
+    </div>
+
+    <script>
+        let display = document.getElementById('display');
+
+        function clearDisplay() {
+            display.textContent = '0';
+        }
+
+        function deleteLast() {
+            display.textContent = display.textContent.slice(0, -1) || '0';
+        }
+
+        function appendCharacter(char) {
+            if (display.textContent === '0' && char !== '.') {
+                display.textContent = char;
+            } else {
+                display.textContent += char;
+            }
+        }
+
+        function calculateResult() {
+            try {
+                display.textContent = eval(display.textContent.replace('×', '*').replace('÷', '/'));
+            } catch {
+                display.textContent = 'Error';
+            }
+        }
+    </script>
+
+</body>
+</html>
