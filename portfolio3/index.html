@@ -37,6 +37,38 @@
 
     <!-- Style css -->
     <link id="change-link" rel="stylesheet" type="text/css" href="https://themes.pixelstrap.net/multikit/assets/css/style.css">
+
+    <style>
+        /* Style for Modal */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close-btn {
+            display: none;
+            /* float: right;
+            font-size: 24px;
+            cursor: pointer; */
+        
+        }
+    </style>
 </head>
 
 <body class="inter-body learning-color">
@@ -186,7 +218,7 @@
                 <div class="swiper slider-1 px-15 reading-slider">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="locked-courses.html" class="reading-list">
+                            <a href="https://github.com/fatkhurrhn/laravel-livewire" target="_blank" class="reading-list">
                                 <div class="reading-box">
                                     <div class="reading-detail">
                                         <div class="reading-image">
@@ -206,7 +238,7 @@
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="locked-courses.html" class="reading-list">
+                            <a href="https://github.com/fatkhurrhn/fatkhurrhn.github.io" target="_blank" class="reading-list">
                                 <div class="reading-box">
                                     <div class="reading-detail">
                                         <div class="reading-image">
@@ -241,7 +273,7 @@
                     <li>
                         <div class="feature-box">
                             <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank" class="feature-image">
-                                <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/course/1.jpg" class="img-fluid" alt="">
+                                <img src="assets/img/dreamlms.png" class="img-fluid" alt="">
                             </a>
                             <div class="feature-detail">
                                 <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
@@ -260,14 +292,14 @@
                     <li>
                         <div class="feature-box">
                             <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank" class="feature-image">
-                                <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/course/1.jpg" class="img-fluid" alt="">
+                                <img src="assets/img/ukk22.png" class="img-fluid" alt="">
                             </a>
                             <div class="feature-detail">
                                 <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
                                     <h6>Project UKK 2022 Tanpa Database - SMK Thursina YBM PLN</h6>
                                 </a>
                                 <ul class="rate-course">
-                                    <li><i class="ri-calendar-fill"></i> 7/23</li>
+                                    <li><i class="ri-calendar-fill"></i> 9/22</li>
                                     <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
                                         <li class="fw-500">Detail</li>
                                     </a>
@@ -287,12 +319,13 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="poster-box">
-                            <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/poster/1.png" class="img-fluid w-100" alt="">
+                            <img src="assets/img/b1.png" class="img-fluid w-100" alt="">
                             <div class="poster-detail p-center">
                                 <div>
-                                    <h3 class="text-white">do you know me? If you haven't already, follow my social media :v</h3>
+                                    <h3 class="text-white">Come on guys, follow my social media, hhe</h3>
                                     <a href=""></a>
-                                    <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-white">Follow Me</button>
+                                    <!-- <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-white">Follow Me</button> -->
+                                    <button id="openModalBtn" class="btn btn-sm btn-white">Follow Me</button>
                                 </div>
                             </div>
                         </div>
@@ -301,6 +334,21 @@
             </div>
         </section>
         <!-- Poster Section End -->
+
+        <!-- Modal Sosmed -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Follow My Sosial Media :v</h2><br>
+                <form class="form-style-1">
+                    <a href="#" class="btn btn-gradient mb-4">Instagram</a>
+                    <a href="#" class="btn btn-gradient mb-4">Linkedin</a>
+                    <a href="#" class="btn btn-gradient mb-4">Tiktok</a>
+                    <a href="#" class="btn btn-gradient mb-4">Blog Web</a>
+                    <a href="#" class="btn btn-gradient mb-4">Github</a>
+                </form>
+            </div>
+        </div>
 
         <!-- Popular Course Start -->
         <section class="section-t-space popular-course-section">
@@ -311,28 +359,28 @@
                 <div class="row g-4">
                     <div class="col-12">
                         <div class="popular-box">
-                            <a href="my-course.html" class="popular-image">
-                                <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/course/3.jpg" class="img-fluid w-100" alt="">
+                            <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank" class="popular-image">
+                                <img src="assets/img/nextjs.png" class="img-fluid w-100" alt="">
                             </a>
                             <div class="popular-detail">
-                                <a href="my-course.html">
-                                    <h5>Python Beyond the Basics - Object-Oriented Programming</h5>
+                                <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">
+                                    <h5>Belajar Membuat Portfolio Menggunakan Next.js <h5>
                                 </a>
                                 <div class="video-play">
                                     <i class="ri-play-circle-line"></i>
-                                    <span>10 Lessons</span>
+                                    <span>on progress</span>
                                 </div>
                                 <ul class="rating-box">
                                     <li>
                                         <ul class="rating">
                                             <li>
-                                                <i class="ri-star-fill"></i>
+                                                <i class="ri-calendar-fill"></i>
                                             </li>
-                                            <li class="title-color">4.5</li>
-                                            <li class="content-color">(250 ratings)</li>
+                                            <li class="title-color">Oct 2024</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
                                         </ul>
                                     </li>
-                                    <li class="fw-500 theme-color">$50.55</li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">Detail</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -340,30 +388,63 @@
 
                     <div class="col-12">
                         <div class="popular-box">
-                            <a href="my-course.html" class="popular-image">
-                                <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/course/4.jpg" class="img-fluid w-100" alt="">
+                            <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank" class="popular-image">
+                                <img src="assets/img/shopthur.png" class="img-fluid w-100" alt="">
                             </a>
                             <div class="popular-detail">
-                                <a href="my-course.html">
-                                    <h5>Object Oriented Programming with Python</h5>
+                                <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">
+                                    <h5>Belajar Membuat Project Ecommerce ShopThur dengan PHP Native<h5>
                                 </a>
                                 <div class="video-play">
                                     <i class="ri-play-circle-line"></i>
-                                    <span>5 Lessons</span>
+                                    <span>completed</span>
                                 </div>
                                 <ul class="rating-box">
                                     <li>
                                         <ul class="rating">
-                                            <li><i class="ri-star-fill"></i></li>
-                                            <li class="title-color">4.5</li>
-                                            <li class="content-color">(250 ratings)</li>
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">May 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
                                         </ul>
                                     </li>
-                                    <li class="fw-500 theme-color">$50.55</li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">Detail</a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank" class="popular-image">
+                                <img src="assets/img/shopthur.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">
+                                    <h5>Belajar Membuat Project Ecommerce ShopThur dengan PHP Native<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">May 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
                 </div>
             </div>
         </section>
@@ -373,119 +454,7 @@
         <div class="learning-box"></div>
         <!-- space box end -->
 
-        <!-- Side menu offcanvas start -->
-        <div class="offcanvas theme-offcanvas learning-offcanvas offcanvas-start" tabindex="-1" id="sideMenu">
-            <div class="offcanvas-header">
-                <div class="profile-box">
-                    <div class="profile-image">
-                        <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/menu-profile.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="profile-name">
-                        <h4 class="text-white">Jacob Mark</h4>
-                        <h6 class="content-color">jacobmark@gmail.com</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="offcanvas-body">
-                <div class="title px-15">
-                    <h4>General Setting</h4>
-                </div>
-                <ul class="menu-setting-list">
-                    <li>
-                        <a href="personal-setting.html" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-user-3-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Personal Setting</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0)" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-download-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Download Option</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="javascript:void(0)" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-play-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Video playback options</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="account-security.html" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-lock-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Account security</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="app-setting.html" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-settings-5-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>App Settings</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-
-                <section class="section-t-space section-b-space">
-                    <div class="divider"></div>
-                </section>
-
-                <div class="title px-15">
-                    <h4>Other Links</h4>
-                </div>
-                <ul class="menu-setting-list">
-                    <li>
-                        <a href="instructor.html" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-phone-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Instructor</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="term-condition.html" class="menu-setting-box">
-                            <div class="setting-icon">
-                                <i class="ri-information-line"></i>
-                            </div>
-                            <div class="setting-name">
-                                <h4>Terms & conditions</h4>
-                                <i class="ri-arrow-right-s-line"></i>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Side menu offcanvas end -->
+        
 
         <!-- Theme Option Setting Box Start -->
         <div class="theme-setting-box">
@@ -527,6 +496,31 @@
 
     <!-- Theme Settings js-->
     <script src="assets/js/theme-setting.js"></script>
+
+
+    <script>
+        // Get elements
+        const modal = document.getElementById("modal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.querySelector(".close-btn");
+
+        // Open modal when button is clicked
+        openModalBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Close modal when the close button is clicked
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside of modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
 </body>
 
 </html>
