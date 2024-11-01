@@ -1,228 +1,499 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>LinkTree - Fathur</title>
-  <link rel="stylesheet" href="./style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>fatkhurrhn</title>
+    <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileImage" content="https://themes.pixelstrap.net/multikit/assets/images/favicon/1.svg">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="https://themes.pixelstrap.net/multikit/assets/images/favicon/9.svg">
+    <link rel="shortcut icon" href="https://themes.pixelstrap.net/multikit/https://themes.pixelstrap.net/multikit/" type="image/x-icon">
 
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="https://themes.pixelstrap.net/multikit/assets/css/vendors/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="https://themes.pixelstrap.net/multikit/assets/css/vendors/swiper/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <!-- <link rel="stylesheet" type="text/css" href="https://themes.pixelstrap.net/multikit/assets/css/remixicon.css"> -->
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="https://themes.pixelstrap.net/multikit/assets/css/style.css">
+
+    <style>
+        /* Style for Modal */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close-btn {
+            display: none;
+            /* float: right;
+            font-size: 24px;
+            cursor: pointer; */
+        
+        }
+    </style>
 </head>
 
-<body>
-  <!-- partial:index.partial.html -->
-  <!DOCTYPE html>
-  <html>
+<body class="inter-body learning-color">
+    <main class="position-relative">
+        <!-- header start -->
+        <header class="main-header learning-header">
+            <div class="custom-container">
+                <div class="top-header">
+                    <div class="header-left">
+                        <a class="text-white" data-bs-toggle="offcanvas" href="#sideMenu" role="button">
+                            <i class="ri-menu-2-fill"></i>
+                        </a>
+                        <h2 style="color: white;">Fatkhurrhn</h2>
+                        <!-- <a href="index.html" class="header-logo">
+                            <img src="https://themes.pixelstrap.net/multikit/assets/images/logo/1.svg" class="img-fluid" alt="">
+                        </a> -->
+                    </div>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Papo de dev</title>
-  </head>
+                    <div class="header-right">
+                        <div class="notification-box">
+                            <a class="text-white" href="https://github.com/fatkhurrhn" target="_blank">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
 
-  <body>
-    <div id="particles-js"></div>
-    <div class="container">
-      <img class="profile" src="pp2.png" />
+                <div class="header-bottom">
+                    <div class="customer-name">
+                        <h2>Hello Guys </h2>
+                        <img src="https://themes.pixelstrap.net/multikit/assets/images/learning/hand.png" alt="">
+                    </div>
+                    <h5>welcome to my little website hhe</h5>
+                </div>
 
-      <h2>M. Fatkhurrohman</h2>
-      <p class="subtitle">Frontend Developer</p>
-      <!-- <p>Acompanhe meu trabalho ✌🏼</p> -->
+                <div class="search-box index-search">
+                    <div class="position-relative">
+                        <input type="search" class="form-control" placeholder="Search">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
 
-      <div class="info-container">
-        <div class="social-media-container">
-          <a href="https://github.com/fatkhur03" target="_blank">
-            <i data-feather="github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/fatkhurrhn/" target="_blank"><i data-feather="linkedin"></i></a>
-          <a href="https://www.instagram.com/story.thur/" target="_blank"><i data-feather="instagram"></i></a>
+        <!-- Mobile Section Start -->
+        <div class="mobile-style-1">
+            <ul>
+                <li class="active">
+                    <a href="index.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-home-5-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Home</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-search-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Search</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="my-project.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>My Project</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-contacts-book-3-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Contact</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://github.com/fatkhurrhn" target="_blank" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-user-3-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Profile</h5>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Mobile Section End -->
+
+        <!-- Category Section Start -->
+        <div class="category-section section-t-space">
+            <div class="title px-15">
+                <h4>Categories</h4>
+            </div>
+
+            <ul class="category-box overflow-auto px-15">
+                <li>
+                    <ul class="category-list">
+                        <li class="active">
+                            <a href="#">Design</a>
+                        </li>
+                        <li>
+                            <a href="#">Coding</a>
+                        </li>
+                        <li>
+                            <a href="#">Marketing</a>
+                        </li>
+                        <li>
+                            <a href="#">Development</a>
+                        </li>
+                        <li>
+                            <a href="#">Art</a>
+                        </li>
+                        <li>
+                            <a href="#">Lifestyle</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Category Section End -->
+
+        <!-- Continue Reading Section Start -->
+        <section class="section-t-space continue-reading-section">
+            <div class="">
+                <div class="title px-15">
+                    <h4>Latest Project History</h4>
+                </div>
+
+                <div class="swiper slider-1 px-15 reading-slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://github.com/fatkhurrhn/laravel-livewire" target="_blank" class="reading-list">
+                                <div class="reading-box">
+                                    <div class="reading-detail">
+                                        <div class="reading-image">
+                                            <img src="https://santrikoding.com/storage/tutorial-sets/6x275yhQxXoQYdFn5XIzpnNVwcc7X25YACfjH7OS.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="reading-name">
+                                            <h5>Latihan Laravel livewire & filament Web App</h5>
+                                        </div>
+                                    </div>
+                                    <div class="reading-view">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"></div>
+                                        </div>
+                                        <h6 class="theme-color">35% Complete</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://github.com/fatkhurrhn/fatkhurrhn.github.io" target="_blank" class="reading-list">
+                                <div class="reading-box">
+                                    <div class="reading-detail">
+                                        <div class="reading-image">
+                                            <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png" class="img-fluid" alt="">
+                                        </div>
+                                        <div class="reading-name">
+                                            <h5>Pages are used to host personal or portfolio website</h5>
+                                        </div>
+                                    </div>
+                                    <div class="reading-view">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar"></div>
+                                        </div>
+                                        <h6 class="theme-color">75% Complete</h6>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Continue Reading Section End -->
+
+        <!-- Features Course Section Start -->
+        <section class="section-t-space feature-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Other Projects</h4>
+                </div>
+                <ul class="feature-course-list">
+                    <li>
+                        <div class="feature-box">
+                            <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank" class="feature-image">
+                                <img src="assets/img/dreamlms.png" class="img-fluid" alt="">
+                            </a>
+                            <div class="feature-detail">
+                                <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
+                                    <h6>Project UAS 2023 - DreamLMS - Laravel10</h6>
+                                </a>
+                                <ul class="rate-course">
+                                    <li><i class="ri-calendar-fill"></i> 7/23</li>
+                                    <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
+                                        <li class="fw-500">Detail</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="feature-box">
+                            <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank" class="feature-image">
+                                <img src="assets/img/ukk22.png" class="img-fluid" alt="">
+                            </a>
+                            <div class="feature-detail">
+                                <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
+                                    <h6>Project UKK 2022 Tanpa Database - SMK Thursina YBM PLN</h6>
+                                </a>
+                                <ul class="rate-course">
+                                    <li><i class="ri-calendar-fill"></i> 9/22</li>
+                                    <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
+                                        <li class="fw-500">Detail</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </section>
+        <!-- Features Course Section End -->
+
+        <!-- Poster Section Start -->
+        <section class="section-t-space poster-section">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="poster-box">
+                            <img src="assets/img/b1.png" class="img-fluid w-100" alt="">
+                            <div class="poster-detail p-center">
+                                <div>
+                                    <h3 class="text-white">Come on guys, follow my social media, hhe</h3>
+                                    <a href=""></a>
+                                    <!-- <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-white">Follow Me</button> -->
+                                    <button id="openModalBtn" class="btn btn-sm btn-white">Follow Me</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Poster Section End -->
+
+        <!-- Modal Sosmed -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Follow My Sosial Media :v</h2><br>
+                <form class="form-style-1">
+                    <a href="#" class="btn btn-gradient mb-4">Instagram</a>
+                    <a href="#" class="btn btn-gradient mb-4">Linkedin</a>
+                    <a href="#" class="btn btn-gradient mb-4">Tiktok</a>
+                    <a href="#" class="btn btn-gradient mb-4">Blog Web</a>
+                    <a href="#" class="btn btn-gradient mb-4">Github</a>
+                </form>
+            </div>
         </div>
 
-        <div class="content">
-          <!-- <div id="secondary-content" class="secondary-content">
-            <h3>
-              <i id="go-back-button" data-feather="arrow-left"></i> Meu Setup
-            </h3>
-            <a class="link" href="#">
-              🪑 Cadeira PlaxMetal Brizza
-            </a>
-            <a class="link">
-              💻 Macbook Pro 2015 i5 16gb 500ssd
-            </a>
-            <a class="link" href="#">
-              📺 Monitor LG34WK650
-            </a>
-            <a class="link"
-              href="#">
-              🖱 Mouse Logitch Mx anywhere 2s
-            </a>
-          </div> -->
+        <!-- Popular Course Start -->
+        <section class="section-t-space popular-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Popular Courses</h4>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank" class="popular-image">
+                                <img src="assets/img/nextjs.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">
+                                    <h5>Belajar Membuat Portfolio Menggunakan Next.js <h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>on progress</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Oct 2024</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-          <div class="main-content">
-            <!-- <p>Último vídeo do youtube 👇🏼</p> -->
-            <!-- <div class="video-container">
-              <iframe src="https://www.youtube.com/embed/IbLQWx4ZA0k" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-            </div> -->
-            <a href="https://fatkhur03.github.io/portfolio/" target="_blank" class="link highlight">
-              Web Portfolio
-            </a>
-            <a id="setup-button" class="link" href="https://www.fatkhurrhn.my.id/" target="_blank">
-              My Blog
-            </a>
-            <a class="link" href="https://www.instagram.com/story.thur/" target="_blank">
-              Instagram
-            </a>
-            <a class="link" href="https://www.linkedin.com/in/fatkhurrhn/" target="_blank">
-              Linkedin
-            </a>
-            <a class="link" href="#">
-              htmlKu
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script src="https://unpkg.com/feather-icons"></script>
-  <script>
-    feather.replace();
-  </script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: {
-          value: 1200,
-          density: {
-            enable: true,
-            value_area: 789.1476416322727
-          }
-        },
-        color: {
-          value: "#ffffff"
-        },
-        shape: {
-          type: "circle",
-          stroke: {
-            width: 0,
-            color: "#000000"
-          },
-          polygon: {
-            nb_sides: 5
-          },
-          image: {
-            src: "img/github.svg",
-            width: 100,
-            height: 100
-          }
-        },
-        opacity: {
-          value: 0.48927153781200905,
-          random: false,
-          anim: {
-            enable: true,
-            speed: 0.2,
-            opacity_min: 0,
-            sync: false
-          }
-        },
-        size: {
-          value: 2,
-          random: true,
-          anim: {
-            enable: true,
-            speed: 2,
-            size_min: 0,
-            sync: false
-          }
-        },
-        line_linked: {
-          enable: false,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.4,
-          width: 1
-        },
-        move: {
-          enable: true,
-          speed: 1,
-          direction: "none",
-          random: true,
-          straight: false,
-          out_mode: "out",
-          bounce: false,
-          attract: {
-            enable: false,
-            rotateX: 600,
-            rotateY: 1200
-          }
-        }
-      },
-      interactivity: {
-        detect_on: "canvas",
-        events: {
-          onhover: {
-            enable: true,
-            mode: "bubble"
-          },
-          onclick: {
-            enable: true,
-            mode: "push"
-          },
-          resize: true
-        },
-        modes: {
-          grab: {
-            distance: 400,
-            line_linked: {
-              opacity: 1
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank" class="popular-image">
+                                <img src="assets/img/shopthur.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">
+                                    <h5>Belajar Membuat Project Ecommerce ShopThur dengan PHP Native<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">May 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank" class="popular-image">
+                                <img src="assets/img/ecarrental.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank">
+                                    <h5>Membuat Project UAS 2023 E-CarRental V2 dengan Javascript<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Jan 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+        </section>
+        <!-- Popular Course End -->
+
+        <!-- space box start -->
+        <div class="learning-box"></div>
+        <!-- space box end -->
+
+        
+    </main>
+
+    <!-- Bootstrap js-->
+    <script src="https://themes.pixelstrap.net/multikit/assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="https://themes.pixelstrap.net/multikit/assets/js/swiper-bundle.min.js"></script>
+    <script src="https://themes.pixelstrap.net/multikit/assets/js/custom_swiper.js"></script>
+
+    <!-- Theme js-->
+    <script src="https://themes.pixelstrap.net/multikit/assets/js/script.js"></script>
+
+    <!-- Theme Settings js-->
+    <script src="assets/js/theme-setting.js"></script>
+
+
+    <script>
+        // Get elements
+        const modal = document.getElementById("modal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.querySelector(".close-btn");
+
+        // Open modal when button is clicked
+        openModalBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Close modal when the close button is clicked
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside of modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
             }
-          },
-          bubble: {
-            distance: 83.91608391608392,
-            size: 1,
-            duration: 3,
-            opacity: 1,
-            speed: 3
-          },
-          repulse: {
-            distance: 200,
-            duration: 0.4
-          },
-          push: {
-            particles_nb: 4
-          },
-          remove: {
-            particles_nb: 2
-          }
-        }
-      },
-      retina_detect: true
-    });
-  </script>
-  <script>
-    const setupButton = document.getElementById("setup-button");
-    const goBackButton = document.getElementById("go-back-button");
-    setupButton.addEventListener("click", showContent);
-    goBackButton.addEventListener("click", hideContent);
-
-    function showContent() {
-      document.getElementById("secondary-content").classList.remove("hide");
-      document.getElementById("secondary-content").classList.add("show");
-    }
-
-    function hideContent() {
-      document.getElementById("secondary-content").classList.remove("show");
-      document.getElementById("secondary-content").classList.add("hide");
-    }
-  </script>
-
-  </html>
-  <!-- partial -->
-
+        });
+    </script>
 </body>
 
 </html>
