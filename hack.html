@@ -42,18 +42,28 @@
 
         <style>
             #noResult {
-              display: none; /* Tersembunyi secara default */
+                width: 285px;
               color: red;
               text-align: center; /* Rata tengah teks */
               margin-top: 20px; /* Ruang di atas */
               font-size: 20px; /* Ukuran font */
               position: fixed; /* Posisi tetap */
-              top: 50%; /* Setengah dari tinggi viewport */
+              top: 40%; /* Setengah dari tinggi viewport */
+              left: 50%; /* Setengah dari lebar viewport */
+              transform: translate(-50%, -50%); /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+            }
+            #noResulttext {
+                width: 285px;
+              color: red;
+              text-align: center; /* Rata tengah teks */
+              margin-top: 20px; /* Ruang di atas */
+              font-size: 20px; /* Ukuran font */
+              position: fixed; /* Posisi tetap */
+              top: 60%; /* Setengah dari tinggi viewport */
               left: 50%; /* Setengah dari lebar viewport */
               transform: translate(-50%, -50%); /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
             }
             </style>
-            
 </head>
 
 <body class="inter-body learning-color">
@@ -105,34 +115,34 @@
             </li>
 
             <li class="">
-                <a href="#" class="mobile-box">
+                <a href="design.html" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-search-line"></i>
+                        <i class="ri-pen-nib-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Search</h5>
+                        <h5>Design</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="code.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-code-s-slash-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Code</h5>
                     </div>
                 </a>
             </li>
 
             <li class="active">
-                <a href="my-project.html" class="mobile-box">
+                <a href="hack.html" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-code-s-slash-line"></i>
+                        <i class="ri-chat-voice-ai-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>My Project</h5>
-                    </div>
-                </a>
-            </li>
-
-            <li>
-                <a href="#" class="mobile-box">
-                    <div class="mobile-icon">
-                        <i class="ri-contacts-book-3-line"></i>
-                    </div>
-                    <div class="mobile-name">
-                        <h5>Contact</h5>
+                        <h5>Hack</h5>
                     </div>
                 </a>
             </li>
@@ -140,19 +150,21 @@
             <li>
                 <a href="https://github.com/fatkhurrhn" target="_blank" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-user-3-line"></i>
+                        <i class="ri-github-fill"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Profile</h5>
+                        <h5>Github</h5>
                     </div>
                 </a>
             </li>
         </ul>
     </div>
     <!-- Mobile Section End -->
+    <h2 id="noResulttext">Sedang dalam perbaikan</h2>
+    <img id="noResult" src="https://media.tenor.com/o4zJUoaOr2EAAAAi/bubududu-panda.gif" alt="">
 
     <!-- Features Course Section Start -->
-    <section class="section-t-space feature-course-section">
+    <!-- <section class="section-t-space feature-course-section">
         <div class="custom-container">
             <br>
             <img id="noResult" style="display: none;" src="https://media.tenor.com/YEkYrAHn70QAAAAj/tkthao219-bubududu.gif" alt="">
@@ -200,7 +212,7 @@
 
             </ul>
         </div>
-    </section>
+    </section> -->
     <!-- Features Course Section End -->
 
     <!-- Bootstrap js-->
