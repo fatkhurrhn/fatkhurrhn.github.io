@@ -42,9 +42,8 @@
 
     <style>
         #noResult {
-            display: none;
-            /* Tersembunyi secara default */
-            color: red;
+            width: 285px;
+            color: #164150;
             text-align: center;
             /* Rata tengah teks */
             margin-top: 20px;
@@ -53,7 +52,26 @@
             /* Ukuran font */
             position: fixed;
             /* Posisi tetap */
-            top: 50%;
+            top: 40%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+
+        #noResulttext {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 60%;
             /* Setengah dari tinggi viewport */
             left: 50%;
             /* Setengah dari lebar viewport */
@@ -61,7 +79,6 @@
             /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
         }
     </style>
-
 </head>
 
 <body class="inter-body learning-color">
@@ -103,7 +120,7 @@
     <div class="mobile-style-1">
         <ul>
             <li class="">
-                <a href="index.html" class="mobile-box">
+                <a href="../index.html" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-home-5-line"></i>
                     </div>
@@ -113,18 +130,18 @@
                 </a>
             </li>
 
-            <li>
-                <a href="design.html" class="mobile-box">
+            <li class="active">
+                <a href="blog.html" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-pen-nib-line"></i>
+                        <i class="ri-news-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Design</h5>
+                        <h5>Blog</h5>
                     </div>
                 </a>
             </li>
 
-            <li class="active">
+            <li>
                 <a href="code.html" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-code-s-slash-line"></i>
@@ -160,14 +177,15 @@
     </div>
     <!-- Mobile Section End -->
 
+    <h2 id="noResulttext">Sedang dalam perbaikan</h2>
+    <img id="noResult" src="https://media.tenor.com/o4zJUoaOr2EAAAAi/bubududu-panda.gif" alt="">
+
     <!-- Features Course Section Start -->
-    <section class="section-t-space feature-course-section">
+    <!-- <section class="section-t-space feature-course-section">
         <div class="custom-container">
             <br>
-            <img id="noResult" style="display: none;"
-                src="https://media.tenor.com/YEkYrAHn70QAAAAj/tkthao219-bubududu.gif" alt="">
-            <h1 id="noResult" style="display: none; color: red; text-align-last: center;">Coba deh search kata lain wkwk
-            </h1>
+            <img id="noResult" style="display: none;" src="https://media.tenor.com/YEkYrAHn70QAAAAj/tkthao219-bubududu.gif" alt="">
+            <h1 id="noResult" style="display: none; color: red; text-align-last: center;">Coba deh search kata lain wkwk</h1>
             <ul class="feature-course-list" id="title">
                 <li>
                     <div class="feature-box">
@@ -211,18 +229,35 @@
 
             </ul>
         </div>
-    </section>
+    </section> -->
     <!-- Features Course Section End -->
 
-    <section class="section-t-space popular-course-section">
-        <div class="custom-container">
-            <div class="popular-detail">
-                <h5 style="text-align: center;">Other projects will follow soon<h5>
-            </div>
-
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon text-white">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                        <i class="ri-tiktok-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </section>
-    <br><br>
+    </div>
+    <!-- Theme Option Setting Box End -->
 
     <!-- Bootstrap js-->
     <script src="https://themes.pixelstrap.net/multikit/assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>

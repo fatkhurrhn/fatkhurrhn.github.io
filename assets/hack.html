@@ -40,30 +40,45 @@
     <link id="change-link" rel="stylesheet" type="text/css"
         href="https://themes.pixelstrap.net/multikit/assets/css/style.css">
 
-        <style>
-            #noResult {
-                width: 285px;
-              color: red;
-              text-align: center; /* Rata tengah teks */
-              margin-top: 20px; /* Ruang di atas */
-              font-size: 20px; /* Ukuran font */
-              position: fixed; /* Posisi tetap */
-              top: 40%; /* Setengah dari tinggi viewport */
-              left: 50%; /* Setengah dari lebar viewport */
-              transform: translate(-50%, -50%); /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
-            }
-            #noResulttext {
-                width: 285px;
-              color: red;
-              text-align: center; /* Rata tengah teks */
-              margin-top: 20px; /* Ruang di atas */
-              font-size: 20px; /* Ukuran font */
-              position: fixed; /* Posisi tetap */
-              top: 60%; /* Setengah dari tinggi viewport */
-              left: 50%; /* Setengah dari lebar viewport */
-              transform: translate(-50%, -50%); /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
-            }
-            </style>
+    <style>
+        #noResult {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 40%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+
+        #noResulttext {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 60%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+    </style>
 </head>
 
 <body class="inter-body learning-color">
@@ -89,10 +104,11 @@
                     </div>
 
                     <div class="search-box search-box-2">
-                        <input type="search" id="searchInput" onkeyup="searchFunction()" class="form-control" placeholder="Search">
+                        <input type="search" id="searchInput" onkeyup="searchFunction()" class="form-control"
+                            placeholder="Search">
                         <i class="ri-search-line"></i>
                     </div>
-                    
+
 
                 </div>
             </div>
@@ -104,7 +120,7 @@
     <div class="mobile-style-1">
         <ul>
             <li class="">
-                <a href="index.html" class="mobile-box">
+                <a href="../index.html" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-home-5-line"></i>
                     </div>
@@ -114,13 +130,13 @@
                 </a>
             </li>
 
-            <li class="active">
-                <a href="design.html" class="mobile-box">
+            <li class="">
+                <a href="blog.html" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-pen-nib-line"></i>
+                        <i class="ri-news-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Design</h5>
+                        <h5>Blog</h5>
                     </div>
                 </a>
             </li>
@@ -136,7 +152,7 @@
                 </a>
             </li>
 
-            <li>
+            <li class="active">
                 <a href="hack.html" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-chat-voice-ai-line"></i>
@@ -160,6 +176,7 @@
         </ul>
     </div>
     <!-- Mobile Section End -->
+
     <h2 id="noResulttext">Sedang dalam perbaikan</h2>
     <img id="noResult" src="https://media.tenor.com/o4zJUoaOr2EAAAAi/bubududu-panda.gif" alt="">
 
@@ -215,6 +232,33 @@
     </section> -->
     <!-- Features Course Section End -->
 
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon text-white">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                        <i class="ri-tiktok-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Theme Option Setting Box End -->
+
     <!-- Bootstrap js-->
     <script src="https://themes.pixelstrap.net/multikit/assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
 
@@ -230,36 +274,34 @@
 
 
     <script>
-       function searchFunction() {
-  // Ambil input pencarian
-  const input = document.getElementById("searchInput");
-  const filter = input.value.toLowerCase();
-  const ul = document.getElementById("title");
-  const li = ul.getElementsByTagName("li");
-  const noResult = document.getElementById("noResult"); // Pesan "tidak ada hasil"
-  
-  let found = false; // Penanda jika ada hasil yang sesuai
+        function searchFunction() {
+            // Ambil input pencarian
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById("title");
+            const li = ul.getElementsByTagName("li");
+            const noResult = document.getElementById("noResult"); // Pesan "tidak ada hasil"
 
-  // Loop melalui semua item, dan sembunyikan yang tidak sesuai dengan pencarian
-  for (let i = 0; i < li.length; i++) {
-    const item = li[i].textContent || li[i].innerText;
-    if (item.toLowerCase().includes(filter)) {
-      li[i].style.display = "";
-      found = true; // Ada hasil yang sesuai
-    } else {
-      li[i].style.display = "none";
-    }
-  }
+            let found = false; // Penanda jika ada hasil yang sesuai
 
-  // Tampilkan pesan jika tidak ada hasil
-  if (!found) {
-    noResult.style.display = "block";
-  } else {
-    noResult.style.display = "none";
-  }
-}
+            // Loop melalui semua item, dan sembunyikan yang tidak sesuai dengan pencarian
+            for (let i = 0; i < li.length; i++) {
+                const item = li[i].textContent || li[i].innerText;
+                if (item.toLowerCase().includes(filter)) {
+                    li[i].style.display = "";
+                    found = true; // Ada hasil yang sesuai
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
 
-
+            // Tampilkan pesan jika tidak ada hasil
+            if (!found) {
+                noResult.style.display = "block";
+            } else {
+                noResult.style.display = "none";
+            }
+        }
     </script>
 </body>
 
