@@ -1,0 +1,218 @@
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --hue: 223;
+  --bg: hsl(var(--hue),10%,90%);
+  --fg: hsl(var(--hue),10%,10%);
+  --focus: hsl(var(--hue),90%,50%);
+  --error: hsl(3,90%,40%);
+  --trans-dur: 0.3s;
+  --trans-timing1: cubic-bezier(0.65,0,0.35,1);
+  --trans-timing2: cubic-bezier(0.65,0,0.35,1.5);
+  font-size: calc(14px + (30 - 14) * (100vw - 280px) / (3840 - 280));
+}
+
+body,
+button,
+input {
+  color: var(--fg);
+  font: 1em/1.5 "DM Sans", sans-serif;
+}
+
+body {
+  background-color: var(--bg);
+  display: flex;
+  height: 100vh;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+}
+
+button {
+  background-color: var(--fg);
+  border-radius: 0.5em;
+  color: var(--bg);
+  cursor: pointer;
+  display: block;
+  padding: 0.75em 1em;
+  width: 100%;
+  transition: background-color var(--trans-dur), color var(--trans-dur);
+  -webkit-appearance: none;
+  appearance: none;
+}
+button:hover {
+  background-color: var(--focus);
+}
+
+form {
+  margin: auto;
+  padding: 3em 0;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+small {
+  font-size: 0.75em;
+  line-height: 2;
+}
+
+.field {
+  margin-bottom: 1.5em;
+  padding-bottom: 0.375em;
+  position: relative;
+}
+.field__error, .field__label {
+  position: absolute;
+}
+.field__error {
+  color: var(--error);
+  top: 100%;
+  left: 0;
+  transition: color var(--trans-dur);
+}
+.field__input, .field__label {
+  -webkit-tap-highlight-color: transparent;
+}
+.field__input {
+  background-color: white;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0 0.125em white inset, 0 0.25em 0 hsl(var(--hue), 10%, 70%);
+  outline: transparent;
+  padding: 0.75em 1em;
+  min-width: 15em;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-color var(--trans-dur), box-shadow var(--trans-dur) var(--trans-timing1), color var(--trans-dur), transform var(--trans-dur) var(--trans-timing1);
+}
+.field__input:hover {
+  box-shadow: 0 0 0 0.125em hsl(var(--hue), 10%, 70%) inset, 0 0.25em 0 hsl(var(--hue), 10%, 70%);
+  transform: scale(1.08, 1.08);
+}
+.field__input:focus-visible {
+  box-shadow: 0 0 0 0.125em var(--focus) inset, 0 0.25em 0 var(--focus);
+  transform: scale(1, 1);
+}
+.field__input:active {
+  box-shadow: 0 0 0 0.25em hsl(var(--hue), 10%, 70%) inset, 0 0 0 hsl(var(--hue), 10%, 70%);
+  transform: translateY(0.375em);
+}
+.field__input[aria-invalid=true] {
+  animation: wobble calc(var(--trans-dur) * 3) var(--trans-timing1);
+  box-shadow: 0 0 0 0.125em var(--error) inset, 0 0.25em 0 var(--error);
+}
+.field__input[aria-invalid=true] + .field__error {
+  animation: fly-in calc(var(--trans-dur) * 3) var(--trans-timing1);
+}
+.field__label {
+  pointer-events: none;
+  top: 0.75em;
+  left: 1em;
+  transition: transform var(--trans-dur) var(--trans-timing2);
+  z-index: 1;
+}
+.field:has(.field__input[aria-invalid=true]) .field__label {
+  animation: bounce calc(var(--trans-dur) * 3) var(--trans-timing1);
+}
+.field:has(.field__input:focus-visible) .field__label, .field:has(.field__input:not(:placeholder-shown)) .field__label {
+  pointer-events: auto;
+  transform: translate(-1em, -2.5em);
+}
+.field:has(.field__input:placeholder-shown:active) .field__label {
+  transform: translate(0.2em, 0.375em);
+  transition-timing-function: var(--trans-timing1);
+}
+
+.note {
+  color: hsl(var(--hue), 10%, 30%);
+  transition: color var(--trans-dur);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),10%,10%);
+    --fg: hsl(var(--hue),10%,90%);
+    --focus: hsl(var(--hue),90%,70%);
+    --error: hsl(3,90%,60%);
+  }
+
+  .field__input {
+    background-color: hsl(var(--hue), 10%, 30%);
+    box-shadow: 0 0 0 0.125em hsl(var(--hue), 10%, 30%) inset, 0 0.25em 0 black;
+  }
+  .field__input:hover {
+    box-shadow: 0 0 0 0.125em black inset, 0 0.25em 0 black;
+  }
+  .field__input:focus-visible {
+    box-shadow: 0 0 0 0.125em var(--focus) inset, 0 0.25em 0 var(--focus);
+  }
+  .field__input:active {
+    box-shadow: 0 0 0 0.25em black inset, 0 0 0 black;
+  }
+  .field__input[aria-invalid=true] {
+    box-shadow: 0 0 0 0.125em var(--error) inset, 0 0.25em 0 var(--error);
+  }
+
+  .note {
+    color: hsl(var(--hue), 10%, 70%);
+    transition: color var(--trans-dur);
+  }
+}
+/* Animations */
+@keyframes bounce {
+  from, to {
+    transform: translate(-1em, -2.5em);
+  }
+  16.67% {
+    transform: translate(-1em, -1.75em) rotate(-15deg) translateX(-0.75em);
+  }
+  33.33% {
+    transform: translate(-1em, -5em) rotate(15deg);
+  }
+  50% {
+    transform: translate(-1em, -5em);
+  }
+  66.67% {
+    animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+    transform: translate(-1em, -2em);
+  }
+  83.33% {
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    transform: translate(-1em, -2.75em);
+  }
+}
+@keyframes fly-in {
+  from, 66.67% {
+    animation-timing-function: cubic-bezier(0.32, 0, 0.67, 0);
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  83.33% {
+    animation-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
+    opacity: 1;
+    transform: translateY(-25%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes wobble {
+  from, 50%, to {
+    box-shadow: 0 0 0 0.125em var(--error) inset, 0 0.25em 0 var(--error);
+    transform: rotate(0);
+  }
+  16.67% {
+    box-shadow: 0 0 0 0.125em var(--error) inset, -0.25em 0.25em 0 var(--error);
+    transform: rotate(-15deg);
+  }
+  33.33% {
+    box-shadow: 0 0 0 0.125em var(--error) inset, 0.25em -0.25em 0 var(--error);
+    transform: rotate(15deg);
+  }
+}
