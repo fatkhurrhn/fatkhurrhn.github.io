@@ -1,7 +1,7 @@
-const accessToken = 'figd_1OwV8s4-UF4Mbrml4G-nv--Nlobs8FLON9fCDP91';
-// const accessToken = 'figd_M9LlCjp8B7NAAAZHhrIUX_yggi_PxqDrY8EoQdis';
+const accessToken = '';
+// const accessToken = '';
 
-const fileKey = '1381812388257069012'; // Ganti dengan file key project Figma Anda https://www.figma.com/design/rK2Wa7abdDjtab0xJiKzeY/HangApp?m=auto&t=YyQppeC5Z5h6pY19-6
+const fileKey = ''; 
 
 // Mendapatkan detail proyek dari Figma API
 async function getFigmaProjects() {
