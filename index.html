@@ -202,7 +202,7 @@
         </div>
         <!-- Category Section End -->
 
-        <!-- Continue Reading Section Start -->
+        <!-- Continue Latest Project History Section Start -->
         <section class="section-t-space continue-reading-section">
             <div class="">
                 <div class="title px-15">
@@ -260,6 +260,7 @@
             </div>
         </section>
         <!-- Continue Reading Section End -->
+
 
         <!-- Features Course Section Start -->
         <section class="section-t-space feature-course-section">
@@ -534,6 +535,46 @@
                 modal.style.display = "none";
             }
         });
+    </script>
+
+<script>
+    // Fungsi untuk menampilkan repositori di HTML
+    function displayRepositories(repos) {
+        // Sortir repositori berdasarkan waktu pembaruan terbaru
+        repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+    
+        // Ambil hanya 2 repositori terbaru
+        repos = repos.slice(0, 2);
+    
+        const repoContainer = document.getElementById('repo-container'); // Pilih kontainer untuk menampilkan repositori
+        repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+    
+        repos.forEach(repo => {
+            const repoElement = document.createElement('div');
+            repoElement.className = 'swiper-slide'; // Sesuaikan dengan class yang digunakan pada HTML
+    
+            // Template yang disesuaikan untuk hanya menampilkan nama dan URL repositori
+            repoElement.innerHTML = `
+                <a href="${repo.html_url}" target="_blank" class="reading-list">
+                    <div class="reading-box">
+                        <div class="reading-detail">
+                            <div class="reading-name">
+                                <h5>${repo.name}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+            
+            repoContainer.appendChild(repoElement);
+        });
+    }
+    
+    // Mengambil repositori dari GitHub
+    fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
+        .then(response => response.json())
+        .then(data => displayRepositories(data))
+        .catch(error => console.error('Error fetching repositories:', error));
     </script>
 </body>
 
