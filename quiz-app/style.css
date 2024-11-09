@@ -1,0 +1,82 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+section {
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.project {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #e2e2e2;
+    border-radius: 5px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #333;
+    color: #f4f4f9;
+}
+
+header.dark-mode, footer.dark-mode {
+    background-color: #222;
+    color: #f4f4f9;
+}
+
+button.dark-mode {
+    background-color: #555;
+}
+
+.project.dark-mode {
+    background-color: #444;
+}
