@@ -7,18 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="fatkhurrhn">
     <meta name="keywords" content="fatkhurrhn">
-    <title>fatkhurrhn</title>
-    <link rel="manifest" href="https://themes.pixelstrap.net/multikit/manifest.json">
+    <title>FaCodes👨🏻‍💻</title>
     <meta name="theme-color" content="#ff8d2f">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
-    <meta name="msapplication-TileImage" content="https://themes.pixelstrap.net/multikit/assets/images/favicon/1.svg">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/x-icon" href="https://themes.pixelstrap.net/multikit/assets/images/favicon/9.svg">
-    <link rel="shortcut icon" href="https://themes.pixelstrap.net/multikit/https://themes.pixelstrap.net/multikit/"
-        type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="img/favicon2.png">
 
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,19 +22,16 @@
         rel="stylesheet">
 
     <!-- Bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css"
-        href="https://themes.pixelstrap.net/multikit/assets/css/vendors/bootstrap.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="css/bootstrap.css">
 
     <!-- Swiper css -->
-    <link rel="stylesheet" type="text/css"
-        href="https://themes.pixelstrap.net/multikit/assets/css/vendors/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
 
     <!-- Remix Icon css -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
     <!-- Style css -->
-    <link id="change-link" rel="stylesheet" type="text/css"
-        href="https://themes.pixelstrap.net/multikit/assets/css/style.css">
+    <link id="change-link" rel="stylesheet" type="text/css" href="css/style.css">
 
     <style>
         #noResult {
@@ -206,7 +199,7 @@
                     <div class="feature-box">
                         <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank"
                             class="feature-image">
-                            <img src="assets/img/dreamlms.png" class="img-fluid" alt="">
+                            <img src="img/dreamlms.png" class="img-fluid" alt="">
                         </a>
                         <div class="feature-detail">
                             <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
@@ -226,7 +219,7 @@
                     <div class="feature-box">
                         <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank"
                             class="feature-image">
-                            <img src="assets/img/ukk22.png" class="img-fluid" alt="">
+                            <img src="img/ukk22.png" class="img-fluid" alt="">
                         </a>
                         <div class="feature-detail">
                             <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
@@ -358,49 +351,17 @@
     <!-- Theme Option Setting Box End -->
 
     <!-- Bootstrap js-->
-    <script src="https://themes.pixelstrap.net/multikit/assets/js/vendors/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
 
     <!-- swiper js -->
-    <script src="https://themes.pixelstrap.net/multikit/assets/js/swiper-bundle.min.js"></script>
-    <script src="https://themes.pixelstrap.net/multikit/assets/js/custom_swiper.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/custom_swiper.js"></script>
 
     <!-- Theme js-->
-    <script src="https://themes.pixelstrap.net/multikit/assets/js/script.js"></script>
-
-    <!-- Theme Settings js-->
-    <!-- <script src="https://themes.pixelstrap.net/multikit/assets/js/theme-setting.js"></script> -->
+    <script src="js/script.js"></script>
 
 
-    <script>
-        function searchFunction() {
-            // Ambil input pencarian
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toLowerCase();
-            const ul = document.getElementById("title");
-            const li = ul.getElementsByTagName("li");
-            const noResult = document.getElementById("noResult"); // Pesan "tidak ada hasil"
-
-            let found = false; // Penanda jika ada hasil yang sesuai
-
-            // Loop melalui semua item, dan sembunyikan yang tidak sesuai dengan pencarian
-            for (let i = 0; i < li.length; i++) {
-                const item = li[i].textContent || li[i].innerText;
-                if (item.toLowerCase().includes(filter)) {
-                    li[i].style.display = "";
-                    found = true; // Ada hasil yang sesuai
-                } else {
-                    li[i].style.display = "none";
-                }
-            }
-
-            // Tampilkan pesan jika tidak ada hasil
-            if (!found) {
-                noResult.style.display = "block";
-            } else {
-                noResult.style.display = "none";
-            }
-        }
-    </script>
+    
 </body>
 
 </html>
