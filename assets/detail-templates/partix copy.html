@@ -1,0 +1,45 @@
+<!-- Teks Jumlah Views -->
+<p id="view-count"
+style="position: absolute; left: 0; font-size: 12px; color: #666; margin-top: 5px; white-space: nowrap; text-align: left; width: 100%;">
+0 Views
+</p>
+</div>
+<script>
+let viewCount = localStorage.getItem('viewCount') ? parseInt(localStorage.getItem('viewCount')) : 0;
+
+const livePreviewButton = document.getElementById('live-preview-btn');
+const viewCountText = document.getElementById('view-count');
+
+// Menampilkan jumlah view yang sudah disimpan
+viewCountText.textContent = `Jumlah Views: ${viewCount}`;
+
+livePreviewButton.addEventListener('click', function () {
+viewCount++; // Menambah jumlah views setiap kali tombol diklik
+viewCountText.textContent = `Jumlah Views: ${viewCount}`; // Memperbarui teks jumlah views
+localStorage.setItem('viewCount', viewCount); // Menyimpan jumlah views ke localStorage
+});
+</script>
+
+
+
+
+<p id="download-count" style="position: absolute; left: 0; font-size: 12px; color: #666; margin-top: 5px; white-space: nowrap; text-align: left; width: 100%;">
+    0 Downloads
+</p>
+</div>
+
+<script>
+let downloadCount = localStorage.getItem('downloadCount') ? parseInt(localStorage.getItem('downloadCount')) : 0;
+
+const downloadButton = document.getElementById('download-btn');
+const downloadCountText = document.getElementById('download-count');
+
+// Menampilkan jumlah download yang sudah disimpan
+downloadCountText.textContent = `${downloadCount} Downloads`;
+
+downloadButton.addEventListener('click', function () {
+    downloadCount++; // Menambah jumlah download setiap kali tombol diklik
+    downloadCountText.textContent = `${downloadCount} Downloads`; // Memperbarui teks jumlah download
+    localStorage.setItem('downloadCount', downloadCount); // Menyimpan jumlah download ke localStorage
+});
+</script>

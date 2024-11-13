@@ -130,28 +130,24 @@
             <div class="name-title">
                 <h5>by fatkhurrhn</h5>
                 <h4>Patrix – Free Responsive Bootstrap 5 Landing Page Template</h4>
-                <ul class="course-number">
-                    <li>portfolio</li>
-                    <li>free</li>
+                <ul class="course-number" >
+                    <li id="view-count">0 Views</li> 
+                    <li id="download-count">0 Downloads</li>
                 </ul>
-                <!-- #164150 -->
-
+                
                 <div style="display: flex; gap: 10px; padding-top: 9px;">
                     <!-- Tombol Live Preview -->
-                    <a href="git.com" class="btn btn-gradient btn-sm"
-                        style="width: fit-content; display: flex; justify-content: center; align-items: center;">
+                    <a id="live-preview-btn" href="https://fatkhurrhn.github.io/patrix/index.html" class="btn btn-gradient btn-sm" style="width: fit-content; display: flex; justify-content: center; align-items: center;"> 
                         Live Preview
                     </a>
-
+                
                     <!-- Tombol Download dengan fungsionalitas download -->
-                    <a href="/download/prefix.zip" class="btn btn-gradient btn-sm"
-                        style="width: fit-content; border-radius: 5px; background: white; border: 2px solid var(--gradient-color, #164150); color: var(--gradient-color, #164150); text-align: center;"
-                        download>
+                    <a id="download-btn" href="../zip/patrix.zip" class="btn btn-gradient btn-sm" 
+                       style="width: fit-content; border-radius: 5px; background: white; border: 2px solid var(--gradient-color, #164150); color: var(--gradient-color, #164150); text-align: center;" 
+                       download>
                         Download
                     </a>
                 </div>
-
-
                 <!-- <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-">Follow Me</button> -->
             </div>
         </div>
@@ -159,7 +155,7 @@
     <!-- Video Name Section End -->
 
     <!-- Term & Condition Section Start -->
-    <section class="term-condition-section section-t-space">
+    <section class="term-condition-section pt-2">
         <div class="custom-container">
 
             <div class="col-12">
@@ -205,7 +201,7 @@
                                 type="button" role="tab">Libraries & Plugins</button>
                         </li>
                     </ul>
-                    <hr>
+                    <hr class="">
                     <div class="tab-content custom-tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel" tabindex="0">
                             <div class="video-box-list">
@@ -392,7 +388,39 @@
             </ul>
         </div>
     </div>
-    <!-- Theme Option Setting Box End -->
+    <!-- Theme Option Setting Box End -->\
+
+    <script>
+        // Mendapatkan nilai jumlah view dan download dari localStorage atau inisialisasi dengan 0
+        let viewCount = localStorage.getItem('viewCount') ? parseInt(localStorage.getItem('viewCount')) : 0;
+        let downloadCount = localStorage.getItem('downloadCount') ? parseInt(localStorage.getItem('downloadCount')) : 0;
+    
+        // Mendapatkan referensi ke elemen HTML yang akan diubah
+        const viewCountText = document.getElementById('view-count');
+        const downloadCountText = document.getElementById('download-count');
+    
+        // Menampilkan jumlah view dan download yang sudah disimpan di localStorage
+        viewCountText.textContent = `${viewCount} Views`;
+        downloadCountText.textContent = `${downloadCount} Downloads`;
+    
+        // Mendapatkan tombol Live Preview dan Download
+        const livePreviewButton = document.getElementById('live-preview-btn');
+        const downloadButton = document.getElementById('download-btn');
+    
+        // Menambah jumlah views setiap kali tombol Live Preview diklik
+        livePreviewButton.addEventListener('click', function () {
+            viewCount++; // Menambah jumlah views
+            viewCountText.textContent = `${viewCount} Views`; // Memperbarui tampilan jumlah views
+            localStorage.setItem('viewCount', viewCount); // Menyimpan jumlah views ke localStorage
+        });
+    
+        // Menambah jumlah downloads setiap kali tombol Download diklik
+        downloadButton.addEventListener('click', function () {
+            downloadCount++; // Menambah jumlah downloads
+            downloadCountText.textContent = `${downloadCount} Downloads`; // Memperbarui tampilan jumlah downloads
+            localStorage.setItem('downloadCount', downloadCount); // Menyimpan jumlah downloads ke localStorage
+        });
+    </script>
 
     <!-- Bootstrap js-->
     <script src="../js/bootstrap.bundle.min.js"></script>
