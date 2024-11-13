@@ -63,6 +63,30 @@
             cursor: pointer; */
 
         }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-text {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            background-color: rgba(22, 65, 80, 0.7); /* Menggunakan RGBA untuk transparansi */
+            color: white;
+            padding: 2px 6px;
+            /* Kurangi padding untuk mengurangi ukuran latar belakang */
+            font-size: 10px;
+            /* Ukuran font tetap kecil */
+            border-radius: 3px;
+            /* Kurangi border-radius untuk sudut lebih tajam */
+        }
+
+        .feature-box .feature-detail {
+            padding: 10px;
+        }
     </style>
 
 
@@ -179,19 +203,19 @@
                 <li>
                     <ul class="category-list">
                         <li class="active">
-                            <a href="assets/category/education.html">Education</a>
+                            <a href="assets/category-ai/education.html">Education</a>
                         </li>
                         <li>
-                            <a href="assets/category/marketing.html">Marketing</a>
+                            <a href="assets/category-ai/marketing.html">Marketing</a>
                         </li>
                         <li>
-                            <a href="assets/category/codeit.html">code & IT</a>
+                            <a href="assets/category-ai/codeit.html">code & IT</a>
                         </li>
                         <li>
-                            <a href="assets/category/detector.html">Ai Detactor</a>
+                            <a href="assets/category-ai/detector.html">Ai Detactor</a>
                         </li>
                         <li>
-                            <a href="assets/category/text.html">Text & Writing</a>
+                            <a href="assets/category-ai/text.html">Text & Writing</a>
                         </li>
                     </ul>
                 </li>
@@ -215,61 +239,53 @@
             </div>
         </section>
 
-
-
-
-        <!-- Features Course Section Start -->
-        <section class="section-t-space feature-course-section">
-            <div class="custom-container">
-                <div class="title">
-                    <h4>Other Projects</h4>
-                </div>
-                <ul class="feature-course-list">
-                    <li>
-                        <div class="feature-box">
-                            <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank"
-                                class="feature-image">
-                                <img src="assets/img/dreamlms.png" class="img-fluid" alt="">
-                            </a>
-                            <div class="feature-detail">
-                                <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
-                                    <h6>Project UAS 2023 - DreamLMS - Laravel10</h6>
-                                </a>
-                                <ul class="rate-course">
-                                    <li><i class="ri-calendar-fill"></i> 7/23</li>
-                                    <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" target="_blank">
-                                        <li class="fw-500">Detail</li>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <div class="feature-box">
-                            <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank"
-                                class="feature-image">
-                                <img src="assets/img/ukk22.png" class="img-fluid" alt="">
-                            </a>
-                            <div class="feature-detail">
-                                <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" target="_blank">
-                                    <h6>Project UKK 2022 Tanpa Database - SMK Thursina YBM PLN</h6>
-                                </a>
-                                <ul class="rate-course">
-                                    <li><i class="ri-calendar-fill"></i> 9/22</li>
-                                    <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase"
-                                        target="_blank">
-                                        <li class="fw-500">Detail</li>
-                                    </a>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                </ul>
+        <!--Templates Start -->
+    <section class="section-t-space feature-course-section popular-course-section">
+        <div class="custom-container">
+            <div class="title">
+                <h4>Popular Templates</h4>
             </div>
-        </section>
-        <!-- Features Course Section End -->
+            <ul class="feature-course-list">
+                <li>
+                    <div class="feature-box">
+                        <div class="feature-image">
+                            <div class="image-container">
+                                <img src="https://themewagon.com/wp-content/uploads/2021/11/patrix-1.png"
+                                    class="img-fluid" alt="">
+                                <a href="category-templates/portfolio.html">
+                                    <div class="category-text">portfolio</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <a href="detail-templates/partix.html">
+                                <h6>Patrix – <font style="color: #939fa4;">Free Responsive Bootstrap 5 Landing Page Template</font></h6>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="feature-box">
+                        <div class="feature-image">
+                            <div class="image-container">
+                                <img src="https://pustakakoding.com/images/template/pustakakoding-template-website-company-profile-digital-creative.jpg"
+                                    class="img-fluid" alt="">
+                                    <a href="category-templates/portfolio.html">
+                                        <div class="category-text">company-profile</div>
+                                    </a>
+                            </div>
+                        </div>
+                        <div class="feature-detail">
+                            <a href="detail-templates/digital.html">
+                                <h6>Digital Creative – <font style="color: #939fa4;">Digital company profile website template with a modern and professional appearance.</font></h6>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!--Templates End -->
 
         <!-- Poster Section Start -->
         <section class="section-t-space poster-section">
