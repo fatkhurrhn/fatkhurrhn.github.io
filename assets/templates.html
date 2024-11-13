@@ -245,7 +245,7 @@
                             </div>
                         </div>
                         <div class="feature-detail">
-                            <a href="#">
+                            <a href="detail-templates/digital.html">
                                 <h6>Digital Creative – <font style="color: #939fa4;">Digital company profile website template with a modern and professional appearance.</font></h6>
                             </a>
                         </div>
@@ -262,49 +262,101 @@
     <!-- space box end -->
 
     <!-- Filter Offcanvas Start -->
+     <style>
+        .scrollable-filter {
+            max-height: 300px; /* Set height limit */
+            overflow-y: auto;  /* Enable scrolling */
+            margin-bottom: 10px; /* Space for the apply button */
+        }
+
+        .apply-button {
+            position: fixed;
+            bottom: 20px; /* Adjust based on the offcanvas padding */
+            right: 20px;  /* Adjust based on the offcanvas padding */
+            z-index: 10;
+        }
+
+     </style>
     <div class="offcanvas filter-button offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="filter-button">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sort by category: </h5>
         </div>
         <div class="offcanvas-body">
             <form class="filter-box-list" id="filterForm">
-                <div class="filter-box">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="1" value="portfolio" checked>
-                    <label class="form-check-label" for="1">
-                        <i class="ri-file-user-line"></i>
-                        <span>Portfolio</span>
-                    </label>
-                </div>
+                <div class="scrollable-filter">
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="1" value="portfolio" checked>
+                        <label class="form-check-label" for="1">
+                            <i class="ri-file-user-line"></i>
+                            <span>Portfolio</span>
+                        </label>
+                    </div>
+    
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="02" value="landing-page">
+                        <label class="form-check-label" for="02">
+                            <i class="ri-pages-line"></i>
+                            <span>Landing Page</span>
+                        </label>
+                    </div>
+    
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="03" value="admin-dashboard">
+                        <label class="form-check-label" for="03">
+                            <i class="ri-dashboard-line"></i>
+                            <span>Admin & Dashboard</span>
+                        </label>
+                    </div>
+    
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="04" value="educational">
+                        <label class="form-check-label" for="04">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>Educational</span>
+                        </label>
+                    </div>
+    
+                    <!-- Additional categories -->
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="05" value="educational2">
+                        <label class="form-check-label" for="05">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>Educational2</span>
+                        </label>
+                    </div>
+                    <!-- Add the remaining categories similarly -->
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="06" value="educational3">
+                        <label class="form-check-label" for="06">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>Educational3</span>
+                        </label>
+                    </div>
 
-                <div class="filter-box">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="02" value="landing-page">
-                    <label class="form-check-label" for="02">
-                        <i class="ri-pages-line"></i>
-                        <span>Landing Page</span>
-                    </label>
-                </div>
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="07" value="educational2">
+                        <label class="form-check-label" for="05">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>Educational4</span>
+                        </label>
+                    </div>
 
-                <div class="filter-box">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="03" value="admin-dashboard">
-                    <label class="form-check-label" for="03">
-                        <i class="ri-dashboard-line"></i>
-                        <span>Admin & Dashboard</span>
-                    </label>
+                    <div class="filter-box">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="08" value="educational2">
+                        <label class="form-check-label" for="05">
+                            <i class="ri-graduation-cap-line"></i>
+                            <span>Educational5</span>
+                        </label>
+                    </div>
                 </div>
-
-                <div class="filter-box">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="04" value="educational">
-                    <label class="form-check-label" for="04">
-                        <i class="ri-graduation-cap-line"></i>
-                        <span>Educational</span>
-                    </label>
-                </div>
-
+                <br><br><br>
+                <!-- Apply button is fixed at the bottom -->
                 <button type="button" class="btn btn-theme text-white apply-button" data-bs-dismiss="offcanvas"
                     onclick="applyFilter()">Apply</button>
             </form>
         </div>
     </div>
+    
     <!-- Filter Offcanvas End -->
 
 
