@@ -65,7 +65,7 @@
         }
     </style>
 
-    
+
 </head>
 
 <body class="inter-body learning-color">
@@ -199,64 +199,23 @@
         </div>
         <!-- Category Section End -->
 
-        <!-- Continue Latest Project History Section Start -->
+
+
         <section class="section-t-space continue-reading-section">
             <div class="">
                 <div class="title px-15">
-                    <h4>Latest Project History</h4>
+                    <h4>Latest Repos History</h4>
                 </div>
 
                 <div class="swiper slider-1 px-15 reading-slider">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <a href="https://github.com/fatkhurrhn/laravel-livewire" target="_blank"
-                                class="reading-list">
-                                <div class="reading-box">
-                                    <div class="reading-detail">
-                                        <div class="reading-image">
-                                            <img src="https://santrikoding.com/storage/tutorial-sets/6x275yhQxXoQYdFn5XIzpnNVwcc7X25YACfjH7OS.png"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                        <div class="reading-name">
-                                            <h5>Latihan Laravel livewire & filament Web App</h5>
-                                        </div>
-                                    </div>
-                                    <div class="reading-view">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar"></div>
-                                        </div>
-                                        <h6 class="theme-color">35% Complete</h6>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="swiper-slide">
-                            <a href="https://github.com/fatkhurrhn/fatkhurrhn.github.io" target="_blank"
-                                class="reading-list">
-                                <div class="reading-box">
-                                    <div class="reading-detail">
-                                        <div class="reading-image">
-                                            <img src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png"
-                                                class="img-fluid" alt="">
-                                        </div>
-                                        <div class="reading-name">
-                                            <h5>Pages are used to host personal or portfolio website</h5>
-                                        </div>
-                                    </div>
-                                    <div class="reading-view">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar"></div>
-                                        </div>
-                                        <h6 class="theme-color">75% Complete</h6>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <div id="repos" class="swiper-wrapper" style="gap: 2px;">
+                        <!-- Repositori akan diisi oleh JavaScript -->
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Continue Reading Section End -->
+
+
 
 
         <!-- Features Course Section Start -->
@@ -462,8 +421,8 @@
         <div class="learning-box"></div>
         <!-- space box end -->
 
-         <!-- Theme Option Setting Box Start -->
-         <div class="theme-setting-box">
+        <!-- Theme Option Setting Box Start -->
+        <div class="theme-setting-box">
             <div class="theme-box">
                 <button class="theme-icon text-white">
                     <i class="ri-menu-line"></i>
@@ -475,7 +434,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/story.thur" class="theme-setting-button" >
+                        <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
                             <i class="ri-instagram-line"></i>
                         </a>
                     </li>
@@ -493,7 +452,7 @@
     </main>
 
     <script>
-        
+
     </script>
 
     <!-- Bootstrap js-->
@@ -533,25 +492,25 @@
             }
         });
     </script>
+    <script>
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
 
-<script>
-    // Fungsi untuk menampilkan repositori di HTML
-    function displayRepositories(repos) {
-        // Sortir repositori berdasarkan waktu pembaruan terbaru
-        repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
-    
-        // Ambil hanya 2 repositori terbaru
-        repos = repos.slice(0, 2);
-    
-        const repoContainer = document.getElementById('repo-container'); // Pilih kontainer untuk menampilkan repositori
-        repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
-    
-        repos.forEach(repo => {
-            const repoElement = document.createElement('div');
-            repoElement.className = 'swiper-slide'; // Sesuaikan dengan class yang digunakan pada HTML
-    
-            // Template yang disesuaikan untuk hanya menampilkan nama dan URL repositori
-            repoElement.innerHTML = `
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+
+            const repoContainer = document.getElementById(
+                'repo-container'); // Pilih kontainer untuk menampilkan repositori
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide'; // Sesuaikan dengan class yang digunakan pada HTML
+
+                // Template yang disesuaikan untuk hanya menampilkan nama dan URL repositori
+                repoElement.innerHTML = `
                 <a href="${repo.html_url}" target="_blank" class="reading-list">
                     <div class="reading-box">
                         <div class="reading-detail">
@@ -562,16 +521,97 @@
                     </div>
                 </a>
             `;
-            
-            repoContainer.appendChild(repoElement);
-        });
-    }
-    
-    // Mengambil repositori dari GitHub
-    fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
-        .then(response => response.json())
-        .then(data => displayRepositories(data))
-        .catch(error => console.error('Error fetching repositories:', error));
+
+                repoContainer.appendChild(repoElement);
+            });
+        }
+
+        // Mengambil repositori dari GitHub
+        fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
+            .then(response => response.json())
+            .then(data => displayRepositories(data))
+            .catch(error => console.error('Error fetching repositories:', error));
+    </script>
+
+    <script>
+        const username = 'fatkhurrhn';
+        const repoContainer = document.getElementById('repos');
+
+        // Fungsi untuk mengambil semua halaman repository
+        async function fetchAllRepositories() {
+            let page = 1;
+            let repos = [];
+            let fetchMore = true;
+
+            while (fetchMore) {
+                try {
+                    const response = await fetch(
+                        `https://api.github.com/users/${username}/repos?page=${page}&per_page=100&sort=updated`);
+                    const data = await response.json();
+
+                    // Jika data kosong, maka semua repositori sudah diambil
+                    if (data.length === 0) {
+                        fetchMore = false;
+                    } else {
+                        repos = repos.concat(data);
+                        page++;
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    fetchMore = false;
+                }
+            }
+
+            return repos;
+        }
+
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide';
+
+                repoElement.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" class="reading-list">
+                <div class="reading-box">
+                    <div class="reading-detail">
+                        <div class="reading-image">
+                            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="reading-name">
+                            <h5>${repo.name} - <font style="color: #939fa4;">${repo.description || 'No description'}</font></h5>
+                        </div>
+                    </div>
+                    <div class="reading-view">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                        <h6 class="theme-color">Updated at: ${new Date(repo.updated_at).toLocaleString()}</h6>
+                    </div>
+                </div>
+            </a>
+        `;
+
+                repoContainer.appendChild(repoElement);
+            });
+        }
+
+        // Fungsi utama untuk mengambil dan menampilkan repositori
+        async function loadRepositories() {
+            const repos = await fetchAllRepositories();
+            displayRepositories(repos);
+        }
+
+        // Memanggil loadRepositories() secara berkala untuk update real-time
+        loadRepositories();
+        setInterval(loadRepositories, 60000); // Update setiap 60 detik
     </script>
 </body>
 

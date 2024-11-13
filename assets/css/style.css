@@ -1,3 +1,8 @@
+
+
+
+
+
 @-webkit-keyframes flash {
   0% {
     -webkit-transform: scale(1);
@@ -31633,7 +31638,7 @@ footer .page-list li a {
 }
 
 .continue-reading-section .reading-list .reading-box .reading-view .progress .progress-bar {
-  width: 50%;
+  width: 70%;
   background-color: rgba(var(--theme-color), 1)
 }
 
