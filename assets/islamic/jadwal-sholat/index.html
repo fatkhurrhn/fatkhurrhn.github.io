@@ -212,49 +212,47 @@
     </div>
     <!-- search-box End -->
 
+
     <div class="container">
-        <div class=" text-date Date">
-            <p class="text-right"><span>loading...</span></p>
+        <div class=" text-date">
+            <div id="realtime-date-time"></div>
         </div>
-        <div class="card">
-
-            <div class="">
-
-                <ul class="list-group table">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Imsak
-                        <span class="badge bg-primary rounded-pill Imsak">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Subuh
-                        <span class="badge bg-primary rounded-pill Subuh">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Terbit
-                        <span class="badge bg-primary rounded-pill Terbit">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Zuhur
-                        <span class="badge bg-primary rounded-pill Zuhur">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Ashar
-                        <span class="badge bg-primary rounded-pill Ashar">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Magrib
-                        <span class="badge bg-primary rounded-pill Magrib">00:00</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Isya
-                        <span class="badge bg-primary rounded-pill Isya">00:00</span>
-                    </li>
-                </ul>
-            </div>
+        
+        <div class="card mt-2">
             
+            <ul class="list-group table">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Imsak
+                    <span class="badge bg-primary rounded-pill Imsak">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Subuh
+                    <span class="badge bg-primary rounded-pill Subuh">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Terbit
+                    <span class="badge bg-primary rounded-pill Terbit">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Zuhur
+                    <span class="badge bg-primary rounded-pill Zuhur">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Ashar
+                    <span class="badge bg-primary rounded-pill Ashar">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Magrib
+                    <span class="badge bg-primary rounded-pill Magrib">00:00</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    Isya
+                    <span class="badge bg-primary rounded-pill Isya">00:00</span>
+                </li>
+            </ul>
         </div>
-
     </div>
+    
 
     <!-- Theme Option Setting Box Start -->
     <div class="theme-setting-box">
@@ -282,6 +280,33 @@
         </div>
     </div>
     <!-- Theme Option Setting Box End -->
+
+    <script>
+        function updateDateTime() {
+        const now = new Date();
+        const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+        const day = days[now.getDay()];
+        const date = now.getDate();
+        const month = now.getMonth() + 1; // Bulan dimulai dari 0
+        const year = now.getFullYear();
+        const hours = now.getHours().toString().padStart(2, '0');
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+
+        const dateTimeString = `${day}, ${date}/${month}/${year} | ${hours}:${minutes}:${seconds}`;
+
+        document.getElementById("realtime-date-time").textContent = dateTimeString;
+        }
+
+        // Panggil fungsi updateDateTime setiap detik
+        setInterval(updateDateTime, 1000);
+
+        // Panggil fungsi updateDateTime saat halaman dimuat
+        updateDateTime();
+    </script>
+
+     <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
