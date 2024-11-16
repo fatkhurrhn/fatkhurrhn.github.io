@@ -1,118 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Donasi</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f4;
-    }
-
-    .container {
-      width: 80%;
-      max-width: 800px;
-      margin: 50px auto;
-      padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-      margin-bottom: 20px;
-    }
-
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      background-color: #45a049;
-    }
-
-    .payment-methods {
-      display: none;
-      margin-top: 20px;
-    }
-
-    .payment-method {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
-
-    .payment-method:hover {
-      background-color: #f0f0f0;
-    }
-
-    .qr-code {
-      display: none;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .qr-code img {
-      max-width: 200px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Donasi</h1>
-
-    <label for="amount">Jumlah Donasi (minimal Rp. 1000):</label>
-    <input type="number" id="amount" min="1000" required>
-
-    <button id="donate-button">Donasi</button>
-
-    <div class="payment-methods">
-      <h2>Pilih Metode Pembayaran:</h2>
-      <div class="payment-method" id="bank-transfer">Transfer Bank</div>
-      <div class="payment-method" id="dana">Dana</div>
-      <div class="payment-method" id="gopay">GoPay</div>
-      <div class="payment-method" id="qris">QRIS</div>
-    </div>
-
-    <div class="qr-code">
-      <h2>Scan QR Code:</h2>
-      <img src="qr_code.png" alt="QR Code">
-    </div>
+<div class="scrollable-filter">
+  <div class="filter-box">
+    <label title="Aktifkan atau non-aktifkan terjemahan ayat" for="translation">Terjemahan</label>
+    <input id="translation" class="checkbox" type="checkbox" checked="">
+  </div>
+  <div class="filter-box">
+    <a title="Buka ayat yang terakhir dibaca" href="#" class="sidepage-item-link" id="last-read-link">
+      <span>Terakhir Dibaca</span><br>
+      <span id="sidepage-item-last-marked" class="sidepage-item-last-marked"><b>Belum Ada.</b> <i>[Click pada simbol
+          &#x2713; untuk menandai.]</i></span>
+    </a>
+  </div>
+  <div class="filter-box">
+    <label title="Audio murottal tiap ayat">Audio Murottal</label> :
+    <input id="murottal-mode-noloop" name="murottal-mode" class="checkbox" type="radio" checked value="noloop">
+    <label title="Berhenti ketika ayat selesai" for="murottal-mode-noloop">Tidak diulang</label>
+    <input id="murottal-mode-loop-ayah" name="murottal-mode" class="checkbox" type="radio" value="ayah">
+    <label title="Ulang murottal pada ayat" for="murottal-mode-loop-ayah">Ulangi ayat</label>
+    <input id="murottal-mode-loop-ayah-selection" name="murottal-mode" class="checkbox" type="radio"
+      value="ayah-selection">
+    <label title="Ulang murottal pada ayat" for="murottal-mode-loop-ayah-selection">Ulangi ayat pilihan</label>
+    <input id="ayah-selection-input" type="text" class="sidepage-textbox-for-radio"
+      placeholder="Contoh: 5,6,11-15,20,22"></span>
+    <span class="sidepage-subitem"><input id="murottal-mode-loop-surah" name="murottal-mode" class="checkbox"
+        type="radio" value="surah"> <label title="Ulang murottal pada surah" for="murottal-mode-loop-surah">Ulangi
+        surah<label>
   </div>
 
-  <script>
-    const donateButton = document.getElementById('donate-button');
-    const paymentMethods = document.querySelector('.payment-methods');
-    const qrCode = document.querySelector('.qr-code');
-
-    donateButton.addEventListener('click', () => {
-      paymentMethods.style.display = 'block';
-    });
-
-    const qrisButton = document.getElementById('qris');
-    qrisButton.addEventListener('click', () => {
-      qrCode.style.display = 'block';
-    });
-
-    // Add event listeners for other payment methods if needed
-  </script>
-</body>
-</html>
+  <div class="filter-box">
+    <select id="murottal-reciter" name="murottal-reciter" class="murottal-reciter" title="Pilih nama qori">
+      <option value="">--pilih sheikh--</option>
+      <option value="Abdurrahmaan_As-Sudais_192kbps">Sheikh Abdurrahman As-Sudais</option>
+      <option value="Husary_128kbps">Sheikh Mahmoud Khalil Al-Hussary</option>
+      <option value="Alafasy_128kbps">Sheikh Mishary Rashid Alafasy</option>
+    </select>
+  </div>
+</div>

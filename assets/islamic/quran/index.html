@@ -14,7 +14,7 @@
     <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
     <meta name="msapplication-TileColor" content="#FFFFFF">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="icon" type="image/x-icon" href="img/favicon2.png">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon2.png">
 
     <!--Google font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,16 +22,16 @@
         rel="stylesheet">
 
     <!-- Bootstrap css -->
-    <link id="rtl-link" rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
 
     <!-- Swiper css -->
-    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/swiper-bundle.min.css">
 
     <!-- Remix Icon css -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
 
     <!-- Style css -->
-    <link id="change-link" rel="stylesheet" type="text/css" href="css/style.css">
+    <link id="change-link" rel="stylesheet" type="text/css" href="../../css/style.css">
 
     <style>
         #noResult {
@@ -82,7 +82,8 @@
             bottom: 4px;
             left: 4px;
             /* background-color: rgba(0, 0, 0, 0.6); */
-            background-color: rgba(22, 65, 80, 0.7); /* Menggunakan RGBA untuk transparansi */
+            background-color: rgba(22, 65, 80, 0.7);
+            /* Menggunakan RGBA untuk transparansi */
             color: white;
             padding: 2px 6px;
             /* Kurangi padding untuk mengurangi ukuran latar belakang */
@@ -96,6 +97,7 @@
             padding: 10px;
         }
     </style>
+
 </head>
 
 <body class="inter-body learning-color">
@@ -119,7 +121,7 @@
             </div>
 
             <div class="header-bottom header-bottom-2">
-                <h2 class="fw-500 text-white">Templates FaCodes👨🏻‍💻</h2>
+                <h2 class="fw-500 text-white">Quran Online</h2>
             </div>
         </div>
     </header>
@@ -129,7 +131,7 @@
     <div class="mobile-style-1">
         <ul>
             <li class="">
-                <a href="../index.html" class="mobile-box">
+                <a href="../../../index.html" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-home-5-line"></i>
                     </div>
@@ -138,56 +140,53 @@
                     </div>
                 </a>
             </li>
-    
+
+            <li class="">
+                <a href="../../islamic.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-moon-clear-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Islamic</h5>
+                    </div>
+                </a>
+            </li>
+
             <li class="active">
-                <a href="blog.html" class="mobile-box">
+                <a href="index.html" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-news-line"></i>
+                        <i class="ri-book-2-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Templates</h5>
+                        <h5>Quran</h5>
                     </div>
                 </a>
             </li>
-    
-            <li class="">
-                <a href="code.html" class="mobile-box">
-                    <div class="mobile-icon">
-                        <i class="ri-code-s-slash-line"></i>
-                    </div>
-                    <div class="mobile-name">
-                        <h5>Repo</h5>
-                    </div>
-                </a>
-            </li>
-    
-            <li class="">
-                <a href="hack.html" class="mobile-box">
-                    <div class="mobile-icon">
-                        <i class="ri-chat-voice-ai-line"></i>
-                    </div>
-                    <div class="mobile-name">
-                        <h5>Hack</h5>
-                    </div>
-                </a>
-            </li>
-    
+
             <li>
-                <a href="https://github.com/fatkhurrhn" target="_blank" class="mobile-box">
+                <a href="../dzikir/" class="mobile-box">
                     <div class="mobile-icon">
-                        <i class="ri-github-fill"></i>
+                        <i class="ri-donut-chart-line"></i>
                     </div>
                     <div class="mobile-name">
-                        <h5>Github</h5>
+                        <h5>Dzikir</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../mosque/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-community-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Mosque</h5>
                     </div>
                 </a>
             </li>
         </ul>
     </div>
     <!-- Mobile Section End -->
-
-    <!-- <h2 id="noResulttext">Sedang dalam tahap pengembangan</h2>
-    <img id="noResult" src="https://media.tenor.com/o4zJUoaOr2EAAAAi/bubududu-panda.gif" alt=""> -->
 
     <!-- search-box Start -->
     <div class="search-box pt-25">
@@ -197,7 +196,7 @@
                     <div class="search-icon">
                         <i class="ri-search-line"></i>
                     </div>
-                    <input type="search" class="form-control" placeholder="Search">
+                    <input id="search-keywords" class="form-control" type="text" placeholder="Ketik nama surah">
                     <button class="btn filter-button" type="button" data-bs-toggle="offcanvas"
                         data-bs-target="#filter-button">
                         <i class="ri-sound-module-line fil"></i>
@@ -208,386 +207,1269 @@
     </div>
     <!-- search-box End -->
 
-    <!--Templates Start -->
+
+
+
+    <style>
+        .surah-list {
+            box-sizing: border-box;
+        }
+
+        .surah-index {
+            list-style: none;
+            padding: 0.5em 0.2em 0.5em 1em;
+            margin-bottom: 0.5em;
+            background-color: #f1f1f1;
+            position: relative;
+            display: block;
+            border-radius: 7px;
+        }
+
+        .surah-index-name {
+            display: block;
+            font-size: 1.2em;
+        }
+
+        .surah-index-ayah {
+            display: block;
+            font-size: 0.75em;
+        }
+
+        .surah-index-number {
+            position: absolute;
+            font-size: 13px;
+            right: 12px;
+            top: 16px;
+        }
+    </style>
+
     <section class="section-t-space feature-course-section popular-course-section">
         <div class="custom-container">
-            <div class="title">
-                <h4>All Templates</h4>
-            </div>
-            <ul class="feature-course-list">
-                <li>
-                    <div class="feature-box">
-                        <div class="feature-image">
-                            <div class="image-container">
-                                <img src="https://themewagon.com/wp-content/uploads/2021/11/patrix-1.png"
-                                    class="img-fluid" alt="">
-                                <a href="category-templates/portfolio.html">
-                                    <div class="category-text">portfolio</div>
+            <!-- Begin each surah -->
+            <div class="ayah-wrapper">
+                <div class="search-wrapper">
+                </div>
+                <div class="surah-list">
+                    <div>
+                        <ul>
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/1/" title="Surah Al-Fatihah"
+                                    data-keywords="Al-Fatihah, Al Fatihah, AlFatihah">
+                                    <span class="surah-index-name">Al-Fatihah - الفاتحة</span>
+                                    <span class="surah-index-ayah">7 Ayat</span>
+                                    <span class="surah-index-number">1</span>
                                 </a>
-                            </div>
-                        </div>
-                        <div class="feature-detail">
-                            <a href="detail-templates/partix.html">
-                                <h6>Patrix – <font style="color: #939fa4;">Free Responsive Bootstrap 5 Landing Page Template</font></h6>
-                            </a>
-                        </div>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/2/" title="Surah Al-Baqarah"
+                                    data-keywords="Al-Baqarah, Al Baqarah, AlBaqarah">
+                                    <span class="surah-index-name">Al-Baqarah - البقرة</span>
+                                    <span class="surah-index-ayah">286 Ayat</span>
+                                    <span class="surah-index-number">2</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/3/" title="Surah Ali 'Imran"
+                                    data-keywords="Ali 'Imran, Ali Imran, Ali Imran">
+                                    <span class="surah-index-name">Ali 'Imran - اٰل عمران</span>
+                                    <span class="surah-index-ayah">200 Ayat</span>
+                                    <span class="surah-index-number">3</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/4/" title="Surah An-Nisa'"
+                                    data-keywords="An-Nisa', An Nisa, AnNisa">
+                                    <span class="surah-index-name">An-Nisa' - النساۤء</span>
+                                    <span class="surah-index-ayah">176 Ayat</span>
+                                    <span class="surah-index-number">4</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/5/" title="Surah Al-Ma'idah"
+                                    data-keywords="Al-Ma'idah, Al Maidah, AlMaidah">
+                                    <span class="surah-index-name">Al-Ma'idah - الماۤئدة</span>
+                                    <span class="surah-index-ayah">120 Ayat</span>
+                                    <span class="surah-index-number">5</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/6/" title="Surah Al-An'am"
+                                    data-keywords="Al-An'am, Al Anam, AlAnam">
+                                    <span class="surah-index-name">Al-An'am - الانعام</span>
+                                    <span class="surah-index-ayah">165 Ayat</span>
+                                    <span class="surah-index-number">6</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/7/" title="Surah Al-A'raf"
+                                    data-keywords="Al-A'raf, Al Araf, AlAraf">
+                                    <span class="surah-index-name">Al-A'raf - الاعراف</span>
+                                    <span class="surah-index-ayah">206 Ayat</span>
+                                    <span class="surah-index-number">7</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/8/" title="Surah Al-Anfal"
+                                    data-keywords="Al-Anfal, Al Anfal, AlAnfal">
+                                    <span class="surah-index-name">Al-Anfal - الانفال</span>
+                                    <span class="surah-index-ayah">75 Ayat</span>
+                                    <span class="surah-index-number">8</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/9/" title="Surah At-Taubah"
+                                    data-keywords="At-Taubah, At Taubah, AtTaubah">
+                                    <span class="surah-index-name">At-Taubah - التوبة</span>
+                                    <span class="surah-index-ayah">129 Ayat</span>
+                                    <span class="surah-index-number">9</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/10/" title="Surah Yunus"
+                                    data-keywords="Yunus, Yunus, Yunus">
+                                    <span class="surah-index-name">Yunus - يونس</span>
+                                    <span class="surah-index-ayah">109 Ayat</span>
+                                    <span class="surah-index-number">10</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/11/" title="Surah Hud" data-keywords="Hud, Hud, Hud">
+                                    <span class="surah-index-name">Hud - هود</span>
+                                    <span class="surah-index-ayah">123 Ayat</span>
+                                    <span class="surah-index-number">11</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/12/" title="Surah Yusuf"
+                                    data-keywords="Yusuf, Yusuf, Yusuf">
+                                    <span class="surah-index-name">Yusuf - يوسف</span>
+                                    <span class="surah-index-ayah">111 Ayat</span>
+                                    <span class="surah-index-number">12</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/13/" title="Surah Ar-Ra'd"
+                                    data-keywords="Ar-Ra'd, Ar Rad, ArRad">
+                                    <span class="surah-index-name">Ar-Ra'd - الرّعد</span>
+                                    <span class="surah-index-ayah">43 Ayat</span>
+                                    <span class="surah-index-number">13</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/14/" title="Surah Ibrahim"
+                                    data-keywords="Ibrahim, Ibrahim, Ibrahim">
+                                    <span class="surah-index-name">Ibrahim - ابرٰهيم</span>
+                                    <span class="surah-index-ayah">52 Ayat</span>
+                                    <span class="surah-index-number">14</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/15/" title="Surah Al-Hijr"
+                                    data-keywords="Al-Hijr, Al Hijr, AlHijr">
+                                    <span class="surah-index-name">Al-Hijr - الحجر</span>
+                                    <span class="surah-index-ayah">99 Ayat</span>
+                                    <span class="surah-index-number">15</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/16/" title="Surah An-Nahl"
+                                    data-keywords="An-Nahl, An Nahl, AnNahl">
+                                    <span class="surah-index-name">An-Nahl - النحل</span>
+                                    <span class="surah-index-ayah">128 Ayat</span>
+                                    <span class="surah-index-number">16</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/17/" title="Surah Al-Isra'"
+                                    data-keywords="Al-Isra', Al Isra, AlIsra">
+                                    <span class="surah-index-name">Al-Isra' - الاسراۤء</span>
+                                    <span class="surah-index-ayah">111 Ayat</span>
+                                    <span class="surah-index-number">17</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/18/" title="Surah Al-Kahf"
+                                    data-keywords="Al-Kahf, Al Kahf, AlKahf">
+                                    <span class="surah-index-name">Al-Kahf - الكهف</span>
+                                    <span class="surah-index-ayah">110 Ayat</span>
+                                    <span class="surah-index-number">18</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/19/" title="Surah Maryam"
+                                    data-keywords="Maryam, Maryam, Maryam">
+                                    <span class="surah-index-name">Maryam - مريم</span>
+                                    <span class="surah-index-ayah">98 Ayat</span>
+                                    <span class="surah-index-number">19</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/20/" title="Surah Taha"
+                                    data-keywords="Taha, Taha, Taha">
+                                    <span class="surah-index-name">Taha - طٰهٰ</span>
+                                    <span class="surah-index-ayah">135 Ayat</span>
+                                    <span class="surah-index-number">20</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/21/" title="Surah Al-Anbiya'"
+                                    data-keywords="Al-Anbiya', Al Anbiya, AlAnbiya">
+                                    <span class="surah-index-name">Al-Anbiya' - الانبياۤء</span>
+                                    <span class="surah-index-ayah">112 Ayat</span>
+                                    <span class="surah-index-number">21</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/22/" title="Surah Al-Hajj"
+                                    data-keywords="Al-Hajj, Al Hajj, AlHajj">
+                                    <span class="surah-index-name">Al-Hajj - الحج</span>
+                                    <span class="surah-index-ayah">78 Ayat</span>
+                                    <span class="surah-index-number">22</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/23/" title="Surah Al-Mu'minun"
+                                    data-keywords="Al-Mu'minun, Al Muminun, AlMuminun">
+                                    <span class="surah-index-name">Al-Mu'minun - المؤمنون</span>
+                                    <span class="surah-index-ayah">118 Ayat</span>
+                                    <span class="surah-index-number">23</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/24/" title="Surah An-Nur"
+                                    data-keywords="An-Nur, An Nur, AnNur">
+                                    <span class="surah-index-name">An-Nur - النّور</span>
+                                    <span class="surah-index-ayah">64 Ayat</span>
+                                    <span class="surah-index-number">24</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/25/" title="Surah Al-Furqan"
+                                    data-keywords="Al-Furqan, Al Furqan, AlFurqan">
+                                    <span class="surah-index-name">Al-Furqan - الفرقان</span>
+                                    <span class="surah-index-ayah">77 Ayat</span>
+                                    <span class="surah-index-number">25</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/26/" title="Surah Asy-Syu'ara'"
+                                    data-keywords="Asy-Syu'ara', Asy Syuara, AsySyuara">
+                                    <span class="surah-index-name">Asy-Syu'ara' - الشعراۤء</span>
+                                    <span class="surah-index-ayah">227 Ayat</span>
+                                    <span class="surah-index-number">26</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/27/" title="Surah An-Naml"
+                                    data-keywords="An-Naml, An Naml, AnNaml">
+                                    <span class="surah-index-name">An-Naml - النمل</span>
+                                    <span class="surah-index-ayah">93 Ayat</span>
+                                    <span class="surah-index-number">27</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/28/" title="Surah Al-Qasas"
+                                    data-keywords="Al-Qasas, Al Qasas, AlQasas">
+                                    <span class="surah-index-name">Al-Qasas - القصص</span>
+                                    <span class="surah-index-ayah">88 Ayat</span>
+                                    <span class="surah-index-number">28</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/29/" title="Surah Al-'Ankabut"
+                                    data-keywords="Al-'Ankabut, Al Ankabut, AlAnkabut">
+                                    <span class="surah-index-name">Al-'Ankabut - العنكبوت</span>
+                                    <span class="surah-index-ayah">69 Ayat</span>
+                                    <span class="surah-index-number">29</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/30/" title="Surah Ar-Rum"
+                                    data-keywords="Ar-Rum, Ar Rum, ArRum">
+                                    <span class="surah-index-name">Ar-Rum - الرّوم</span>
+                                    <span class="surah-index-ayah">60 Ayat</span>
+                                    <span class="surah-index-number">30</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/31/" title="Surah Luqman"
+                                    data-keywords="Luqman, Luqman, Luqman">
+                                    <span class="surah-index-name">Luqman - لقمٰن</span>
+                                    <span class="surah-index-ayah">34 Ayat</span>
+                                    <span class="surah-index-number">31</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/32/" title="Surah As-Sajdah"
+                                    data-keywords="As-Sajdah, As Sajdah, AsSajdah">
+                                    <span class="surah-index-name">As-Sajdah - السّجدة</span>
+                                    <span class="surah-index-ayah">30 Ayat</span>
+                                    <span class="surah-index-number">32</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/33/" title="Surah Al-Ahzab"
+                                    data-keywords="Al-Ahzab, Al Ahzab, AlAhzab">
+                                    <span class="surah-index-name">Al-Ahzab - الاحزاب</span>
+                                    <span class="surah-index-ayah">73 Ayat</span>
+                                    <span class="surah-index-number">33</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/34/" title="Surah Saba'"
+                                    data-keywords="Saba', Saba, Saba">
+                                    <span class="surah-index-name">Saba' - سبأ</span>
+                                    <span class="surah-index-ayah">54 Ayat</span>
+                                    <span class="surah-index-number">34</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/35/" title="Surah Fatir"
+                                    data-keywords="Fatir, Fatir, Fatir">
+                                    <span class="surah-index-name">Fatir - فاطر</span>
+                                    <span class="surah-index-ayah">45 Ayat</span>
+                                    <span class="surah-index-number">35</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/36/" title="Surah Yasin"
+                                    data-keywords="Yasin, Yasin, Yasin">
+                                    <span class="surah-index-name">Yasin - يٰسۤ</span>
+                                    <span class="surah-index-ayah">83 Ayat</span>
+                                    <span class="surah-index-number">36</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/37/" title="Surah As-Saffat"
+                                    data-keywords="As-Saffat, As Saffat, AsSaffat">
+                                    <span class="surah-index-name">As-Saffat - الصّٰۤفّٰت</span>
+                                    <span class="surah-index-ayah">182 Ayat</span>
+                                    <span class="surah-index-number">37</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/38/" title="Surah Sad" data-keywords="Sad, Sad, Sad">
+                                    <span class="surah-index-name">Sad - ص</span>
+                                    <span class="surah-index-ayah">88 Ayat</span>
+                                    <span class="surah-index-number">38</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/39/" title="Surah Az-Zumar"
+                                    data-keywords="Az-Zumar, Az Zumar, AzZumar">
+                                    <span class="surah-index-name">Az-Zumar - الزمر</span>
+                                    <span class="surah-index-ayah">75 Ayat</span>
+                                    <span class="surah-index-number">39</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/40/" title="Surah Gafir"
+                                    data-keywords="Gafir, Gafir, Gafir">
+                                    <span class="surah-index-name">Gafir - غافر</span>
+                                    <span class="surah-index-ayah">85 Ayat</span>
+                                    <span class="surah-index-number">40</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/41/" title="Surah Fussilat"
+                                    data-keywords="Fussilat, Fussilat, Fussilat">
+                                    <span class="surah-index-name">Fussilat - فصّلت</span>
+                                    <span class="surah-index-ayah">54 Ayat</span>
+                                    <span class="surah-index-number">41</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/42/" title="Surah Asy-Syura"
+                                    data-keywords="Asy-Syura, Asy Syura, AsySyura">
+                                    <span class="surah-index-name">Asy-Syura - الشورى</span>
+                                    <span class="surah-index-ayah">53 Ayat</span>
+                                    <span class="surah-index-number">42</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/43/" title="Surah Az-Zukhruf"
+                                    data-keywords="Az-Zukhruf, Az Zukhruf, AzZukhruf">
+                                    <span class="surah-index-name">Az-Zukhruf - الزخرف</span>
+                                    <span class="surah-index-ayah">89 Ayat</span>
+                                    <span class="surah-index-number">43</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/44/" title="Surah Ad-Dukhan"
+                                    data-keywords="Ad-Dukhan, Ad Dukhan, AdDukhan">
+                                    <span class="surah-index-name">Ad-Dukhan - الدخان</span>
+                                    <span class="surah-index-ayah">59 Ayat</span>
+                                    <span class="surah-index-number">44</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/45/" title="Surah Al-Jasiyah"
+                                    data-keywords="Al-Jasiyah, Al Jasiyah, AlJasiyah">
+                                    <span class="surah-index-name">Al-Jasiyah - الجاثية</span>
+                                    <span class="surah-index-ayah">37 Ayat</span>
+                                    <span class="surah-index-number">45</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/46/" title="Surah Al-Ahqaf"
+                                    data-keywords="Al-Ahqaf, Al Ahqaf, AlAhqaf">
+                                    <span class="surah-index-name">Al-Ahqaf - الاحقاف</span>
+                                    <span class="surah-index-ayah">35 Ayat</span>
+                                    <span class="surah-index-number">46</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/47/" title="Surah Muhammad"
+                                    data-keywords="Muhammad, Muhammad, Muhammad">
+                                    <span class="surah-index-name">Muhammad - محمّد</span>
+                                    <span class="surah-index-ayah">38 Ayat</span>
+                                    <span class="surah-index-number">47</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/48/" title="Surah Al-Fath"
+                                    data-keywords="Al-Fath, Al Fath, AlFath">
+                                    <span class="surah-index-name">Al-Fath - الفتح</span>
+                                    <span class="surah-index-ayah">29 Ayat</span>
+                                    <span class="surah-index-number">48</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/49/" title="Surah Al-Hujurat"
+                                    data-keywords="Al-Hujurat, Al Hujurat, AlHujurat">
+                                    <span class="surah-index-name">Al-Hujurat - الحجرٰت</span>
+                                    <span class="surah-index-ayah">18 Ayat</span>
+                                    <span class="surah-index-number">49</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/50/" title="Surah Qaf" data-keywords="Qaf, Qaf, Qaf">
+                                    <span class="surah-index-name">Qaf - ق</span>
+                                    <span class="surah-index-ayah">45 Ayat</span>
+                                    <span class="surah-index-number">50</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/51/" title="Surah Az-Zariyat"
+                                    data-keywords="Az-Zariyat, Az Zariyat, AzZariyat">
+                                    <span class="surah-index-name">Az-Zariyat - الذّٰريٰت</span>
+                                    <span class="surah-index-ayah">60 Ayat</span>
+                                    <span class="surah-index-number">51</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/52/" title="Surah At-Tur"
+                                    data-keywords="At-Tur, At Tur, AtTur">
+                                    <span class="surah-index-name">At-Tur - الطور</span>
+                                    <span class="surah-index-ayah">49 Ayat</span>
+                                    <span class="surah-index-number">52</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/53/" title="Surah An-Najm"
+                                    data-keywords="An-Najm, An Najm, AnNajm">
+                                    <span class="surah-index-name">An-Najm - النجم</span>
+                                    <span class="surah-index-ayah">62 Ayat</span>
+                                    <span class="surah-index-number">53</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/54/" title="Surah Al-Qamar"
+                                    data-keywords="Al-Qamar, Al Qamar, AlQamar">
+                                    <span class="surah-index-name">Al-Qamar - القمر</span>
+                                    <span class="surah-index-ayah">55 Ayat</span>
+                                    <span class="surah-index-number">54</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/55/" title="Surah Ar-Rahman"
+                                    data-keywords="Ar-Rahman, Ar Rahman, ArRahman">
+                                    <span class="surah-index-name">Ar-Rahman - الرحمن</span>
+                                    <span class="surah-index-ayah">78 Ayat</span>
+                                    <span class="surah-index-number">55</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/56/" title="Surah Al-Waqi'ah"
+                                    data-keywords="Al-Waqi'ah, Al Waqiah, AlWaqiah">
+                                    <span class="surah-index-name">Al-Waqi'ah - الواقعة</span>
+                                    <span class="surah-index-ayah">96 Ayat</span>
+                                    <span class="surah-index-number">56</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/57/" title="Surah Al-Hadid"
+                                    data-keywords="Al-Hadid, Al Hadid, AlHadid">
+                                    <span class="surah-index-name">Al-Hadid - الحديد</span>
+                                    <span class="surah-index-ayah">29 Ayat</span>
+                                    <span class="surah-index-number">57</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/58/" title="Surah Al-Mujadalah"
+                                    data-keywords="Al-Mujadalah, Al Mujadalah, AlMujadalah">
+                                    <span class="surah-index-name">Al-Mujadalah - المجادلة</span>
+                                    <span class="surah-index-ayah">22 Ayat</span>
+                                    <span class="surah-index-number">58</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/59/" title="Surah Al-Hasyr"
+                                    data-keywords="Al-Hasyr, Al Hasyr, AlHasyr">
+                                    <span class="surah-index-name">Al-Hasyr - الحشر</span>
+                                    <span class="surah-index-ayah">24 Ayat</span>
+                                    <span class="surah-index-number">59</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/60/" title="Surah Al-Mumtahanah"
+                                    data-keywords="Al-Mumtahanah, Al Mumtahanah, AlMumtahanah">
+                                    <span class="surah-index-name">Al-Mumtahanah - الممتحنة</span>
+                                    <span class="surah-index-ayah">13 Ayat</span>
+                                    <span class="surah-index-number">60</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/61/" title="Surah As-Saff"
+                                    data-keywords="As-Saff, As Saff, AsSaff">
+                                    <span class="surah-index-name">As-Saff - الصّفّ</span>
+                                    <span class="surah-index-ayah">14 Ayat</span>
+                                    <span class="surah-index-number">61</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/62/" title="Surah Al-Jumu'ah"
+                                    data-keywords="Al-Jumu'ah, Al Jumuah, AlJumuah">
+                                    <span class="surah-index-name">Al-Jumu'ah - الجمعة</span>
+                                    <span class="surah-index-ayah">11 Ayat</span>
+                                    <span class="surah-index-number">62</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/63/" title="Surah Al-Munafiqun"
+                                    data-keywords="Al-Munafiqun, Al Munafiqun, AlMunafiqun">
+                                    <span class="surah-index-name">Al-Munafiqun - المنٰفقون</span>
+                                    <span class="surah-index-ayah">11 Ayat</span>
+                                    <span class="surah-index-number">63</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/64/" title="Surah At-Tagabun"
+                                    data-keywords="At-Tagabun, At Tagabun, AtTagabun">
+                                    <span class="surah-index-name">At-Tagabun - التغابن</span>
+                                    <span class="surah-index-ayah">18 Ayat</span>
+                                    <span class="surah-index-number">64</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/65/" title="Surah At-Talaq"
+                                    data-keywords="At-Talaq, At Talaq, AtTalaq">
+                                    <span class="surah-index-name">At-Talaq - الطلاق</span>
+                                    <span class="surah-index-ayah">12 Ayat</span>
+                                    <span class="surah-index-number">65</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/66/" title="Surah At-Tahrim"
+                                    data-keywords="At-Tahrim, At Tahrim, AtTahrim">
+                                    <span class="surah-index-name">At-Tahrim - التحريم</span>
+                                    <span class="surah-index-ayah">12 Ayat</span>
+                                    <span class="surah-index-number">66</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/67/" title="Surah Al-Mulk"
+                                    data-keywords="Al-Mulk, Al Mulk, AlMulk">
+                                    <span class="surah-index-name">Al-Mulk - الملك</span>
+                                    <span class="surah-index-ayah">30 Ayat</span>
+                                    <span class="surah-index-number">67</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/68/" title="Surah Al-Qalam"
+                                    data-keywords="Al-Qalam, Al Qalam, AlQalam">
+                                    <span class="surah-index-name">Al-Qalam - القلم</span>
+                                    <span class="surah-index-ayah">52 Ayat</span>
+                                    <span class="surah-index-number">68</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/69/" title="Surah Al-Haqqah"
+                                    data-keywords="Al-Haqqah, Al Haqqah, AlHaqqah">
+                                    <span class="surah-index-name">Al-Haqqah - الحاۤقّة</span>
+                                    <span class="surah-index-ayah">52 Ayat</span>
+                                    <span class="surah-index-number">69</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/70/" title="Surah Al-Ma'arij"
+                                    data-keywords="Al-Ma'arij, Al Maarij, AlMaarij">
+                                    <span class="surah-index-name">Al-Ma'arij - المعارج</span>
+                                    <span class="surah-index-ayah">44 Ayat</span>
+                                    <span class="surah-index-number">70</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/71/" title="Surah Nuh" data-keywords="Nuh, Nuh, Nuh">
+                                    <span class="surah-index-name">Nuh - نوح</span>
+                                    <span class="surah-index-ayah">28 Ayat</span>
+                                    <span class="surah-index-number">71</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/72/" title="Surah Al-Jinn"
+                                    data-keywords="Al-Jinn, Al Jinn, AlJinn">
+                                    <span class="surah-index-name">Al-Jinn - الجن</span>
+                                    <span class="surah-index-ayah">28 Ayat</span>
+                                    <span class="surah-index-number">72</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/73/" title="Surah Al-Muzzammil"
+                                    data-keywords="Al-Muzzammil, Al Muzzammil, AlMuzzammil">
+                                    <span class="surah-index-name">Al-Muzzammil - المزّمّل</span>
+                                    <span class="surah-index-ayah">20 Ayat</span>
+                                    <span class="surah-index-number">73</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/74/" title="Surah Al-Muddassir"
+                                    data-keywords="Al-Muddassir, Al Muddassir, AlMuddassir">
+                                    <span class="surah-index-name">Al-Muddassir - المدّثّر</span>
+                                    <span class="surah-index-ayah">56 Ayat</span>
+                                    <span class="surah-index-number">74</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/75/" title="Surah Al-Qiyamah"
+                                    data-keywords="Al-Qiyamah, Al Qiyamah, AlQiyamah">
+                                    <span class="surah-index-name">Al-Qiyamah - القيٰمة</span>
+                                    <span class="surah-index-ayah">40 Ayat</span>
+                                    <span class="surah-index-number">75</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/76/" title="Surah Al-Insan"
+                                    data-keywords="Al-Insan, Al Insan, AlInsan">
+                                    <span class="surah-index-name">Al-Insan - الانسان</span>
+                                    <span class="surah-index-ayah">31 Ayat</span>
+                                    <span class="surah-index-number">76</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/77/" title="Surah Al-Mursalat"
+                                    data-keywords="Al-Mursalat, Al Mursalat, AlMursalat">
+                                    <span class="surah-index-name">Al-Mursalat - المرسلٰت</span>
+                                    <span class="surah-index-ayah">50 Ayat</span>
+                                    <span class="surah-index-number">77</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/78/" title="Surah An-Naba'"
+                                    data-keywords="An-Naba', An Naba, AnNaba">
+                                    <span class="surah-index-name">An-Naba' - النبأ</span>
+                                    <span class="surah-index-ayah">40 Ayat</span>
+                                    <span class="surah-index-number">78</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/79/" title="Surah An-Nazi'at"
+                                    data-keywords="An-Nazi'at, An Naziat, AnNaziat">
+                                    <span class="surah-index-name">An-Nazi'at - النّٰزعٰت</span>
+                                    <span class="surah-index-ayah">46 Ayat</span>
+                                    <span class="surah-index-number">79</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/80/" title="Surah 'Abasa"
+                                    data-keywords="'Abasa, Abasa, Abasa">
+                                    <span class="surah-index-name">'Abasa - عبس</span>
+                                    <span class="surah-index-ayah">42 Ayat</span>
+                                    <span class="surah-index-number">80</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/81/" title="Surah At-Takwir"
+                                    data-keywords="At-Takwir, At Takwir, AtTakwir">
+                                    <span class="surah-index-name">At-Takwir - التكوير</span>
+                                    <span class="surah-index-ayah">29 Ayat</span>
+                                    <span class="surah-index-number">81</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/82/" title="Surah Al-Infitar"
+                                    data-keywords="Al-Infitar, Al Infitar, AlInfitar">
+                                    <span class="surah-index-name">Al-Infitar - الانفطار</span>
+                                    <span class="surah-index-ayah">19 Ayat</span>
+                                    <span class="surah-index-number">82</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/83/" title="Surah Al-Mutaffifin"
+                                    data-keywords="Al-Mutaffifin, Al Mutaffifin, AlMutaffifin">
+                                    <span class="surah-index-name">Al-Mutaffifin - المطفّفين</span>
+                                    <span class="surah-index-ayah">36 Ayat</span>
+                                    <span class="surah-index-number">83</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/84/" title="Surah Al-Insyiqaq"
+                                    data-keywords="Al-Insyiqaq, Al Insyiqaq, AlInsyiqaq">
+                                    <span class="surah-index-name">Al-Insyiqaq - الانشقاق</span>
+                                    <span class="surah-index-ayah">25 Ayat</span>
+                                    <span class="surah-index-number">84</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/85/" title="Surah Al-Buruj"
+                                    data-keywords="Al-Buruj, Al Buruj, AlBuruj">
+                                    <span class="surah-index-name">Al-Buruj - البروج</span>
+                                    <span class="surah-index-ayah">22 Ayat</span>
+                                    <span class="surah-index-number">85</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/86/" title="Surah At-Tariq"
+                                    data-keywords="At-Tariq, At Tariq, AtTariq">
+                                    <span class="surah-index-name">At-Tariq - الطارق</span>
+                                    <span class="surah-index-ayah">17 Ayat</span>
+                                    <span class="surah-index-number">86</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/87/" title="Surah Al-A'la"
+                                    data-keywords="Al-A'la, Al Ala, AlAla">
+                                    <span class="surah-index-name">Al-A'la - الاعلى</span>
+                                    <span class="surah-index-ayah">19 Ayat</span>
+                                    <span class="surah-index-number">87</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/88/" title="Surah Al-Gasyiyah"
+                                    data-keywords="Al-Gasyiyah, Al Gasyiyah, AlGasyiyah">
+                                    <span class="surah-index-name">Al-Gasyiyah - الغاشية</span>
+                                    <span class="surah-index-ayah">26 Ayat</span>
+                                    <span class="surah-index-number">88</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/89/" title="Surah Al-Fajr"
+                                    data-keywords="Al-Fajr, Al Fajr, AlFajr">
+                                    <span class="surah-index-name">Al-Fajr - الفجر</span>
+                                    <span class="surah-index-ayah">30 Ayat</span>
+                                    <span class="surah-index-number">89</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/90/" title="Surah Al-Balad"
+                                    data-keywords="Al-Balad, Al Balad, AlBalad">
+                                    <span class="surah-index-name">Al-Balad - البلد</span>
+                                    <span class="surah-index-ayah">20 Ayat</span>
+                                    <span class="surah-index-number">90</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/91/" title="Surah Asy-Syams"
+                                    data-keywords="Asy-Syams, Asy Syams, AsySyams">
+                                    <span class="surah-index-name">Asy-Syams - الشمس</span>
+                                    <span class="surah-index-ayah">15 Ayat</span>
+                                    <span class="surah-index-number">91</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/92/" title="Surah Al-Lail"
+                                    data-keywords="Al-Lail, Al Lail, AlLail">
+                                    <span class="surah-index-name">Al-Lail - الّيل</span>
+                                    <span class="surah-index-ayah">21 Ayat</span>
+                                    <span class="surah-index-number">92</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/93/" title="Surah Ad-Duha"
+                                    data-keywords="Ad-Duha, Ad Duha, AdDuha">
+                                    <span class="surah-index-name">Ad-Duha - الضحى</span>
+                                    <span class="surah-index-ayah">11 Ayat</span>
+                                    <span class="surah-index-number">93</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/94/" title="Surah Asy-Syarh"
+                                    data-keywords="Asy-Syarh, Asy Syarh, AsySyarh">
+                                    <span class="surah-index-name">Asy-Syarh - الشرح</span>
+                                    <span class="surah-index-ayah">8 Ayat</span>
+                                    <span class="surah-index-number">94</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/95/" title="Surah At-Tin"
+                                    data-keywords="At-Tin, At Tin, AtTin">
+                                    <span class="surah-index-name">At-Tin - التين</span>
+                                    <span class="surah-index-ayah">8 Ayat</span>
+                                    <span class="surah-index-number">95</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/96/" title="Surah Al-'Alaq"
+                                    data-keywords="Al-'Alaq, Al Alaq, AlAlaq">
+                                    <span class="surah-index-name">Al-'Alaq - العلق</span>
+                                    <span class="surah-index-ayah">19 Ayat</span>
+                                    <span class="surah-index-number">96</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/97/" title="Surah Al-Qadr"
+                                    data-keywords="Al-Qadr, Al Qadr, AlQadr">
+                                    <span class="surah-index-name">Al-Qadr - القدر</span>
+                                    <span class="surah-index-ayah">5 Ayat</span>
+                                    <span class="surah-index-number">97</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/98/" title="Surah Al-Bayyinah"
+                                    data-keywords="Al-Bayyinah, Al Bayyinah, AlBayyinah">
+                                    <span class="surah-index-name">Al-Bayyinah - البيّنة</span>
+                                    <span class="surah-index-ayah">8 Ayat</span>
+                                    <span class="surah-index-number">98</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/99/" title="Surah Az-Zalzalah"
+                                    data-keywords="Az-Zalzalah, Az Zalzalah, AzZalzalah">
+                                    <span class="surah-index-name">Az-Zalzalah - الزلزلة</span>
+                                    <span class="surah-index-ayah">8 Ayat</span>
+                                    <span class="surah-index-number">99</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/100/" title="Surah Al-'Adiyat"
+                                    data-keywords="Al-'Adiyat, Al Adiyat, AlAdiyat">
+                                    <span class="surah-index-name">Al-'Adiyat - العٰديٰت</span>
+                                    <span class="surah-index-ayah">11 Ayat</span>
+                                    <span class="surah-index-number">100</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/101/" title="Surah Al-Qari'ah"
+                                    data-keywords="Al-Qari'ah, Al Qariah, AlQariah">
+                                    <span class="surah-index-name">Al-Qari'ah - القارعة</span>
+                                    <span class="surah-index-ayah">11 Ayat</span>
+                                    <span class="surah-index-number">101</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/102/" title="Surah At-Takasur"
+                                    data-keywords="At-Takasur, At Takasur, AtTakasur">
+                                    <span class="surah-index-name">At-Takasur - التكاثر</span>
+                                    <span class="surah-index-ayah">8 Ayat</span>
+                                    <span class="surah-index-number">102</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/103/" title="Surah Al-'Asr"
+                                    data-keywords="Al-'Asr, Al Asr, AlAsr">
+                                    <span class="surah-index-name">Al-'Asr - العصر</span>
+                                    <span class="surah-index-ayah">3 Ayat</span>
+                                    <span class="surah-index-number">103</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/104/" title="Surah Al-Humazah"
+                                    data-keywords="Al-Humazah, Al Humazah, AlHumazah">
+                                    <span class="surah-index-name">Al-Humazah - الهمزة</span>
+                                    <span class="surah-index-ayah">9 Ayat</span>
+                                    <span class="surah-index-number">104</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/105/" title="Surah Al-Fil"
+                                    data-keywords="Al-Fil, Al Fil, AlFil">
+                                    <span class="surah-index-name">Al-Fil - الفيل</span>
+                                    <span class="surah-index-ayah">5 Ayat</span>
+                                    <span class="surah-index-number">105</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/106/" title="Surah Quraisy"
+                                    data-keywords="Quraisy, Quraisy, Quraisy">
+                                    <span class="surah-index-name">Quraisy - قريش</span>
+                                    <span class="surah-index-ayah">4 Ayat</span>
+                                    <span class="surah-index-number">106</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/107/" title="Surah Al-Ma'un"
+                                    data-keywords="Al-Ma'un, Al Maun, AlMaun">
+                                    <span class="surah-index-name">Al-Ma'un - الماعون</span>
+                                    <span class="surah-index-ayah">7 Ayat</span>
+                                    <span class="surah-index-number">107</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/108/" title="Surah Al-Kausar"
+                                    data-keywords="Al-Kausar, Al Kausar, AlKausar">
+                                    <span class="surah-index-name">Al-Kausar - الكوثر</span>
+                                    <span class="surah-index-ayah">3 Ayat</span>
+                                    <span class="surah-index-number">108</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/109/" title="Surah Al-Kafirun"
+                                    data-keywords="Al-Kafirun, Al Kafirun, AlKafirun">
+                                    <span class="surah-index-name">Al-Kafirun - الكٰفرون</span>
+                                    <span class="surah-index-ayah">6 Ayat</span>
+                                    <span class="surah-index-number">109</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/110/" title="Surah An-Nasr"
+                                    data-keywords="An-Nasr, An Nasr, AnNasr">
+                                    <span class="surah-index-name">An-Nasr - النصر</span>
+                                    <span class="surah-index-ayah">3 Ayat</span>
+                                    <span class="surah-index-number">110</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/111/" title="Surah Al-Lahab"
+                                    data-keywords="Al-Lahab, Al Lahab, AlLahab">
+                                    <span class="surah-index-name">Al-Lahab - اللهب</span>
+                                    <span class="surah-index-ayah">5 Ayat</span>
+                                    <span class="surah-index-number">111</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/112/" title="Surah Al-Ikhlas"
+                                    data-keywords="Al-Ikhlas, Al Ikhlas, AlIkhlas">
+                                    <span class="surah-index-name">Al-Ikhlas - الاخلاص</span>
+                                    <span class="surah-index-ayah">4 Ayat</span>
+                                    <span class="surah-index-number">112</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/113/" title="Surah Al-Falaq"
+                                    data-keywords="Al-Falaq, Al Falaq, AlFalaq">
+                                    <span class="surah-index-name">Al-Falaq - الفلق</span>
+                                    <span class="surah-index-ayah">5 Ayat</span>
+                                    <span class="surah-index-number">113</span>
+                                </a>
+                            </li>
+
+
+                            <li class="surah-index">
+                                <a class="surah-index-link" href="/114/" title="Surah An-Nas"
+                                    data-keywords="An-Nas, An Nas, AnNas">
+                                    <span class="surah-index-name">An-Nas - الناس</span>
+                                    <span class="surah-index-ayah">6 Ayat</span>
+                                    <span class="surah-index-number">114</span>
+                                </a>
+                            </li>
+
+
+                        </ul>
                     </div>
-                </li>
-                <li>
-                    <div class="feature-box">
-                        <div class="feature-image">
-                            <div class="image-container">
-                                <img src="https://pustakakoding.com/images/template/pustakakoding-template-website-company-profile-digital-creative.jpg"
-                                    class="img-fluid" alt="">
-                                    <a href="category-templates/portfolio.html">
-                                        <div class="category-text">company-profile</div>
-                                    </a>
-                            </div>
-                        </div>
-                        <div class="feature-detail">
-                            <a href="detail-templates/digital.html">
-                                <h6>Digital Creative – <font style="color: #939fa4;">Digital company profile website template with a modern and professional appearance.</font></h6>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="feature-box">
-                        <div class="feature-image">
-                            <div class="image-container">
-                                <img src="https://themewagon.com/wp-content/uploads/2024/09/FoodMart-1200x736.webp"
-                                    class="img-fluid" alt="">
-                                    <a href="category-templates/ecommerce.html">
-                                        <div class="category-text">ecommerce</div>
-                                    </a>
-                            </div>
-                        </div>
-                        <div class="feature-detail">
-                            <a href="detail-templates/foodmart.html">
-                                <h6>FoodMart – <font style="color: #939fa4;">Free Bootstrap 5 eCommerce Website Template</font></h6>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="feature-box">
-                        <div class="feature-image">
-                            <div class="image-container">
-                                <img src="https://themewagon.com/wp-content/uploads/2021/12/elearning-1.png"
-                                    class="img-fluid" alt="">
-                                    <a href="category-templates/education.html">
-                                        <div class="category-text">education</div>
-                                    </a>
-                            </div>
-                        </div>
-                        <div class="feature-detail">
-                            <a href="detail-templates/elearning.html">
-                                <h6>Elearning – <font style="color: #939fa4;">Free Bootstrap 5 CSS3 Education Website Template</font></h6>
-                            </a>
-                        </div>
-                    </div>
-                </li>
-                
-            </ul>
+                </div>
+            </div>
         </div>
     </section>
-    <!--Templates End -->
+
+
+
 
     <!-- space box start -->
     <div class="learning-box"></div>
     <!-- space box end -->
 
     <!-- Filter Offcanvas Start -->
-     <style>
+    <style>
         .scrollable-filter {
-            max-height: 300px; /* Set height limit */
-            overflow-y: auto;  /* Enable scrolling */
-            margin-bottom: 10px; /* Space for the apply button */
+            max-height: 300px;
+            /* Set height limit */
+            overflow-y: auto;
+            /* Enable scrolling */
+            margin-bottom: 10px;
+            /* Space for the apply button */
         }
 
         .apply-button {
             position: fixed;
-            bottom: 20px; /* Adjust based on the offcanvas padding */
-            right: 20px;  /* Adjust based on the offcanvas padding */
+            bottom: 20px;
+            /* Adjust based on the offcanvas padding */
+            right: 20px;
+            /* Adjust based on the offcanvas padding */
             z-index: 10;
         }
-     </style>
+    </style>
     <div class="offcanvas filter-button offcanvas-bottom theme-bottom-offcanvas" tabindex="-1" id="filter-button">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Sort by category: </h5>
-        </div>
         <div class="offcanvas-body">
             <form class="filter-box-list" id="filterForm">
-                <div class="scrollable-filter">
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="1" value="portfolio" checked>
-                        <label class="form-check-label" for="1">
-                            <i class="ri-file-user-line"></i>
-                            <span>Portfolio</span>
-                        </label>
-                    </div>
-    
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="02" value="landing-page">
-                        <label class="form-check-label" for="02">
-                            <i class="ri-pages-line"></i>
-                            <span>Landing Page</span>
-                        </label>
-                    </div>
-    
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="03" value="admin-dashboard">
-                        <label class="form-check-label" for="03">
-                            <i class="ri-dashboard-line"></i>
-                            <span>Admin & Dashboard</span>
-                        </label>
-                    </div>
-    
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="04" value="educational">
-                        <label class="form-check-label" for="04">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span>Educational</span>
-                        </label>
-                    </div>
-    
-                    <!-- Additional categories -->
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="05" value="educational2">
-                        <label class="form-check-label" for="05">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span>Educational2</span>
-                        </label>
-                    </div>
-                    <!-- Add the remaining categories similarly -->
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="06" value="educational3">
-                        <label class="form-check-label" for="06">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span>Educational3</span>
-                        </label>
-                    </div>
-
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="07" value="educational2">
-                        <label class="form-check-label" for="05">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span>Educational4</span>
-                        </label>
-                    </div>
-
-                    <div class="filter-box">
-                        <input class="form-check-input" type="radio" name="exampleRadios" id="08" value="educational2">
-                        <label class="form-check-label" for="05">
-                            <i class="ri-graduation-cap-line"></i>
-                            <span>Educational5</span>
-                        </label>
-                    </div>
+                <div class="filter-box">
+                    <label title="Aktifkan atau non-aktifkan terjemahan ayat" for="translation"><b>Terjemahan :</b></label>
+                    <input id="translation" class="checkbox" type="checkbox" checked="">
+                    <input id="nightmode" class="checkbox" type="hidden">
                 </div>
-                <br><br><br>
-                <!-- Apply button is fixed at the bottom -->
-                <button type="button" class="btn btn-theme text-white apply-button" data-bs-dismiss="offcanvas"
-                    onclick="applyFilter()">Apply</button>
+                <div class="filter-box">
+                    <a title="Buka ayat yang terakhir dibaca" href="#" class="sidepage-item-link" id="last-read-link">
+                      <span><b>Terakhir Dibaca :</b> </span>
+                      <span id="sidepage-item-last-marked" class="sidepage-item-last-marked"><b>Belum Ada.</b> <i>[Click pada simbol
+                          &#x2713; untuk menandai.]</i></span>
+                    </a>
+                  </div>
+                <div class="filter-box">
+                    <a title="Audio murottal tiap ayat" class="sidepage-item-link"> <b>Audio Murottal :</b></a>
+                    <span class="sidepage-subitem"><input id="murottal-mode-noloop" name="murottal-mode" class="checkbox" type="radio" checked value="noloop">
+                    <label title="Berhenti ketika ayat selesai" for="murottal-mode-noloop">Tidak diulang</label></span>
+                    <span class="sidepage-subitem"><input id="murottal-mode-loop-ayah" name="murottal-mode"
+                            class="checkbox" type="radio" value="ayah"> <label title="Ulang murottal pada ayat"
+                            for="murottal-mode-loop-ayah">Ulangi ayat</label></span>
+                    <span class="sidepage-subitem"><input id="murottal-mode-loop-ayah-selection" name="murottal-mode"
+                            class="checkbox" type="radio" value="ayah-selection"> <label
+                            title="Ulang murottal pada ayat" for="murottal-mode-loop-ayah-selection">Ulangi ayat
+                            pilihan</label></span>
+                    <span class="sidepage-subitem"><input id="ayah-selection-input" type="text"
+                            class="sidepage-textbox-for-radio" placeholder="Contoh: 5,6,11-15,20,22"></span>
+                    <span class="sidepage-subitem"><input id="murottal-mode-loop-surah" name="murottal-mode"
+                            class="checkbox" type="radio" value="surah"> <label title="Ulang murottal pada surah"
+                            for="murottal-mode-loop-surah">Ulangi surah</label></span>
+                    <span class="sidepage-subitem">
+                    </span>
+                </div>
+                <div class="filter-box">
+                    <select id="murottal-reciter" name="murottal-reciter" class="form-control" title="Pilih nama qori">
+                        <option value="">--pilih sheikh--</option>
+                        <option value="Abdurrahmaan_As-Sudais_192kbps">Sheikh Abdurrahman As-Sudais</option>
+                        <option value="Husary_128kbps">Sheikh Mahmoud Khalil Al-Hussary</option>
+                        <option value="Alafasy_128kbps">Sheikh Mishary Rashid Alafasy</option>
+                        </select>
+                  </div>
             </form>
         </div>
     </div>
-    
+
     <!-- Filter Offcanvas End -->
-
-
-
-    <!-- Course Section Start 
-   <div class="section course-section section-t-space section-b-space">
-    <div class="custom-container">
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav nav-tabs custom-nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="course-tab" data-bs-toggle="tab"
-                            data-bs-target="#course-tab-pane" type="button" role="tab">Courses</button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="more-tab" data-bs-toggle="tab" data-bs-target="#more-tab-pane"
-                            type="button" role="tab">More</button>
-                    </li>
-                </ul>
-                <div class="tab-content custom-tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="course-tab-pane" role="tabpanel" tabindex="0">
-                        <div class="video-box-list">
-                            <ul class="video-list">
-                                <li>
-                                    <div class="video-box complete">
-                                        <div class="video-number">
-                                            <h4>01</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Introduction</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="video-box watching">
-                                        <div class="video-number">
-                                            <h4>02</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Course Overview</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="video-box download">
-                                        <div class="video-number">
-                                            <h4>03</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Basics in Python</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="video-box download">
-                                        <div class="video-number">
-                                            <h4>04</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Embedding PHP in HTML</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="video-box download">
-                                        <div class="video-number">
-                                            <h4>05</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Using Dynamic Data</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-
-                                <li>
-                                    <div class="video-box download">
-                                        <div class="video-number">
-                                            <h4>06</h4>
-                                        </div>
-                                        <div class="video-content">
-                                            <h5>Exercise</h5>
-                                            <h6>Video - 4.15min</h6>
-                                        </div>
-                                        <div class="video-icon">
-                                            <i class="ri-play-fill play-icon"></i>
-                                            <i class="ri-check-line check-icon"></i>
-                                            <i class="ri-download-2-line download-icon"></i>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="more-tab-pane" role="tabpanel" tabindex="0">
-                        <div class="more-option-box">
-                            <ul class="more-option-list">
-                                <li>
-                                    <button class="option-box" data-bs-target="#shareCourse"
-                                        data-bs-toggle="offcanvas">
-                                        <span class="option-icon">
-                                            <i class="ri-share-box-line"></i>
-                                        </span>
-                                        <span class="option-content">
-                                            <span>Share this Course</span>
-                                        </span>
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <button class="option-box" data-bs-target="#certificate"
-                                        data-bs-toggle="offcanvas">
-                                        <span class="option-icon">
-                                            <i class="ri-award-line"></i>
-                                        </span>
-                                        <span class="option-content">
-                                            <span>Course Certificate</span>
-                                        </span>
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <button class="option-box" data-bs-target="#question"
-                                        data-bs-toggle="offcanvas">
-                                        <span class="option-icon">
-                                            <i class="ri-question-line"></i>
-                                        </span>
-                                        <span class="option-content">
-                                            <span>Q&A</span>
-                                        </span>
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <button class="option-box" data-bs-target="#notes" data-bs-toggle="offcanvas">
-                                        <span class="option-icon">
-                                            <i class="ri-file-text-line"></i>
-                                        </span>
-                                        <span class="option-content">
-                                            <span>Notes</span>
-                                        </span>
-                                    </button>
-                                </li>
-
-                                <li>
-                                    <button class="option-box" id="liveToastBtn">
-                                        <span class="option-icon">
-                                            <i class="ri-download-2-line"></i>
-                                        </span>
-                                        <span class="option-content">
-                                            <span>Archive this course</span>
-                                        </span>
-                                    </button>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
- Section End -->
 
     <!-- Theme Option Setting Box Start -->
     <div class="theme-setting-box">
@@ -616,67 +1498,493 @@
     </div>
     <!-- Theme Option Setting Box End -->
 
+    <script type="text/javascript">
+        var murottalAudioElement = document.createElement('Audio');
+        var previousPlayedButton = null;
+        var murottalLoopMode = 'noloop';
+        var ayahSelection = [];
 
-    <script>
-        function applyFilter() {
-            // Get the selected radio button value
-            const selectedCategory = document.querySelector('input[name="exampleRadios"]:checked').value;
+        var afterAudioDoneCallback = function (e) {
+            // &#x25b6; black right triangle
+            var surahNumber = e.target.myCustomData.surahNumber;
+            var ayahNumber = e.target.myCustomData.ayahNumber;
+            var audioButton = e.target.myCustomData.audioButton;
+            audioButton.innerHTML = '<span class="icon-content">&#x25b6;</span>';
 
-            // Define a map for the redirection
-            const redirectionMap = {
-                "portfolio": "category-templates/portfolio.html",
-                "landing-page": "category-templates/landing-page.html",
-                "admin-dashboard": "category-templates/admin-dashboard.html",
-                "educational": "category-templates/educational.html"
-            };
+            murottalAudioElement.loop = false;
+            if (murottalLoopMode === 'surah') {
+                if (audioButton.getAttribute('data-from-tafsir-page') == "1") {
+                    return;
+                }
 
-            // Redirect to the corresponding page based on the selected category
-            if (redirectionMap[selectedCategory]) {
-                window.location.href = redirectionMap[selectedCategory];
-            }
-        }
-    </script>
+                var nextAyah = audioButton.getAttribute('data-next-ayah-number');
+                if (audioButton.getAttribute('data-is-last-ayah') == "1") {
+                    nextAyah = 1;
+                }
+                document.getElementById('audio-' + surahNumber + '-' + nextAyah).click();
 
-    <script>
-        function searchFunction() {
-            // Ambil input pencarian
-            const input = document.getElementById("searchInput");
-            const filter = input.value.toLowerCase();
-            const ul = document.getElementById("title");
-            const li = ul.getElementsByTagName("li");
-            const noResult = document.getElementById("noResult"); // Pesan "tidak ada hasil"
-
-            let found = false; // Penanda jika ada hasil yang sesuai
-
-            // Loop melalui semua item, dan sembunyikan yang tidak sesuai dengan pencarian
-            for (let i = 0; i < li.length; i++) {
-                const item = li[i].textContent || li[i].innerText;
-                if (item.toLowerCase().includes(filter)) {
-                    li[i].style.display = "";
-                    found = true; // Ada hasil yang sesuai
-                } else {
-                    li[i].style.display = "none";
+                // do not scroll if we are opening side menu
+                if (window.location.hash.indexOf('#sidepage') == -1) {
+                    window.location.href = '#no' + nextAyah;
                 }
             }
 
-            // Tampilkan pesan jika tidak ada hasil
-            if (!found) {
-                noResult.style.display = "block";
-            } else {
-                noResult.style.display = "none";
+            if (murottalLoopMode === 'ayah-selection') {
+                if (audioButton.getAttribute('data-from-tafsir-page') == "1") {
+                    return;
+                }
+
+                var currentIndexPosition = ayahSelection.indexOf(parseInt(ayahNumber));
+                var nextAyah = ayahSelection[currentIndexPosition + 1];
+
+                if (currentIndexPosition + 1 === ayahSelection.length) {
+                    nextAyah = ayahSelection[0];
+                }
+
+                // Prevent unknown ayat to be played
+                if (document.getElementById('audio-' + surahNumber + '-' + nextAyah) === null) {
+                    return;
+                }
+
+                document.getElementById('audio-' + surahNumber + '-' + nextAyah).click();
+
+                // do not scroll if we are opening side menu
+                if (window.location.hash.indexOf('#sidepage') == -1) {
+                    window.location.href = '#no' + nextAyah;
+                }
             }
         }
+
+        /**
+         * Function to pad string at beginning. With modification without String.repeat().
+         *
+         * https://github.com/uxitten/polyfill/blob/master/string.polyfill.js
+         * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/padStart
+         *
+         * @return String
+         */
+        if (!String.prototype.padStart) {
+            String.prototype.padStart = function padStart(targetLength, padString) {
+                var targetLength = targetLength >> 0; //truncate if number, or convert non-number to 0;
+                var padString = String(typeof padString !== 'undefined' ? padString : ' ');
+                if (this.length >= targetLength) {
+                    return String(this);
+                } else {
+                    targetLength = targetLength - this.length;
+                    var prefix = '';
+                    for (var i = 0; i < targetLength; i++) {
+                        prefix += padString;
+                    }
+
+                    return prefix + String(this);
+                }
+            };
+        }
+
+        /**
+         * @param String $value
+         * @return Array
+         */
+        function parseAyahSelection(value) {
+            var tmpSelection = [];
+            var ayahSelection = [];
+
+            var tmp = value.split(',');
+            for (var i = 0; i < tmp.length; i++) {
+                if (tmp[i].indexOf('-') > -1) {
+                    var tmp2 = tmp[i].split('-');
+                    var start = parseInt(tmp2[0]);
+                    var end = parseInt(tmp2[1]);
+
+                    for (var j = start; j <= end; j++) {
+                        tmpSelection.push(j);
+                    }
+
+                    continue;
+                }
+
+                tmpSelection.push(parseInt(tmp[i]));
+            }
+
+            // Remove duplicate
+            for (var i = 0; i < tmpSelection.length; i++) {
+                if (ayahSelection.indexOf(tmpSelection[i]) !== -1) {
+                    continue;
+                }
+
+                ayahSelection.push(tmpSelection[i]);
+            }
+
+            // Sort from lowest to highest
+            return ayahSelection.sort(function (a, b) {
+                return a - b;
+            });
+        }
+
+
+        /**
+         * Check exitense of a cookie.
+         *
+         * @param String name
+         * @param String value
+         * @return boolean
+         */
+        function isCookieExists(name, value) {
+            if (document.cookie.split(';').filter(function (item) {
+                    if (typeof value === 'undefined') {
+                        return item.indexOf(name + '=') >= 0;
+                    }
+
+                    return item.indexOf(name + '=' + value) >= 0;
+                }).length) {
+                return true;
+            }
+
+            return false;
+        };
+
+        /**
+         * Write cookie and set the expiration to forever. It will only write once.
+         *
+         * @param String name
+         * @param String value
+         * @param Boolean checkWithValue
+         * @return void
+         */
+        function writePermanentCookie(name, value, checkWithValue) {
+            var currentYear = (new Date()).getFullYear() + 3;
+            var expires = (new Date(currentYear, 12, 12)).toUTCString();
+            document.cookie = name + '=' + value + ';path=/;expires=' + expires;
+        };
+
+        /**
+         * Apply night mode
+         *
+         * @param boolean night
+         * @return void
+         */
+        function applyNightMode(apply) {
+            var nightModeCss = 'nightmode';
+
+            if (apply === false) {
+                document.body.className = document.body.className.replace(nightModeCss, '');
+
+                writePermanentCookie('nightMode', '0');
+                return;
+            }
+
+            document.body.className = document.body.className + ' ' + nightModeCss;
+
+            writePermanentCookie('nightMode', '1');
+        }
+
+        /**
+         * Apply translation
+         *
+         * @param boolean apply
+         * @return void
+         */
+        function applyTranslation(apply) {
+            var notranslationCss = 'notranslation';
+
+            if (apply === true) {
+                document.body.className = document.body.className.replace(notranslationCss, '');
+
+                writePermanentCookie('useTranslation', '1');
+                return;
+            }
+
+            document.body.className = document.body.className + ' ' + notranslationCss;
+
+            writePermanentCookie('useTranslation', '0');
+        }
+
+        /**
+         * Apply on double click for ayah element
+         *
+         * @return void
+         */
+        function applyClickForBookmark() {
+            var ayahNumberElements = document.getElementsByClassName('link-mark-ayah');
+            var writeMarkedAyah = function (surahName, surahNumber, ayahNumber) {
+                var marked = confirm('Tandai sebagai terakhir dibaca Surah ' + surahName + ' ayat ' + ayahNumber +
+                    '?');
+                if (marked == false) {
+                    return;
+                }
+
+                var lastReadCookieValue = surahName + ',' + surahNumber.toString() + ',' + ayahNumber.toString();
+                writePermanentCookie('lastRead', lastReadCookieValue);
+                document.getElementById('sidepage-item-last-marked').innerHTML = 'Surah ' + surahName + ' ayat ' +
+                    ayahNumber;
+                document.getElementById('last-read-link').href = '/' + surahNumber + '/#no' + ayahNumber;
+            };
+
+            var ayahInfo;
+            for (var i = 0; i < ayahNumberElements.length; i++) {
+                ayahNumberElements[i].onclick = function (e) {
+                    ayahInfo = this.parentNode.parentNode.title.split(',');
+                    writeMarkedAyah(ayahInfo[0], ayahInfo[1], ayahInfo[2]);
+
+                    return false;
+                }
+            }
+
+            if (!isCookieExists('lastRead')) {
+                return;
+            }
+
+            ayahInfo = document.cookie.replace(/(?:(?:^|.*;\s*)lastRead\s*\=\s*([^;]*).*$)|^.*$/, "$1").split(',');
+            document.getElementById('sidepage-item-last-marked').innerHTML = 'Surah ' + ayahInfo[0] + ' ayat ' +
+                ayahInfo[2];
+            document.getElementById('last-read-link').href = '/' + ayahInfo[1] + '/#no' + ayahInfo[2];
+        }
+
+        /**
+         * Audio murottal are taken from everyayah.com. Currently only support one reciter.
+         *
+         * @param int surahNumber
+         * @param int ayahNumber
+         * @param HTMLAudioElement audioButton
+         * @return void
+         */
+        function playAudioMurottal(surahNumber, ayahNumber, audioButton) {
+            var reciterName = document.getElementById('murottal-reciter').value;
+            var baseMurottalUrl = 'https://everyayah.com/data/' + reciterName + '/';
+            var murottalFile = (parseInt(surahNumber) * 1000 + parseInt(ayahNumber)).toString();
+            murottalFile = murottalFile.padStart(6, '0') + '.mp3';
+
+            if (previousPlayedButton === audioButton && !murottalAudioElement.ended) {
+                if (murottalAudioElement.paused) {
+                    murottalAudioElement.play();
+                    // Pause icon using double pipe character
+                    audioButton.innerHTML = '<span class="icon-content"><b>||</b></span>';
+                } else {
+                    murottalAudioElement.pause();
+                    // pipe with black triangle icon
+                    audioButton.innerHTML = '<span class="icon-content">|&#x25b6;</span>';
+                }
+
+                return;
+            }
+
+            if (previousPlayedButton !== null) {
+                // reset button back to Play icon
+                previousPlayedButton.innerHTML = '<span class="icon-content">&#x25b6;</span>';
+            }
+            previousPlayedButton = audioButton;
+
+            murottalAudioElement.src = baseMurottalUrl + murottalFile;
+            murottalAudioElement.play();
+
+            if (murottalLoopMode === 'ayah') {
+                murottalAudioElement.loop = true;
+            }
+
+            // Pause icon using double pipe character
+            audioButton.innerHTML = '<span class="icon-content"><b>||</b></span>';
+            murottalAudioElement.myCustomData = {
+                surahNumber: surahNumber,
+                ayahNumber: ayahNumber,
+                audioButton: audioButton
+            }
+            murottalAudioElement.removeEventListener('ended', afterAudioDoneCallback, false);
+            murottalAudioElement.addEventListener('ended', afterAudioDoneCallback, false);
+        }
+
+        /**
+         * Function apply function to play audio murottal
+         *
+         * @return void
+         */
+        function applyClickForMurottal() {
+            var clickAudioElements = document.getElementsByClassName('murottal-audio-player');
+            for (var i = 0; i < clickAudioElements.length; i++) {
+                clickAudioElements[i].onclick = function (e) {
+                    playAudioMurottal(
+                        this.getAttribute('data-surah-number'),
+                        this.getAttribute('data-ayah-number'),
+                        this
+                    );
+                }
+            }
+
+            var murottalOptionElements = document.getElementsByName('murottal-mode');
+            for (var i = 0; i < murottalOptionElements.length; i++) {
+                murottalOptionElements[i].onclick = function (e) {
+                    murottalLoopMode = this.value;
+
+                    writePermanentCookie('murottalMode', this.value);
+
+                    if (this.value === 'ayah') {
+                        murottalAudioElement.loop = true;
+                        return;
+                    }
+
+                    if (this.value === 'ayah-selection' && ayahSelection.length === 0) {
+                        return;
+                    }
+
+                    murottalAudioElement.loop = false;
+                }
+
+                if (isCookieExists('murottalMode', murottalOptionElements[i].value)) {
+                    murottalOptionElements[i].checked = true;
+                    murottalLoopMode = murottalOptionElements[i].value;
+                }
+            }
+
+            if (isCookieExists('ayahSelection')) {
+                var ayahSelectionInCookie = document.cookie.replace(
+                    /(?:(?:^|.*;\s*)ayahSelection\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                document.getElementById('ayah-selection-input').value = ayahSelectionInCookie;
+                ayahSelection = parseAyahSelection(ayahSelectionInCookie);
+            }
+
+            if (isCookieExists('reciterIndex')) {
+                var reciterIndex = document.cookie.replace(/(?:(?:^|.*;\s*)reciterIndex\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+                document.getElementById('murottal-reciter').selectedIndex = parseInt(reciterIndex);
+            }
+        }
+
+        document.getElementById('murottal-reciter').onchange = function (e) {
+            writePermanentCookie('reciterIndex', this.selectedIndex);
+        }
+
+        document.getElementById('ayah-selection-input').onkeyup = function (e) {
+            // Regex credit @see https://stackoverflow.com/a/45450540/2566677
+            var ayatRegex = new RegExp(/^[0-9]+(?:-[0-9]+)?(,[0-9]+(?:-[0-9]+)?)*$/gm);
+            if (!ayatRegex.test(this.value)) {
+                this.className = this.className.replace(' input-error', '') + ' input-error';
+                return;
+            }
+
+            this.className = this.className.replace(' input-error', '');
+            ayahSelection = parseAyahSelection(this.value);
+            writePermanentCookie('ayahSelection', this.value);
+        }
+
+        /**
+         * Jump to particular ayah when select element changes
+         */
+        var gotoAyahElement = document.getElementById('goto-ayah');
+        var onAyahPage = false;
+
+        if (gotoAyahElement !== null) {
+            gotoAyahElement.onchange = function (e) {
+                window.location.href = this.value;
+            }
+
+            // Apply selected attribute
+            var gotoTafsirAyahElement = document.getElementsByClassName('goto-ayah-tafsir');
+            if (gotoTafsirAyahElement.length > 0) {
+                onAyahPage = true;
+                var currentAyah = parseInt(window.location.pathname.split('/')[2]);
+                var optionsEl = gotoTafsirAyahElement[0].options;
+
+                for (var i = 0; i < optionsEl.length; i++) {
+                    if (currentAyah - 1 === i) {
+                        optionsEl[i].selected = true;
+                    }
+                }
+            }
+
+            // Scroll to Next ayah on click
+            var allAyah = document.querySelectorAll('.ayah-text');
+            for (var i = 0; i < allAyah.length; i++) {
+                allAyah[i].addEventListener('click', function (el) {
+                    window.location.href = '#no' + this.parentNode.getAttribute('data-next-ayah-number');
+                });
+            }
+
+            // Go to next ayah when press ENTER
+            document.onkeyup = function (e) {
+                if (e.which === 13) {
+                    /* Deprecated - but I need to support my BB10 :) */
+                    currentAyah = parseInt(window.location.hash.split('#no')[1]) || 0
+
+                    if (currentAyah === allAyah.length) {
+                        return;
+                    }
+
+                    e.preventDefault();
+                    window.location.href = '#no' + (currentAyah + 1);
+                }
+            }
+        }
+
+        document.getElementById('translation').onclick = function (e) {
+            if (this.checked) {
+                applyTranslation(true);
+                return;
+            }
+
+            applyTranslation(false);
+        }
+
+        document.getElementById('nightmode').onclick = function (e) {
+            if (this.checked) {
+                applyNightMode(true);
+                return;
+            }
+
+            applyNightMode(false);
+        }
+
+        var searchElement = document.getElementById('search-keywords');
+
+        if (searchElement !== null) {
+            document.getElementById('search-keywords').onkeyup = function (e) {
+                var surahList = document.getElementsByClassName('surah-index-link');
+                var keyword = this.value.toLowerCase();
+
+                for (var i = 0; i < surahList.length; i++) {
+                    surahList[i].parentNode.style.display = 'block';
+
+                    if (surahList[i].getAttribute('data-keywords').toLowerCase().indexOf(keyword) === -1) {
+                        surahList[i].parentNode.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function (e) {
+            applyClickForBookmark();
+            applyClickForMurottal();
+
+            if (isCookieExists('nightMode', '1')) {
+                applyNightMode(true);
+                document.getElementById('nightmode').checked = true;
+            }
+
+            if (isCookieExists('nightMode', '0')) {
+                applyNightMode(false);
+                document.getElementById('nightmode').checked = false;
+            }
+
+            // Translation is enabled by default
+            if (!onAyahPage) {
+                if (isCookieExists('useTranslation', '0')) {
+                    applyTranslation(false);
+                    document.getElementById('translation').checked = false;
+                }
+            }
+
+            if (onAyahPage) {
+                document.getElementById('translation').disabled = true;
+            }
+        });
     </script>
 
     <!-- Bootstrap js-->
-    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
 
     <!-- swiper js -->
-    <script src="js/swiper-bundle.min.js"></script>
-    <script src="js/custom_swiper.js"></script>
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/custom_swiper.js"></script>
 
     <!-- Theme js-->
-    <script src="js/script.js"></script>
+    <script src="../../js/script.js"></script>
 </body>
 
 </html>
