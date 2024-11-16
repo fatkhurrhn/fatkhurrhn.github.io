@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>FaCodes👨🏻‍💻</title>
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon2.png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="../../css/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="../../css/style.css">
+
+    <style>
+        #noResult {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 40%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+
+        #noResulttext {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 60%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-text {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            background-color: rgba(22, 65, 80, 0.7);
+            /* Menggunakan RGBA untuk transparansi */
+            color: white;
+            padding: 2px 6px;
+            /* Kurangi padding untuk mengurangi ukuran latar belakang */
+            font-size: 10px;
+            /* Ukuran font tetap kecil */
+            border-radius: 3px;
+            /* Kurangi border-radius untuk sudut lebih tajam */
+        }
+
+        .feature-box .feature-detail {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body class="inter-body learning-color">
+    <!-- header start -->
+    <header class="main-header learning-header h-102">
+        <div class="custom-container">
+            <div class="top-header">
+                <div class="header-left">
+                    <a class="text-white" href="../index.html">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                </div>
+
+                <div class="header-right">
+                    <div class="notification-box">
+                        <a class="text-white" href="https://github.com/fatkhurrhn">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom header-bottom-2">
+                <h4 class="fw-500 text-white">Jadwal Sholat
+                    <i class="ri-map-pin-line"></i>
+                    <span class="judul-kota">Depok</span>
+                </h4>
+            </div>
+           
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Mobile Section Start -->
+    <div class="mobile-style-1">
+        <ul>
+            <li class="">
+                <a href="../../../index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-home-5-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Home</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="../../islamic.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-moon-clear-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Islamic</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-book-2-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Quran</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../dzikir/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-donut-chart-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Dzikir</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../mosque/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-community-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Mosque</h5>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Mobile Section End -->
+
+    <!-- search-box Start -->
+    <div class="search-box pt-25">
+        <div class="custom-container">
+            <form class="form-style-1 learning-search-form">
+                <div>
+                    <div class="search-icon">
+                        <i class="ri-search-line"></i>
+                    </div>
+                    <input type="text" class="form-control input-search" placeholder="Cari Kota....">
+                </div>
+            </form>
+            <div class="list-group card-list hidden-list mb-4">
+                <!-- <a href="#" id="kota" class="list-group-item list-group-item-action">Batam</a>
+                <a href="#" id="kota" class="list-group-item list-group-item-action">Jakarta</a>
+                <a href="#" id="kota" class="list-group-item list-group-item-action">Surabaya</a> -->
+            </div>
+        </div>
+    </div>
+    <!-- search-box End -->
+
+    <div class="container">
+        <div class=" text-date Date">
+            <p class="text-right"><span>loading...</span></p>
+        </div>
+        <div class="card">
+
+            <div class="">
+
+                <ul class="list-group table">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Imsak
+                        <span class="badge bg-primary rounded-pill Imsak">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Subuh
+                        <span class="badge bg-primary rounded-pill Subuh">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Terbit
+                        <span class="badge bg-primary rounded-pill Terbit">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Zuhur
+                        <span class="badge bg-primary rounded-pill Zuhur">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Ashar
+                        <span class="badge bg-primary rounded-pill Ashar">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Magrib
+                        <span class="badge bg-primary rounded-pill Magrib">00:00</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Isya
+                        <span class="badge bg-primary rounded-pill Isya">00:00</span>
+                    </li>
+                </ul>
+            </div>
+            
+        </div>
+
+    </div>
+
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon text-white">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                        <i class="ri-tiktok-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Theme Option Setting Box End -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    </script>
+    <script src="main.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/custom_swiper.js"></script>
+
+    <!-- Theme js-->
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>
