@@ -1,16 +1,560 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Halaman Utama</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+  <meta charSet="utf-8" data-next-head="" />
+  <meta name="viewport" content="width=device-width" data-next-head="" />
+  <title data-next-head="">Fatkhurrhn</title>
+  
+  <link rel="stylesheet" href="https://lipeng.ac/assets/_next/static/css/9005d71252cd517e.css" data-n-g="" />
+  
+  <script src="https://lipeng.ac/assets/_next/static/chunks/webpack-aa725930686c14fe.js" defer=""></script>
+  <script src="https://lipeng.ac/assets/_next/static/chunks/framework-73f736c50d3a8144.js" defer=""></script>
+  <script src="https://lipeng.ac/assets/_next/static/chunks/main-97a903d919dec8c2.js" defer=""></script>
+  <script src="https://lipeng.ac/assets/_next/static/chunks/pages/_app-bef3d6ad68e1ca39.js" defer=""></script>
+
 <body>
-    <div id="navbar"></div>
+  <div>
+    <div>
 
-    <!-- Isi halaman utama -->
+      <!-- Dark Mode -->
+      <!-- <script>
+        ((e, o, s, u, d, m, l, h) => {
+          let i = document.documentElement,
+            T = ["light", "dark"];
 
-    <div id="footer"></div>
+          function p(a) {
+            (Array.isArray(e) ? e : [e]).forEach(g => {
+              let k = g === "class",
+                S = k && m ? d.map(f => m[f] || f) : d;
+              k ? (i.classList.remove(...S), i.classList.add(a)) : i.setAttribute(g, a)
+            }), R(a)
+          }
 
-    <script src="js/script.js"></script>
+          function R(a) {
+            h && T.includes(a) && (i.style.colorScheme = a)
+          }
+
+          function c() {
+            return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
+          }
+          if (u) p(u);
+          else try {
+            let a = localStorage.getItem(o) || s,
+              g = l && a === "system" ? c() : a;
+            p(g)
+          } catch (a) {}
+        })("class", "theme", "system", null, ["light", "dark"], null, true, true)
+      </script> -->
+
+      <div class="min-h-screen animate-appear bg-gbg dark:bg-neutral-900 dark:text-white">
+        <div>
+          <header id="header" class="header fixed top-0 z-50 grid h-auto w-full grid-cols-8 border-b border-gray-200 px-1 py-2 leading-14 duration-300 dark:border-b-transparent dark:backdrop-blur-lg lg:border-0 lg:bg-transparent lg:px-5 lg:py-4">
+            <div class="col-start-1 col-end-3 flex items-center lg:items-baseline lg:space-x-2">
+              <div class="relative tabs-wrapper">
+                <div class="tabs-highlighter z-0"></div>
+                <ul data-cy="tabs-list" class="list-none items-center flex flex-row gap-x-2">
+                  <li aria-label="tab" class="whitespace-nowrap text-gray-500 dark:text-gray-400 dark:transition-colors dark:hover:text-gray-300  z-10 cursor-pointer rounded-md">
+                    <div class="group mx-auto flex cursor-pointer items-center justify-center space-x-3 px-5">
+                      <div
+                        class="flex h-[18px] w-[18px] flex-shrink-0 items-center rounded-full border border-gray-300 dark:border-gray-500">
+                        <img alt="Tony&#x27;s NFT avatar" loading="lazy" width="18" height="18" decoding="async" data-nimg="1" class="rounded-full" style="color:transparent" srcSet="https://i.ibb.co.com/F4YrWnB/pp-dark.png"/></div>
+                      <div class="text-3 font-medium text-black">
+                        <a href="/">
+                          <h3 class="text-gray-700 dark:text-gray-400 dark:group-hover:text-gray-300">Fatkhurrhn</h3>
+                        </a>
+                      </div>
+                    </div>
+                  </li>
+                  <li aria-label="tab"
+                    class="whitespace-nowrap text-gray-500 dark:text-gray-400 dark:transition-colors dark:hover:text-gray-300 hidden lg:block z-10 cursor-pointer rounded-md">
+                    <a href="#" rel="noopener noreferrer"
+                      class="flex items-center">
+                      <button class="flex cursor-pointer items-center justify-center rounded-md px-5 py-2 text-xl tracking-wider focus:outline-none lg:flex">
+                        <span class="mr-1 h-6 w-6">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" height="100%" width="100%"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"> </path>
+                          </svg>
+                        </span>Newsletter
+                        </button>
+                      </a>
+                    </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-start-3 col-end-7 flex items-center justify-center">
+              <div class="effect-pressing hidden lg:flex lg:w-[65%] xl:w-[620px]">
+                <div aria-label="Command + K to open the command palette"
+                  class="absolute left-3 top-[6px] z-10 cursor-not-allowed rounded-md border bg-gray-50 px-1.5 py-0.5 text-xs text-gray-400 dark:border-gray-600 dark:bg-transparent">
+                  ⌘+K</div><input type="text"
+                  class="w-full rounded-md border border-gray-200 bg-white bg-opacity-90 px-3 py-2 pl-[54px] text-sm text-gray-500 outline-none transition-shadow hover:bg-neutral-50 dark:border-gray-700 dark:bg-gray-800 dark:bg-opacity-50 dark:shadow-sm dark:hover:border-gray-700 dark:hover:bg-gray-800 dark:hover:bg-opacity-100"
+                  placeholder="Search..." data-oa="click-activateKbar" data-cy="cmdkbutton" />
+              </div>
+            </div>
+            <div class="col-start-7 col-end-9 flex justify-end space-x-2">
+              <div class="relative tabs-wrapper">
+                <div class="tabs-highlighter z-0"></div>
+                <ul data-cy="tabs-list" class="list-none items-center flex flex-row gap-x-2">
+                  <li aria-label="tab"
+                    class="whitespace-nowrap text-gray-500 dark:text-gray-400 dark:transition-colors dark:hover:text-gray-300 hidden lg:block z-10 cursor-pointer rounded-md">
+                    <a class="flex h-full w-full items-center" href="/pages"><button
+                        class="flex cursor-pointer items-center justify-center rounded-md px-5 py-2 text-xl tracking-wider focus:outline-none lg:flex"><span
+                          class="mr-1 h-6 w-6"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" height="100%" width="100%">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2">
+                            </path>
+                          </svg></span>Pages</button></a></li>
+                  <li aria-label="tab"
+                    class="whitespace-nowrap text-gray-500 dark:text-gray-400 dark:transition-colors dark:hover:text-gray-300  z-10 cursor-pointer rounded-md">
+                    <a class="flex h-full w-full items-center" href="#"><button
+                        class="flex cursor-pointer items-center justify-center rounded-md px-5 py-2 text-xl tracking-wider focus:outline-none lg:flex"><span
+                          class="mr-1 h-6 w-6"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" height="100%" width="100%">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z">
+                            </path>
+                          </svg></span>About</button></a></li>
+                </ul>
+              </div>
+            </div>
+          </header>
+          <main class="mx-auto h-auto min-h-main w-full px-5 pt-0 lg:w-content lg:px-10 lg:pt-20">
+            <section class="mt-0 pt-24 lg:mt-20 lg:pt-0">
+              <div class="flex items-center justify-between gap-x-10 gap-y-8">
+                <div class="hidden flex-shrink-0 pt-1 lg:block"><img alt="Tony He" loading="lazy" width="131"
+                    height="131" decoding="async" data-nimg="1"
+                    class="rounded-md bg-gray-200 shadow-sm dark:border dark:border-gray-600" style="color:transparent"
+                    srcSet="https://i.ibb.co.com/F4YrWnB/pp-dark.png"/>
+                </div>
+                <div class="flex flex-col gap-y-1">
+                  <h1
+                    class="flex items-center whitespace-nowrap break-words text-3xl font-medium tracking-wide text-black dark:text-white lg:text-[1.8rem]">
+                    <span
+                      class="mr-2.5 inline-block animate-waveHand cursor-pointer hover:animate-waveHandAgain">👋</span>Hello,
+                    and welcome!</h1>
+                  <div
+                    class="flex flex-col gap-y-1.5 break-words px-1 text-justify text-4 font-light leading-relaxed tracking-wide text-gray-500 dark:text-gray-300 lg:text-2">
+                    <p>As a 5th semester student majoring in Information Systems at <a href="#" class="inline-flex items-center gap-x-1 transition-colors hover:text-blue-500 dark:hover:text-blue-500">Nurul Fikri Integrated Technology College<span class="flex h-5 w-5">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z">
+                        </path>
+                      </svg>
+                      </span>
+                    </a>, I have a huge passion for technology and am always eager to stay updated on the latest trends in the world.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="mt-10">
+              <div class="mt-6">
+                <div class="mt-4 grid lg:grid-cols-5 lg:gap-3">
+                  <div class="col-span-3 col-start-1 hidden grid-cols-3 gap-3 lg:grid">
+                    <a href="#" rel="noreferrer">
+                      <button type="button" class="!w-full text-3 leading-14 text-gray-700 w-max py-2 px-7 shadow-sm border border-gray-300 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:shadow-inner rounded-md cursor-pointer focus:outline-none justify-center items-center text-xl tracking-wider bg-white flex effect-pressing" aria-label="default">
+                      <span class="h-6 w-6 flex-shrink-0 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" height="100%" width="100%"><path fill="none" d="M0 0h24v24H0z"></path><path d="M16 8.24537V15.5C16 19.0899 13.0899 22 9.5 22C5.91015 22 3 19.0899 3 15.5C3 11.9101 5.91015 9 9.5 9C10.0163 9 10.5185 9.06019 11 9.17393V12.3368C10.5454 12.1208 10.0368 12 9.5 12C7.567 12 6 13.567 6 15.5C6 17.433 7.567 19 9.5 19C11.433 19 13 17.433 13 15.5V2H16C16 4.76142 18.2386 7 21 7V10C19.1081 10 17.3696 9.34328 16 8.24537Z"></path></svg>
+                        </span>Tiktok
+                      </button>
+                    </a>
+                    
+                    <a href="#" rel="noreferrer"><button type="button" class="!w-full text-3 leading-14 text-blue-600 w-max py-2 px-7 shadow-sm border border-gray-300 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:shadow-inner rounded-md cursor-pointer focus:outline-none justify-center items-center text-xl tracking-wider bg-white flex effect-pressing" aria-label="default">
+                      <span class="h-6 w-6 flex-shrink-0 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" height="100%" width="100%">
+                            <path d="M18.3362 18.339H15.6707V14.1622C15.6707 13.1662 15.6505 11.8845 14.2817 11.8845C12.892 11.8845 12.6797 12.9683 12.6797 14.0887V18.339H10.0142V9.75H12.5747V10.9207H12.6092C12.967 10.2457 13.837 9.53325 15.1367 9.53325C17.8375 9.53325 18.337 11.3108 18.337 13.6245V18.339H18.3362ZM7.00373 8.57475C6.14573 8.57475 5.45648 7.88025 5.45648 7.026C5.45648 6.1725 6.14648 5.47875 7.00373 5.47875C7.85873 5.47875 8.55173 6.1725 8.55173 7.026C8.55173 7.88025 7.85798 8.57475 7.00373 8.57475ZM8.34023 18.339H5.66723V9.75H8.34023V18.339ZM19.6697 3H4.32923C3.59498 3 3.00098 3.5805 3.00098 4.29675V19.7033C3.00098 20.4202 3.59498 21 4.32923 21H19.6675C20.401 21 21.001 20.4202 21.001 19.7033V4.29675C21.001 3.5805 20.401 3 19.6675 3H19.6697Z">
+                            </path>
+                          </svg>
+                        </span>
+                        <span class="tracking-normal">LinkedIn</span>
+                      </button>
+                    </a>
+                    
+                    <a href="#" rel="noreferrer"><button type="button" class="!w-full text-3 leading-14 text-gray-500 w-max py-2 px-7 shadow-sm border border-gray-300 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:shadow-inner rounded-md cursor-pointer focus:outline-none justify-center items-center text-xl tracking-wider bg-white flex effect-pressing" aria-label="default">
+                      <span class="h-6 w-6 flex-shrink-0 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
+                        </span>
+                        <span class="tracking-normal">Instagram</span>
+                      </button>
+                    </a>
+                  </div>
+
+                  <div class="flex gap-x-2 whitespace-nowrap lg:col-start-4 lg:col-end-6 lg:block">
+                    <button type="button" class="!w-full text-3 leading-14 text-gray-500 lg:hidden w-max py-2 px-7 shadow-sm border border-gray-300 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:shadow-inner rounded-md cursor-pointer focus:outline-none justify-center items-center text-xl tracking-wider bg-white flex effect-pressing" aria-label="instagram">
+                      <span class="h-6 w-6 flex-shrink-0 mr-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
+                      </span>
+                      <span class="tracking-normal">Instagram</span>
+                    </button>
+                    
+                    <a href="#">
+                      <button type="button" class="!w-full text-gray-500 w-max py-2 px-7 shadow-sm border border-gray-300 dark:border-gray-800 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 hover:shadow-inner rounded-md cursor-pointer focus:outline-none justify-center items-center text-xl tracking-wider bg-white flex effect-pressing" aria-label="default">
+                        <span class="h-6 w-6 flex-shrink-0 mr-1"> 
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill="none" d="M0 0h24v24H0z"></path><path d="M7.25361 18.4944L7.97834 18.917C9.18909 19.623 10.5651 20 12.001 20C16.4193 20 20.001 16.4183 20.001 12C20.001 7.58172 16.4193 4 12.001 4C7.5827 4 4.00098 7.58172 4.00098 12C4.00098 13.4363 4.37821 14.8128 5.08466 16.0238L5.50704 16.7478L4.85355 19.1494L7.25361 18.4944ZM2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22ZM8.39232 7.30833C8.5262 7.29892 8.66053 7.29748 8.79459 7.30402C8.84875 7.30758 8.90265 7.31384 8.95659 7.32007C9.11585 7.33846 9.29098 7.43545 9.34986 7.56894C9.64818 8.24536 9.93764 8.92565 10.2182 9.60963C10.2801 9.76062 10.2428 9.95633 10.125 10.1457C10.0652 10.2428 9.97128 10.379 9.86248 10.5183C9.74939 10.663 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.40738 11.0473 9.44455 11.1944C9.45903 11.25 9.50521 11.331 9.54708 11.3991C9.57027 11.4368 9.5918 11.4705 9.60577 11.4938C9.86169 11.9211 10.2057 12.3543 10.6259 12.7616C10.7463 12.8783 10.8631 12.9974 10.9887 13.108C11.457 13.5209 11.9868 13.8583 12.559 14.1082L12.5641 14.1105C12.6486 14.1469 12.692 14.1668 12.8157 14.2193C12.8781 14.2457 12.9419 14.2685 13.0074 14.2858C13.0311 14.292 13.0554 14.2955 13.0798 14.2972C13.2415 14.3069 13.335 14.2032 13.3749 14.1555C14.0984 13.279 14.1646 13.2218 14.1696 13.2222V13.2238C14.2647 13.1236 14.4142 13.0888 14.5476 13.097C14.6085 13.1007 14.6691 13.1124 14.7245 13.1377C15.2563 13.3803 16.1258 13.7587 16.1258 13.7587L16.7073 14.0201C16.8047 14.0671 16.8936 14.1778 16.8979 14.2854C16.9005 14.3523 16.9077 14.4603 16.8838 14.6579C16.8525 14.9166 16.7738 15.2281 16.6956 15.3913C16.6406 15.5058 16.5694 15.6074 16.4866 15.6934C16.3743 15.81 16.2909 15.8808 16.1559 15.9814C16.0737 16.0426 16.0311 16.0714 16.0311 16.0714C15.8922 16.159 15.8139 16.2028 15.6484 16.2909C15.391 16.428 15.1066 16.5068 14.8153 16.5218C14.6296 16.5313 14.4444 16.5447 14.2589 16.5347C14.2507 16.5342 13.6907 16.4482 13.6907 16.4482C12.2688 16.0742 10.9538 15.3736 9.85034 14.402C9.62473 14.2034 9.4155 13.9885 9.20194 13.7759C8.31288 12.8908 7.63982 11.9364 7.23169 11.0336C7.03043 10.5884 6.90299 10.1116 6.90098 9.62098C6.89729 9.01405 7.09599 8.4232 7.46569 7.94186C7.53857 7.84697 7.60774 7.74855 7.72709 7.63586C7.85348 7.51651 7.93392 7.45244 8.02057 7.40811C8.13607 7.34902 8.26293 7.31742 8.39232 7.30833Z"></path></svg>
+                        </span>
+                        <span class="pl-0.5 text-4 leading-14 tracking-normal lg:text-3">Colaboration & Endorsement</span>
+                       </button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="mt-6">
+              <div class="mt-5">
+                <div class="mt-4">
+                  <div class="w-full rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+                    <div
+                      class="flex w-full items-center justify-between gap-x-2.5 border-b border-gray-200 px-4.5 py-2.5 dark:border-gray-700">
+                      <div
+                        class="flex items-center gap-x-[7px] text-[15px] font-medium tracking-wide text-gray-700 dark:text-white">
+                        <span class="h-4.5 w-4.5 lg:h-7 lg:w-7"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" height="100%" width="100%">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9">
+                            </path>
+                          </svg></span><span>Pages &amp; Links</span></div>
+                      <a class="flex items-center gap-x-1 text-gray-500 underline-offset-4 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-500" href="#">More
+                        <span class="h-5 w-5 underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z">
+                        </path>
+                      </svg>
+                    </span>
+                  </a>
+                    </div>
+                    <div
+                      class="mask-x mt-4 flex items-center justify-between gap-x-2.5 overflow-x-auto whitespace-nowrap px-4.5 pb-4 text-sm text-gray-600 dark:text-gray-300">
+                      <div class="flex items-center gap-x-2.5"><a
+                          class="effect-pressing flex items-center gap-x-[4px] rounded-md border px-3 py-1 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600"
+                          href="https://drive.google.com/file/d/1T96IuSPGw_c2pvHDbXcGErriir_eRNFt/view?usp=drive_link"><span
+                            class="h-4.5 w-4.5 lg:h-[16px] lg:w-[16px]"><svg xmlns="http://www.w3.org/2000/svg"
+                              viewBox="0 0 24 24" fill="currentColor">
+                              <path
+                                d="M19 22H5C3.34315 22 2 20.6569 2 19V3C2 2.44772 2.44772 2 3 2H17C17.5523 2 18 2.44772 18 3V15H22V19C22 20.6569 20.6569 22 19 22ZM18 17V19C18 19.5523 18.4477 20 19 20C19.5523 20 20 19.5523 20 19V17H18ZM16 20V4H4V19C4 19.5523 4.44772 20 5 20H16ZM6 7H14V9H6V7ZM6 11H14V13H6V11ZM6 15H11V17H6V15Z">
+                              </path>
+                            </svg></span><span class="flex items-center gap-x-2"><span>Curriculum Vitae</span><span
+                              class="text-xs tracking-tight text-gray-400">(May not be up-to-date)</span></span></a><a
+                         
+                          class="effect-pressing flex items-center gap-x-[4px] rounded-md border px-3 py-1 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600"
+                          href="#"><span
+                            class="h-4.5 w-4.5 lg:h-[16px] lg:w-[16px]"><svg xmlns="http://www.w3.org/2000/svg"
+                              fill="none" viewBox="0 0 24 24" stroke="currentColor" height="100%" width="100%">
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z">
+                              </path>
+                            </svg></span><span class="flex items-center gap-x-2"><span>Feedback</span></span></a><a
+                         
+                          class="effect-pressing flex items-center gap-x-[4px] rounded-md border px-3 py-1 shadow-sm hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-700 dark:hover:border-gray-600 dark:hover:bg-gray-600"
+                          href="https://github.com/fatkhurrhn"><span class="h-4.5 w-4.5 lg:h-[16px] lg:w-[16px]"><svg
+                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="100%" width="100%">
+                              <path fill="none" d="M0 0h24v24H0z"></path>
+                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 0 0 6.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 0 1 2.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0 0 22 12c0-5.525-4.475-10-10-10z"
+                                fill="currentColor"></path>
+                            </svg></span><span>Github</span></a></div>
+                      <div><a aria-label="See all pages"
+                          class="group flex h-[25px] w-[25px] items-center justify-center overflow-hidden rounded-full bg-gray-100 text-gray-500 transition-all ease-in-out hover:w-[76px] dark:border dark:border-gray-600 dark:bg-transparent dark:text-gray-500"
+                          href="#"><span
+                            class="effect-pressing more-to-come absolute right-0 flex w-[76px] justify-end gap-x-[4px] pr-[4px] leading-none transition-all ease-in-out dark:pr-1"><span
+                              class="-mt-[0.5px] hidden text-xs opacity-0 transition-all delay-100 ease-in-out group-hover:block group-hover:opacity-100">See
+                              all</span><span class="h-[16px] w-[16px] transition-all ease-in-out"><svg
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" height="100%"
+                                width="100%">
+                                <path fill-rule="evenodd"
+                                  d="M16.28 11.47a.75.75 0 010 1.06l-7.5 7.5a.75.75 0 01-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 011.06-1.06l7.5 7.5z"
+                                  clip-rule="evenodd"></path>
+                              </svg></span></span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="mt-16"><label
+                class="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-[4px] font-medium tracking-wider shadow-sm dark:border-gray-600 dark:bg-gray-700"><span
+                  class="mr-1.5 flex h-5 w-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path
+                      d="M13.1962 2.26797L16.4462 7.89714C16.7223 8.37543 16.5584 8.98702 16.0801 9.26316L14.7806 10.0123L15.7811 11.7452L14.049 12.7452L13.0485 11.0123L11.75 11.7632C11.2717 12.0393 10.6601 11.8754 10.384 11.3971L8.5462 8.21466C6.49383 8.83736 5 10.7442 5 13C5 13.6254 5.1148 14.2239 5.32447 14.7757C6.0992 14.284 7.01643 14 8 14C9.68408 14 11.1737 14.8326 12.0797 16.1086L19.7681 11.6704L20.7681 13.4025L12.8898 17.951C12.962 18.2893 13 18.6402 13 19C13 19.3427 12.9655 19.6774 12.8999 20.0007L21 20V22L4.00054 22.0012C3.3723 21.1654 3 20.1262 3 19C3 17.9928 3.29782 17.0551 3.81021 16.2703C3.29276 15.2948 3 14.1816 3 13C3 10.0047 4.88131 7.44881 7.52677 6.44948L7.13397 5.76797C6.58169 4.81139 6.90944 3.58821 7.86603 3.03592L10.4641 1.53592C11.4207 0.983638 12.6439 1.31139 13.1962 2.26797ZM8 16C6.34315 16 5 17.3432 5 19C5 19.3506 5.06014 19.6872 5.17067 19.9999H10.8293C10.9399 19.6872 11 19.3506 11 19C11 17.3432 9.65685 16 8 16ZM11.4641 3.26797L8.86602 4.76797L11.616 9.53111L14.2141 8.03111L11.4641 3.26797Z">
+                    </path>
+                  </svg></span><span class="uppercase">Get to Know Me</span></label>
+              <div class="mt-[15px] flex flex-col gap-y-2 break-words px-0.5 text-justify text-3 font-light leading-relaxed tracking-wide text-gray-500 underline-offset-[6px] dark:text-gray-300 lg:text-[17px]">
+                <p>As a 5th semester student majoring in Information Systems at Nurul Fikri Integrated Technology College, I have a huge passion for technology and am always eager to stay updated on the latest trends in the world. My curiosity drives me to explore how technology can shape our future and improve lives.</p>
+                <p>In addition to my academic journey, I also have a strong presence on social media:</p>
+
+                <div class="flex flex-col items-center gap-y-3 pb-[12px] pr-1 pt-4.5 text-sm lg:flex-row">
+                  <div class="text-normal flex w-full items-center gap-x-2 rounded-md border bg-white px-4 py-[7px] font-medium shadow-sm dark:border-gray-600 dark:bg-gray-800 lg:w-auto">
+                    <div class="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500 text-white dark:bg-indigo-700">1</div>
+                    <div class="text-justify">Instagram: Over 90K followers</div>
+                  </div>
+                  <div class="text-normal flex w-full items-center gap-x-2 rounded-md border bg-white px-4 py-[7px] font-medium shadow-sm dark:border-gray-600 dark:bg-gray-800 lg:w-auto">
+                    <div class="flex h-5 w-5 items-center justify-center rounded-full bg-teal-500 text-white dark:bg-teal-700">2</div>
+                    <div>LinkedIn: Over 500 connections</div>
+                  </div>
+                  <div class="text-normal flex w-full items-center gap-x-2 rounded-md border bg-white px-4 py-[7px] font-medium shadow-sm dark:border-gray-600 dark:bg-gray-800 lg:w-auto">
+                    <div class="flex h-5 w-5 items-center justify-center rounded-full bg-indigo-500 text-white dark:bg-indigo-700">3</div>
+                    <div>TikTok: Over 3K followers</div>
+                  </div>
+                </div>
+
+                <p>Through these platforms, I love sharing insights, engaging with others, and building meaningful connections. Let's be friends and inspire each other to grow!</p>
+                <p>My general objectives are to:</p>
+                <ul class="list-disc pl-5">
+                  <li class="pl-3">Explore innovative ways to apply technology in real-world scenarios;</li>
+                  <li class="pl-3">Share knowledge and create content that resonates with a wider audience;</li>
+                  <li class="pl-3">Build strong connections that foster collaboration and growth</li>
+                </ul>
+              </div>
+            </section>
+            <section class="mt-14">
+              <div class="flex items-center justify-between"><label
+                  class="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-[4px] font-medium tracking-wider shadow-sm dark:border-gray-600 dark:bg-gray-700"><span
+                    class="mr-1.5 flex h-5 w-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="currentColor">
+                      <path
+                        d="M20 22H4C3.44772 22 3 21.5523 3 21V3C3 2.44772 3.44772 2 4 2H20C20.5523 2 21 2.44772 21 3V21C21 21.5523 20.5523 22 20 22ZM19 20V4H5V20H19ZM7 6H11V10H7V6ZM7 12H17V14H7V12ZM7 16H17V18H7V16ZM13 7H17V9H13V7Z">
+                      </path>
+                    </svg></span><span class="hidden uppercase lg:block">Project</span><span
+                    class="block uppercase lg:hidden">Project</span></label>
+                    <a class="flex items-center gap-x-1 text-gray-500 underline-offset-4 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-500" href="https://github.com/fatkhurrhn?tab=repositories">Repositories
+                      <span class="h-5 w-5 underline">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z">
+                      </path>
+                    </svg>
+                  </span>
+                </a>
+              </div>
+
+              <div class="mt-5 flex flex-col gap-y-4">
+                <div class="group flex w-full cursor-pointer flex-col gap-y-2 rounded-md border bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600">
+                  <div class="text-normal flex w-full items-center border-b border-gray-200 px-4.5 py-2.5 font-serif font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white dark:group-hover:border-gray-600">
+                   <a href="https://github.com/fatkhurrhn/volunter-pembuatan-aplikasi"> <p>Volunteer App Creation in Dicoding</p></a>
+                  </div>
+                  <div class="flex flex-col gap-y-2.5 px-4.5 pb-3.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <a href="https://github.com/fatkhurrhn/volunter-pembuatan-aplikasi"><p>This repository is used as a volunteer search competition for creating Dicoding applications.</p></a>
+                    </div>
+                    <div class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs text-gray-500 lg:-ml-1 lg:flex-row lg:items-center">
+                      <div class="rounded-full border bg-gray-100 px-2.5 py-0.5 font-medium dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 ">
+                        <a href="https://github.com/fatkhurrhn/volunter-pembuatan-aplikasi">Updated on Sep 14, 2024</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="group flex w-full cursor-pointer flex-col gap-y-2 rounded-md border bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600">
+                  <div class="text-normal flex w-full items-center border-b border-gray-200 px-4.5 py-2.5 font-serif font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white dark:group-hover:border-gray-600">
+                   <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS"> <p>Projek UAS DreamsLMS Apps</p></a>
+                  </div>
+                  <div class="flex flex-col gap-y-2.5 px-4.5 pb-3.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS"><p>he DreamLMS (Learning Management System) application uses Laravel10</p></a>
+                    </div>
+                    <div class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs text-gray-500 lg:-ml-1 lg:flex-row lg:items-center">
+                      <div class="rounded-full border bg-gray-100 px-2.5 py-0.5 font-medium dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 ">
+                        <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS">Updated on Jul 12, 2023</a>
+                      </div>
+                  </div>
+                </div>
+                <div class="group flex w-full cursor-pointer flex-col gap-y-2 rounded-md border bg-white shadow-sm transition-all hover:-translate-y-1 hover:border-gray-300 hover:bg-gray-50 dark:border-gray-700 dark:bg-gray-800 dark:hover:border-gray-600">
+                  <div class="text-normal flex w-full items-center border-b border-gray-200 px-4.5 py-2.5 font-serif font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white dark:group-hover:border-gray-600">
+                   <a href="https://github.com/fatkhurrhn/random-password-generator"> <p>Random Password Generator with Node Js</p></a>
+                  </div>
+                  <div class="flex flex-col gap-y-2.5 px-4.5 pb-3.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <a href="https://github.com/fatkhurrhn/random-password-generator"><p>A simple yet powerful web application for generating secure random passwords. Built with Node.js and Express.js</p></a>
+                    </div>
+                    <div class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs text-gray-500 lg:-ml-1 lg:flex-row lg:items-center">
+                      <div class="rounded-full border bg-gray-100 px-2.5 py-0.5 font-medium dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400 ">
+                        <a href="https://github.com/fatkhurrhn/random-password-generator">Updated on Nov 26, 2024 </a>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="mt-14">
+              <div class="flex items-center justify-between"><label
+                  class="inline-flex items-center rounded-full border border-gray-300 bg-white px-4 py-[4px] font-medium tracking-wider shadow-sm dark:border-gray-600 dark:bg-gray-700"><span
+                    class="mr-1.5 flex h-5 w-5"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                      fill="currentColor">
+                      <path
+                        d="M15 3C15.5523 3 16 3.44772 16 4V6H21C21.5523 6 22 6.44772 22 7V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V7C2 6.44772 2.44772 6 3 6H8V4C8 3.44772 8.44772 3 9 3H15ZM16 8H8V19H16V8ZM4 8V19H6V8H4ZM14 5H10V6H14V5ZM18 8V19H20V8H18Z">
+                      </path>
+                    </svg></span><span class="uppercase">Education</span></label><a
+                  class="flex items-center gap-x-1 text-gray-500 underline-offset-4 transition-colors hover:text-blue-500 dark:text-gray-400 dark:hover:text-blue-500"
+                  href="https://www.linkedin.com/in/fatkhurrhn/">LinkedIn<span class="h-5 w-5 underline"><svg
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                      <path
+                        d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z">
+                      </path>
+                    </svg></span></a></div>
+              <div class="mt-5 flex flex-col gap-y-4">
+                <div class="flex gap-x-4 overflow-x-auto whitespace-nowrap mask-x-r">
+                  <div
+                    class="flex w-full flex-col gap-y-2 rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:min-w-[26rem]">
+                    <div
+                      class="text-normal flex w-full items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap border-b border-gray-200 px-4.5 py-2.5 font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white">
+                      <div class="flex items-center gap-x-2"><img alt="University of Waterloo logo" loading="lazy"
+                          width="24" height="24" decoding="async" data-nimg="1"
+                          class="rounded-full border bg-white dark:border-gray-700" style="color:transparent"
+                          srcSet="https://image.pngaaa.com/373/2046373-middle.png"/>
+                        <p>STT Nurul Fikri</p>
+                      </div><label
+                        class="rounded-full border bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">Depok</label>
+                    </div>
+                    <div
+                      class="flex items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap px-4.5 pb-2.5 pt-1">
+                      <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                        <p>Major of Information Systems (SI)</p>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs font-medium text-gray-500 lg:items-center">
+                        Sept 2022 - Present</div>
+                    </div>
+                    <div
+                      class="-mt-[8px] flex items-center justify-between border-t border-gray-200 px-4.5 py-1.5 dark:border-gray-700">
+                      <p class="text-sm text-gray-500 dark:text-gray-400">Nurul Fikri Integrated Technology College</p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400"></p>
+                    </div>
+                  </div>
+                  <div
+                    class="flex w-full flex-col gap-y-2 rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:min-w-[26rem]">
+                    <div
+                      class="text-normal flex w-full items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap border-b border-gray-200 px-4.5 py-2.5 font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white">
+                      <div class="flex items-center gap-x-2"><img alt="Zhejiang University logo" loading="lazy"
+                          width="24" height="24" decoding="async" data-nimg="1"
+                          class="rounded-full border bg-white dark:border-gray-700" style="color:transparent"
+                          srcSet="https://i.ibb.co.com/MCPrmZb/channels4-profile.jpg" />
+                        <p>Bangkit Academy</p>
+                      </div><label
+                        class="rounded-full border bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">Cloud</label>
+                    </div>
+                    <div
+                      class="flex items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap px-4.5 pb-2.5 pt-1">
+                      <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                        <p>Cloud Computing</p>
+                      </div>
+                      <div
+                        class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs font-medium text-gray-500 lg:items-center">
+                        Sep - Jan 2025</div>
+                    </div>
+                    <div
+                      class="-mt-[8px] flex items-center justify-between border-t border-gray-200 px-4.5 py-1.5 dark:border-gray-700">
+                      <p class="text-sm text-gray-500 dark:text-gray-400">Led by Google, Tokopedia, Gojek, & Traveloka</p>
+                      <p class="text-sm text-gray-500 dark:text-gray-400"></p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="flex w-full flex-col gap-y-2 rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:min-w-[26rem]">
+                  <div
+                    class="text-normal flex w-full items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap border-b border-gray-200 px-4.5 py-2.5 font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white">
+                    <div class="flex items-center gap-x-2"><img alt="BioRender logo" loading="lazy" width="24"
+                        height="24" decoding="async" data-nimg="1"
+                        class="rounded-full border bg-white dark:border-gray-700" style="color:transparent"
+                        srcSet="https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbiorender_logo.png&amp;w=32&amp;q=75 1x, https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbiorender_logo.png&amp;w=48&amp;q=75 2x"
+                        src="https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbiorender_logo.png&amp;w=48&amp;q=75" />
+                      <p>BioRender</p>
+                    </div><label
+                      class="rounded-full border bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">SWE,
+                      Co-op</label>
+                  </div>
+                  <div
+                    class="flex items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap px-4.5 pb-2.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <p>Full Stack Software Engineer</p>
+                    </div>
+                    <div
+                      class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs font-medium text-gray-500 lg:items-center">
+                      Jan - Apr 2023</div>
+                  </div>
+                  <div
+                    class="-mt-[8px] flex items-center justify-between border-t border-gray-200 px-4.5 py-1.5 dark:border-gray-700">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Science Suite Inc.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Toronto, ON</p>
+                  </div>
+                </div>
+                <div
+                  class="flex w-full flex-col gap-y-2 rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:min-w-[26rem]">
+                  <div
+                    class="text-normal flex w-full items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap border-b border-gray-200 px-4.5 py-2.5 font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white">
+                    <div class="flex items-center gap-x-2"><img alt="Safyre Labs Inc. logo" loading="lazy" width="24"
+                        height="24" decoding="async" data-nimg="1"
+                        class="rounded-full border bg-white dark:border-gray-700" style="color:transparent"
+                        src="https://static.ouorz.com/jewlr-logo.svg" />
+                      <p>Safyre Labs Inc.</p>
+                    </div><label
+                      class="rounded-full border bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">SWE,
+                      Co-op</label>
+                  </div>
+                  <div
+                    class="flex items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap px-4.5 pb-2.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <p>Full Stack Software Engineer</p>
+                    </div>
+                    <div
+                      class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs font-medium text-gray-500 lg:items-center">
+                      May - Aug 2022</div>
+                  </div>
+                </div>
+                <div
+                  class="flex w-full flex-col gap-y-2 rounded-md border bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:min-w-[26rem]">
+                  <div
+                    class="text-normal flex w-full items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap border-b border-gray-200 px-4.5 py-2.5 font-medium tracking-wide text-gray-700 dark:border-gray-700 dark:text-white">
+                    <div class="flex items-center gap-x-2"><img alt="Bitbuy logo" loading="lazy" width="24" height="24"
+                        decoding="async" data-nimg="1" class="rounded-full border bg-white dark:border-gray-700"
+                        style="color:transparent"
+                        srcSet="https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbitbuy_logo.png&amp;w=32&amp;q=75 1x, https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbitbuy_logo.png&amp;w=48&amp;q=75 2x"
+                        src="https://lipeng.ac/assets/_next/image?url=https%3A%2F%2Fstatic.ouorz.com%2Fbitbuy_logo.png&amp;w=48&amp;q=75" />
+                      <p>Bitbuy</p>
+                    </div><label
+                      class="rounded-full border bg-gray-100 px-2.5 py-0.5 text-xs text-gray-500 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-400">SWE,
+                      Co-op</label>
+                  </div>
+                  <div
+                    class="flex items-center justify-between gap-x-2.5 overflow-hidden overflow-x-auto whitespace-nowrap px-4.5 pb-2.5 pt-1">
+                    <div class="text-sm tracking-wide text-gray-600 dark:text-gray-300">
+                      <p>Front End Software Engineer</p>
+                    </div>
+                    <div
+                      class="flex flex-col items-start gap-x-2.5 gap-y-2 text-xs font-medium text-gray-500 lg:items-center">
+                      Sep - Dec 2021</div>
+                  </div>
+                  <div
+                    class="-mt-[8px] flex items-center justify-between border-t border-gray-200 px-4.5 py-1.5 dark:border-gray-700">
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Bitbuy Technologies Inc.</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Toronto, ON</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="mb-25 mt-11">
+              <div class="mt-5">
+                <div
+                  class="my-2 flex w-full flex-col gap-y-3 rounded-md border bg-white px-4.5 py-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 lg:flex-row lg:items-center lg:gap-x-10 lg:gap-y-0 lg:space-x-4 lg:py-3">
+                  <div>
+                    <p
+                      class="flex items-center whitespace-nowrap text-xl tracking-wide text-gray-600 dark:text-gray-300">
+                      <span class="mr-2 h-7 w-7"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                          stroke="currentColor" height="100%" width="100%">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                          </path>
+                        </svg></span>Any suggestions for me?</p>
+                  </div>
+                  <div class="flex w-full justify-end">
+                    <form class="flex w-full"><input type="email"
+                        class=" flex h-8 w-full rounded-md border bg-white px-4 text-4 tracking-wide text-gray-500 shadow-sm focus:outline-none dark:border-gray-700 dark:bg-gray-700 dark:text-gray-400"
+                        placeholder="your.email@address.com" required="" value="" /><button type="submit"
+                        class="effect-pressing absolute right-1.5 top-[6.5px] animate-appear rounded-full bg-slate-500 px-[8px] py-[2px] text-xs text-white shadow-sm hover:bg-neutral-600 hover:shadow-inner dark:bg-neutral-800 dark:text-gray-300 lg:hidden">Send</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </main>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 </body>
+
 </html>
