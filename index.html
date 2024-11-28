@@ -143,10 +143,10 @@
             <div class="flex justify-between items-center">
               <h1 class="text-2xl font-semibold text-text">Fatkhurrhn</h1>
               <a
-                href="/#services"
+                href="#"
                 class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
               >
-                <span class="relative flex h-3 w-3 mr-2">
+                <span class="relative flex h-3 w-3 mr-2 rounded">
                   <span
                     class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
                   ></span>
@@ -155,22 +155,13 @@
               </a>
             </div>
             <div class="mt-2 space-y-3 sm:space-y-2">
-              <p>Fullstack developer. Freelancer. Astro core maintainer.</p>
-              <p>
-                Open-Source lover. French. Two-time winner of the Astro
-                Community Award.
-              </p>
-              <p>
-                <span
-                  id="hero-time"
-                  class="bg-bg-subtle border border-border px-1 py-0.5 tabular-nums select-none"
-                  >00:00:00</span
-                >
-                Central European Time.
-              </p>
+              <p>Information System Student | Cloud Computing at Bangkit Academy 2024.</p>
+              <p>Having more than 90K followers on Instagram, and more than 500 connections on Linkedin.</p>
+              <p><span id="hero-time" class="bg-bg-subtle border border-border px-1 py-0.5 tabular-nums select-none">00:00:00</span> Western Indonesia Time.</p>
             </div>
             <div class="mt-4">
               <div class="flex space-x-2">
+                <!-- Instagram -->
                 <a
                   href="mailto:contact@florian-lefebvre.dev"
                   target="_blank"
@@ -276,38 +267,39 @@
           </div>
         </div>
         <script>
-          window.__handleTime ??= () => {
-            const updateTime = () => {
-              const today = new Date();
-              const formatter = new Intl.DateTimeFormat("en-US", {
-                timeZone: "CET",
-                hour12: false, // 24-hour format
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric",
-              });
-
-              // Format the date using the formatter
-              const timeInTimeZone = formatter.format(today);
-
-              document.getElementById("hero-time").innerText = timeInTimeZone;
-            };
-
-            updateTime();
-            return setInterval(() => {
+            window.__handleTime ??= () => {
+              const updateTime = () => {
+                const today = new Date();
+                const formatter = new Intl.DateTimeFormat("en-US", {
+                  timeZone: "Asia/Jakarta", // Ganti ke zona waktu WIB
+                  hour12: false, // 24-hour format
+                  hour: "numeric",
+                  minute: "numeric",
+                  second: "numeric",
+                });
+          
+                // Format the date using the formatter
+                const timeInTimeZone = formatter.format(today);
+          
+                document.getElementById("hero-time").innerText = timeInTimeZone;
+              };
+          
               updateTime();
-            }, 1000);
-          };
-
-          window.__handleTimeId = window.__handleTime();
-          document.addEventListener("astro:after-swap", () => {
-            if (window.__handleTimeId) {
-              clearInterval(window.__handleTimeId);
-            }
-
-            window.__handleTimeId = undefined;
-          });
-        </script>
+              return setInterval(() => {
+                updateTime();
+              }, 1000);
+            };
+          
+            window.__handleTimeId = window.__handleTime();
+            document.addEventListener("astro:after-swap", () => {
+              if (window.__handleTimeId) {
+                clearInterval(window.__handleTimeId);
+              }
+          
+              window.__handleTimeId = undefined;
+            });
+          </script>
+          
       </section>
       <section id="latest-article" class="mx-auto px-4 max-w-xl py-16">
         <div class="flex justify-between items-center mb-4">
