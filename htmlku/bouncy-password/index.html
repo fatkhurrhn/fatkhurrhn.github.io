@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Bouncy Password Error</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;display=swap'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<form action="">
+	<div class="field">
+		<label for="pass" class="field__label">Enter new password</label>
+		<input id="pass" class="field__input" type="password" name="pass" autocomplete="off" placeholder=" " aria-describedby="pass-error pass-note" aria-required="true" required>
+		<strong id="pass-error" class="field__error" data-error></strong>
+	</div>
+	<p id="pass-note" class="note"><small>Must contain at least <span data-req></span> characters.</small></p>
+	<button type="submit">Reset Password</button>
+</form>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
