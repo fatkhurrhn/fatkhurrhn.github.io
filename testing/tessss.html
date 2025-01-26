@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Button WhatsApp</title>
+  </head>
+  <body>
+    <h2>Pesan Produkkk</h2>
+    <button id="beli-button">Beli</button>
+
+    <script>
+      const waNumber = "+6285266502805";
+      const messageTemplate = `Halo, saya ingin memesan dengan format berikut:
+- Nama Lengkap: 
+- Pesanan: 
+- Nomor Telepon: 
+- Alamat: `;
+      document.getElementById("beli-button").addEventListener("click", () => {
+        const encodedMessage = encodeURIComponent(messageTemplate);
+        const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+        window.open(waLink, "_blank");
+      });
+    </script>
+  </body>
+</html>
