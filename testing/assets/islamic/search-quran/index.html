@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>FaCodes👨🏻‍💻</title>
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="../../img/favicon2.png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="../../css/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="../../css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&family=Noto+Nastaliq+Urdu&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+
+</head>
+
+<body class="inter-body learning-color">
+    <!-- header start -->
+    <header class="main-header learning-header h-102">
+        <div class="custom-container">
+            <div class="top-header">
+                <div class="header-left">
+                    <a class="text-white" href="../../islamic.html">
+                        <i class="ri-arrow-left-line"></i>
+                    </a>
+                </div>
+
+                <div class="header-right">
+                    <div class="notification-box">
+                        <a class="text-white" href="https://github.com/fatkhurrhn">
+                            <i class="ri-github-fill"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-bottom header-bottom-2">
+                <h4 class="fw-500 text-white">SearchAyah - Quran Search</h4>
+            </div>
+
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- Mobile Section Start -->
+    <div class="mobile-style-1">
+        <ul>
+            <li class="">
+                <a href="../../../index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-home-5-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Home</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="../../islamic.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-moon-clear-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Islamic</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-book-2-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Quran</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../dzikir/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-donut-chart-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Dzikir</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../mosque/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-community-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Mosque</h5>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Mobile Section End -->
+
+    <main>
+        <section class="main-section">
+            <div class="header-card">
+                <h1 class="header-title">SearchAyah - Quran Search</h1>
+                <div class="quote-container">
+                    <p class="quote-text">
+                        "This is the Book about which there is no doubt, a guidance for those conscious of Allah." <br>
+                        (Surah Al-Baqarah, 2:2)
+                    </p>
+                </div>
+            </div>
+            <div class="search-container">
+                <div class="search-input-wrapper">
+                    <input type="text" 
+                           id="searchBox" 
+                           placeholder="Search Word or Ayat of Quran"
+                           class="search-input"
+                           aria-label="Search Word or Ayat of Quran" />
+                </div>
+    
+                <div class="language-select-wrapper">
+                    <label for="languageSelect" class="language-label"></label>
+                    <select id="languageSelect" class="language-select">
+                        <option value="indonesian">Indonesian</option>
+                        <option value="english">English</option>
+                        <option value="urdu">اردو</option>
+                        <option value="turkish">Turkish</option>
+                        <option value="french">French</option>
+                        <option value="bengali">Bengali</option>
+                        <option value="german">German</option>
+                    </select>
+                </div>
+    
+                <div id="searchInfo" class="search-info hidden">
+                    <div class="filter-wrapper">
+                        <div class="filter-icon-wrapper">
+                            <svg class="filter-icon" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z">
+                                </path>
+                            </svg>
+                            <span class="filter-text">FILTER</span>
+                        </div>
+                    </div>
+                    <div id="resultCount" class="result-count"></div>
+                </div>
+                <div id="results" class="results hidden"></div>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+        </section>
+    </main>
+    
+    <style>
+        .main-section {
+            max-width: 64rem; /* 5xl */
+            margin: 0 auto;
+            padding: 1rem;
+            margin-bottom: 20rem;
+            height: auto;
+        }
+    
+        .header-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            margin: 2rem auto;
+            max-width: 64rem;
+            color: #164150; /* text-cyan-800 */
+        }
+    
+        .header-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+    
+        .quote-container {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #164150;
+            text-align: center;
+        }
+    
+        .quote-text {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    
+        .search-container {
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+        }
+    
+        .search-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+    
+        .search-input {
+            width: 100%;
+            height: 3rem;
+            padding: 0 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #164150;
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+    
+        .search-input:focus {
+            outline: none;
+            border-color: #164150;
+        }
+    
+        .language-select-wrapper {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.875rem;
+        }
+    
+        .language-select {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 2px solid #164150;
+            color: #164150; /* text-slate-800 */
+        }
+    
+        .language-select:focus {
+            outline: none;
+            border-color: #67b2b4;
+        }
+    
+        .search-info {
+            margin: 1.25rem 0;
+            background-color: rgba(103, 178, 180, 0.2);
+            border-radius: 0.5rem;
+            padding: 0.75rem;
+        }
+    
+        .filter-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+    
+        .filter-icon-wrapper {
+            display: flex;
+            align-items: center;
+        }
+    
+        .filter-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            margin-right: 0.5rem;
+            color: #1f2937; /* text-slate-800 */
+        }
+    
+        .filter-text {
+            font-weight: 600;
+            color: #1f2937;
+        }
+    
+        .result-count {
+            font-size: 0.875rem;
+            color: #1f2937;
+            margin-top: 0.5rem;
+        }
+    
+        .results {
+            display: none;
+        }
+    
+        .search-results {
+            margin-top: 2.5rem;
+        }
+    
+        .hidden {
+            display: none;
+        }
+    
+        /* Responsive Styles */
+        @media (min-width: 640px) {
+            .header-title {
+                font-size: 1.5rem;
+            }
+            
+            .quote-text {
+                font-size: 1.125rem;
+            }
+            
+            .search-input {
+                font-size: 1rem;
+            }
+            
+            .language-select-wrapper {
+                font-size: 1rem;
+            }
+        }
+    
+        @media (min-width: 768px) {
+            .main-section {
+                margin-bottom: 24rem;
+            }
+        }
+    
+        @media (min-width: 1024px) {
+            .main-section {
+                margin-bottom: 28rem;
+            }
+        }
+    
+        @media (min-width: 1280px) {
+            .main-section {
+                margin-bottom: 32rem;
+            }
+        }
+    </style>
+
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon text-white">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                        <i class="ri-tiktok-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Theme Option Setting Box End -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.5.3/fuse.min.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../../js/custom_swiper.js"></script>
+
+    <!-- Theme js-->
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

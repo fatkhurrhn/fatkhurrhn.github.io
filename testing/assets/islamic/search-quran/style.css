@@ -1,0 +1,112 @@
+@layer base {
+    body {
+        font-family: Josefin Sans, sans-serif;
+    }
+
+    .font-pacifico {
+        font-family: "Pacifico", cursive;
+    }
+
+    .font-urdu {
+        font-family: "Noto Nastaliq Urdu", serif;
+    }
+
+    .font-arabic{
+        font-family: "Amiri", serif;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #76a8a9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #6e9d9e;
+}
+
+@layer components {
+    .menu__link::before {
+        content: "";
+        width: 0;
+        height: 2px;
+        border-radius: 2px;
+        background-color: #004d40;
+        position: absolute;
+        bottom: -0.25rem;
+        right: 0;
+        transition: right 0.4s, width 0.4s, left 0.4s;
+    }
+
+    .menu__link:hover::before {
+        width: 100%;
+        left: 0;
+    }
+}
+
+.scene {
+    width: 100px;  /* Reduced from 200px */
+    height: 100px; /* Reduced from 200px */
+    perspective: 300px; /* Reduced from 600px to maintain proportion */
+    margin: 50px auto;
+}
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: translateZ(-50px); /* Reduced from -100px */
+    animation: rotate 10s infinite linear;
+}
+.cube__face {
+    position: absolute;
+    width: 103px;  /* Reduced from 200px */
+    height: 100px; /* Reduced from 200px */
+    background: url('/images/intro.png') center/cover no-repeat; /* Adjusted placeholder size */
+}
+.cube__face--front  { transform: rotateY(  0deg) translateZ(50px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(50px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(50px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(50px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(50px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotate {
+    0% { transform: translateZ(-50px) rotateX(0deg) rotateY(0deg); }
+    100% { transform: translateZ(-50px) rotateX(360deg) rotateY(360deg); }
+}
+#intro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 2s ease-in-out;
+}
+/* 
+#intro.fade-out {
+    opacity: 0;
+}
+
+.hidden-content {
+    display: none;
+} */

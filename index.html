@@ -1,1288 +1,696 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Home | Fatkhurrhnn</title>
-    <script defer data-domain="florian-lefebvre.dev" src="https://florian-lefebvre.dev/js/script.js"></script>
-    <link rel="stylesheet" href="style.css" />
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>FaCodes👨🏻‍💻</title>
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon2.png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="assets/css/style.css">
+
     <style>
-      .social-link svg {
-        height: 1.25rem;
-        width: 1.25rem;
-      }
-      @media (min-width: 640px) {
-        .social-link svg {
-          height: 1.5rem;
-          width: 1.5rem;
+        /* Style for Modal */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
         }
-      }
-      @keyframes astroFadeInOut {
-        0% {
-          opacity: 1;
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
         }
-        to {
-          opacity: 0;
+
+        .close-btn {
+            display: none;
+            /* float: right;
+            font-size: 24px;
+            cursor: pointer; */
+
         }
-      }
-      @keyframes astroFadeIn {
-        0% {
-          opacity: 0;
+
+        .image-container {
+            position: relative;
+            display: inline-block;
         }
-      }
-      @keyframes astroFadeOut {
-        to {
-          opacity: 0;
+
+        .category-text {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            background-color: rgba(22, 65, 80, 0.7);
+            /* Menggunakan RGBA untuk transparansi */
+            color: white;
+            padding: 2px 6px;
+            /* Kurangi padding untuk mengurangi ukuran latar belakang */
+            font-size: 10px;
+            /* Ukuran font tetap kecil */
+            border-radius: 3px;
+            /* Kurangi border-radius untuk sudut lebih tajam */
         }
-      }
-      @keyframes astroSlideFromRight {
-        0% {
-          transform: translate(100%);
+
+        .feature-box .feature-detail {
+            padding: 10px;
         }
-      }
-      @keyframes astroSlideFromLeft {
-        0% {
-          transform: translate(-100%);
-        }
-      }
-      @keyframes astroSlideToRight {
-        to {
-          transform: translate(100%);
-        }
-      }
-      @keyframes astroSlideToLeft {
-        to {
-          transform: translate(-100%);
-        }
-      }
-      @media (prefers-reduced-motion) {
-        ::view-transition-group(*),
-        ::view-transition-old(*),
-        ::view-transition-new(*) {
-          animation: none !important;
-        }
-        [data-astro-transition-scope] {
-          animation: none !important;
-        }
-      }
     </style>
-  </head>
-  <body class="flex min-h-full flex-col bg-bg text-text-subtle">
-    <div class="sticky top-0 left-0 h-2 w-full z-10 bg-bg">
-      <div
-        id="page-progress"
-        class="h-full bg-text transition-all linear duration-100"
-        style="width: 0%"
-      ></div>
-    </div>
-    <header
-      class="px-4 mx-auto max-w-xl flex items-center justify-between w-full py-2"
-    >
-      <a href="#" class="text-text hover:text-text-subtle transition-colors">
-        <svg
-          fill="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-10 w-10"
-        >
-          <path
-            d="m13.1294 20.8356 4.0117-14.97189c.4635-1.72957 2.0108-3.1687 3.4388-3.15394.2762.00285.4363.28293.3649.54966L16.9331 18.2313c-.4635 1.7296-2.0108 3.1687-3.4389 3.1539-.2761-.0028-.4363-.2829-.3648-.5496ZM6.85594 10.2862l1.11075-4.14531c.46343-1.72957 2.0108-3.16871 3.43881-3.15395.034.00035.0662.00489.0964.01308.8275.00102 1.4981.6722 1.4981 1.5 0 .82843-.6716 1.5-1.5 1.5-.1302 0-.2565-.01659-.3769-.04776L9.93352 10.3917c1.42748.3099 2.68058 1.2674 2.97148 2.3999.0688.2675-.1603.4946-.4365.4946H9.15792l-1.39929 5.2223c-.46343 1.7295-2.0108 3.1687-3.43883 3.1539-.27612-.0029-.43628-.2829-.36481-.5497l2.12129-7.9167c-1.45745-.2927-2.74838-1.2634-3.04426-2.4151-.06871-.2675.16037-.4947.43651-.4947h3.38741Z"
-          ></path>
-        </svg>
-        <span class="sr-only">Home</span>
-      </a>
-      <div class="items-center flex space-x-2">
-        <a
-          href="#"
-          class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
-        >
-          Articles
-        </a>
-        <a
-          href="#"
-          class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            class="h-4 w-4 mr-2"
-          >
-            <g
-              fill="none"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-            >
-              <path d="M0 0h24v24H0z"></path>
-              <path
-                fill="currentColor"
-                d="M5.821 4.91c3.898-2.765 9.469-2.539 13.073.536c3.667 3.127 4.168 8.238 1.152 11.897c-2.842 3.447-7.965 4.583-12.231 2.805l-.232-.101l-4.375.931l-.075.013l-.11.009l-.113-.004l-.044-.005l-.11-.02l-.105-.034l-.1-.044l-.076-.042l-.108-.077l-.081-.074l-.073-.083l-.053-.075l-.065-.115l-.042-.106l-.031-.113l-.013-.075l-.009-.11l.004-.113l.005-.044l.02-.11l.022-.072l1.15-3.451l-.022-.036C.969 12.45 1.97 7.805 5.59 5.079l.23-.168z"
-              ></path>
-            </g>
-          </svg>
-          <span>Contact</span>
-        </a>
-      </div>
-    </header>
-    <div
-      class="bg-gradient-to-b from-bg to-bg/0 sticky top-2 h-24 z-10 pointer-events-none"
-    ></div>
-    <main>
-      <section class="mx-auto px-4 max-w-xl py-16 pt-0 sm:pt-8">
-        <div class="flex max-sm:flex-col gap-4">
-          <img
-            src="pp.jpg"
-            alt=""
-            class="h-24 w-24 sm:h-32 sm:w-32 rounded-full bg-bg-subtle border border-border shrink-0"
-            loading="eager"
-            width="128"
-            height="128"
-            decoding="async"
-          />
-          <div>
-            <div class="flex justify-between items-center">
-              <h1 class="text-2xl font-semibold text-text">Fatkhurrhn</h1>
-              <a
-                href="https://fatkhurrhn.github.io/htmlku/kejutan-bunga/index.html"
-                class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
-              >
-                <span class="relative flex h-3 w-3 mr-2 rounded">
-                  <span
-                    class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
-                  ></span>
-                </span>
-                <span>Full</span>
-              </a>
-            </div>
-            <div class="mt-2 space-y-3 sm:space-y-2">
-              <p>Information System Student | Cloud Computing at Bangkit Academy 2024.</p>
-              <p>Having more than 90K followers on Instagram, and more than 500 connections on Linkedin.</p>
-              <p><span id="hero-time" class="bg-bg-subtle border border-border px-1 py-0.5 tabular-nums select-none">00:00:00</span> Western Indonesia Time.</p>
-            </div>
-            <div class="mt-4">
-              <div class="flex space-x-2">
-                <!-- Instagram -->
-                <a
-                href="https://instagram.com/story.thur"
-                target="_blank"
-                class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-              >
-                <span class="sr-only">Instagram</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path fill="currentColor" d="M13.0281 2.00073C14.1535 2.00259 14.7238 2.00855 15.2166 2.02322L15.4107 2.02956C15.6349 2.03753 15.8561 2.04753 16.1228 2.06003C17.1869 2.1092 17.9128 2.27753 18.5503 2.52503C19.2094 2.7792 19.7661 3.12253 20.3219 3.67837C20.8769 4.2342 21.2203 4.79253 21.4753 5.45003C21.7219 6.0867 21.8903 6.81337 21.9403 7.87753C21.9522 8.1442 21.9618 8.3654 21.9697 8.58964L21.976 8.78373C21.9906 9.27647 21.9973 9.84686 21.9994 10.9723L22.0002 11.7179C22.0003 11.809 22.0003 11.903 22.0003 12L22.0002 12.2821L21.9996 13.0278C21.9977 14.1532 21.9918 14.7236 21.9771 15.2163L21.9707 15.4104C21.9628 15.6347 21.9528 15.8559 21.9403 16.1225C21.8911 17.1867 21.7219 17.9125 21.4753 18.55C21.2211 19.2092 20.8769 19.7659 20.3219 20.3217C19.7661 20.8767 19.2069 21.22 18.5503 21.475C17.9128 21.7217 17.1869 21.89 16.1228 21.94C15.8561 21.9519 15.6349 21.9616 15.4107 21.9694L15.2166 21.9757C14.7238 21.9904 14.1535 21.997 13.0281 21.9992L12.2824 22C12.1913 22 12.0973 22 12.0003 22L11.7182 22L10.9725 21.9993C9.8471 21.9975 9.27672 21.9915 8.78397 21.9768L8.58989 21.9705C8.36564 21.9625 8.14444 21.9525 7.87778 21.94C6.81361 21.8909 6.08861 21.7217 5.45028 21.475C4.79194 21.2209 4.23444 20.8767 3.67861 20.3217C3.12278 19.7659 2.78028 19.2067 2.52528 18.55C2.27778 17.9125 2.11028 17.1867 2.06028 16.1225C2.0484 15.8559 2.03871 15.6347 2.03086 15.4104L2.02457 15.2163C2.00994 14.7236 2.00327 14.1532 2.00111 13.0278L2.00098 10.9723C2.00284 9.84686 2.00879 9.27647 2.02346 8.78373L2.02981 8.58964C2.03778 8.3654 2.04778 8.1442 2.06028 7.87753C2.10944 6.81253 2.27778 6.08753 2.52528 5.45003C2.77944 4.7917 3.12278 4.2342 3.67861 3.67837C4.23444 3.12253 4.79278 2.78003 5.45028 2.52503C6.08778 2.27753 6.81278 2.11003 7.87778 2.06003C8.14444 2.04816 8.36564 2.03847 8.58989 2.03062L8.78397 2.02433C9.27672 2.00969 9.8471 2.00302 10.9725 2.00086L13.0281 2.00073ZM12.0003 7.00003C9.23738 7.00003 7.00028 9.23956 7.00028 12C7.00028 14.7629 9.23981 17 12.0003 17C14.7632 17 17.0003 14.7605 17.0003 12C17.0003 9.23713 14.7607 7.00003 12.0003 7.00003ZM12.0003 9.00003C13.6572 9.00003 15.0003 10.3427 15.0003 12C15.0003 13.6569 13.6576 15 12.0003 15C10.3434 15 9.00028 13.6574 9.00028 12C9.00028 10.3431 10.3429 9.00003 12.0003 9.00003ZM17.2503 5.50003C16.561 5.50003 16.0003 6.05994 16.0003 6.74918C16.0003 7.43843 16.5602 7.9992 17.2503 7.9992C17.9395 7.9992 18.5003 7.4393 18.5003 6.74918C18.5003 6.05994 17.9386 5.49917 17.2503 5.50003Z"></path>
-                </svg>
-              </a>
-                <!-- Linkedin -->
-                <a
-                href="https://www.linkedin.com/in/fatkhurrhn"
-                target="_blank"
-                class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-              >
-                <span class="sr-only">LinkedIn</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-                  ></path>
-                </svg>
-              </a>
-                <!-- Github -->
-                <a
-                href="https://github.com/fatkhurrhn"
-                target="_blank"
-                class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-              >
-                <span class="sr-only">GitHub</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-                  ></path>
-                </svg>
-              </a>
-                <!-- Email -->
-                <a
-                href="mailto:contact@muhammadthursina123@gmail.com"
-                target="_blank"
-                class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-              >
-                <span class="sr-only">Email</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                  <g
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                  >
-                    <path d="M0 0h24v24H0z"></path>
-                    <path
-                      fill="currentColor"
-                      d="M22 7.535V17a3 3 0 0 1-2.824 2.995L19 20H5a3 3 0 0 1-2.995-2.824L2 17V7.535l9.445 6.297l.116.066a1 1 0 0 0 .878 0l.116-.066L22 7.535z"
-                    ></path>
-                    <path
-                      fill="currentColor"
-                      d="M19 4c1.08 0 2.027.57 2.555 1.427L12 11.797l-9.555-6.37a2.999 2.999 0 0 1 2.354-1.42L5 4h14z"
-                    ></path>
-                  </g>
-                </svg>
-              </a>
-                <!-- Discord -->
-                <a
-                href="#"
-                target="_blank"
-                class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-              >
-                <span class="sr-only">Fathur Discord Server</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0a13 13 0 0 0-.617-1.25a.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.08.08 0 0 0 .084-.028a14 14 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13 13 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10 10 0 0 0 .372-.292a.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01q.181.149.373.292a.077.077 0 0 1-.006.127a12.3 12.3 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028a19.8 19.8 0 0 0 6.002-3.03a.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418"
-                  ></path>
-                </svg>
-              </a>
-                <!-- Whatsapp -->
-                <a
-                  href="#"
-                  target="_blank"
-                  class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-                >
-                  <span class="sr-only">Whatsapp</span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                  >
-                    <path fill="currentColor" d="M12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2ZM8.59339 7.30019L8.39232 7.30833C8.26293 7.31742 8.13607 7.34902 8.02057 7.40811C7.93392 7.45244 7.85348 7.51651 7.72709 7.63586C7.60774 7.74855 7.53857 7.84697 7.46569 7.94186C7.09599 8.4232 6.89729 9.01405 6.90098 9.62098C6.90299 10.1116 7.03043 10.5884 7.23169 11.0336C7.63982 11.9364 8.31288 12.8908 9.20194 13.7759C9.4155 13.9885 9.62473 14.2034 9.85034 14.402C10.9538 15.3736 12.2688 16.0742 13.6907 16.4482C13.6907 16.4482 14.2507 16.5342 14.2589 16.5347C14.4444 16.5447 14.6296 16.5313 14.8153 16.5218C15.1066 16.5068 15.391 16.428 15.6484 16.2909C15.8139 16.2028 15.8922 16.159 16.0311 16.0714C16.0311 16.0714 16.0737 16.0426 16.1559 15.9814C16.2909 15.8808 16.3743 15.81 16.4866 15.6934C16.5694 15.6074 16.6406 15.5058 16.6956 15.3913C16.7738 15.2281 16.8525 14.9166 16.8838 14.6579C16.9077 14.4603 16.9005 14.3523 16.8979 14.2854C16.8936 14.1778 16.8047 14.0671 16.7073 14.0201L16.1258 13.7587C16.1258 13.7587 15.2563 13.3803 14.7245 13.1377C14.6691 13.1124 14.6085 13.1007 14.5476 13.097C14.4142 13.0888 14.2647 13.1236 14.1696 13.2238C14.1646 13.2218 14.0984 13.279 13.3749 14.1555C13.335 14.2032 13.2415 14.3069 13.0798 14.2972C13.0554 14.2955 13.0311 14.292 13.0074 14.2858C12.9419 14.2685 12.8781 14.2457 12.8157 14.2193C12.692 14.1668 12.6486 14.1469 12.5641 14.1105C11.9868 13.8583 11.457 13.5209 10.9887 13.108C10.8631 12.9974 10.7463 12.8783 10.6259 12.7616C10.2057 12.3543 9.86169 11.9211 9.60577 11.4938C9.5918 11.4705 9.57027 11.4368 9.54708 11.3991C9.50521 11.331 9.45903 11.25 9.44455 11.1944C9.40738 11.0473 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.74939 10.663 9.86248 10.5183C9.97128 10.379 10.0652 10.2428 10.125 10.1457C10.2428 9.95633 10.2801 9.76062 10.2182 9.60963C9.93764 8.92565 9.64818 8.24536 9.34986 7.56894C9.29098 7.43545 9.11585 7.33846 8.95659 7.32007C8.90265 7.31384 8.84875 7.30758 8.79459 7.30402C8.66053 7.29748 8.5262 7.29892 8.39232 7.30833L8.59339 7.30019Z"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <script>
-            window.__handleTime ??= () => {
-              const updateTime = () => {
-                const today = new Date();
-                const formatter = new Intl.DateTimeFormat("en-US", {
-                  timeZone: "Asia/Jakarta", // Ganti ke zona waktu WIB
-                  hour12: false, // 24-hour format
-                  hour: "numeric",
-                  minute: "numeric",
-                  second: "numeric",
-                });
-          
-                // Format the date using the formatter
-                const timeInTimeZone = formatter.format(today);
-          
-                document.getElementById("hero-time").innerText = timeInTimeZone;
-              };
-          
-              updateTime();
-              return setInterval(() => {
-                updateTime();
-              }, 1000);
-            };
-          
-            window.__handleTimeId = window.__handleTime();
-            document.addEventListener("astro:after-swap", () => {
-              if (window.__handleTimeId) {
-                clearInterval(window.__handleTimeId);
-              }
-          
-              window.__handleTimeId = undefined;
-            });
-          </script>
-          
-      </section>
-      <section id="latest-article" class="mx-auto px-4 max-w-xl py-16">
-        <div class="flex justify-between items-center mb-4">
-          <h2 class="text-text font-semibold text-lg">
-            <a
-              href="#"
-              class="group flex items-center space-x-2"
-            >
-              <span> Latest article </span>
-              <span
-                class="group-hover:opacity-100 opacity-0 transition-opacity"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  class="w-5 h-5"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11"
-                  ></path>
-                </svg> </span
-            ></a>
-          </h2>
-          <a
-            href="#"
-            class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
-          >
-            View all
-          </a>
-        </div>
-        <div
-          class="relative bg-bg border border-border aspect-video hover:opacity-80 transition-opacity"
-        >
-          <img
-            src="https://florian-lefebvre.dev/_astro/cover.Bh7EfpDI_LQUOw.webp"
-            alt="Choose Tech OpenGraph design."
-            class="object-cover object-center"
-            loading="eager"
-            data-astro-transition-scope="astro-k35cfwuq-1"
-            width="576"
-            height="301"
-            decoding="async"
-          />
-          <div
-            class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
-          >
-            <time datetime="2024-02-13T00:00:00.000Z"> Sep 13, 2024 </time>
-          </div>
-          <div
-            class="bg-bg-subtle p-2 border-t border-border flex flex-col-reverse"
-          >
-            <div
-              class="text-sm mt-1"
-              data-astro-transition-scope="astro-qyri3g6x-2"
-            >
-              I&#39;m sad to announce that I&#39;ve decided to shutdown Choose
-              Tech.
-            </div>
-            <a
-              href="#"
-              class="text-text font-semibold"
-              data-astro-transition-scope="astro-hztgxfl2-3"
-            >
-              Shutting down Choose Tech <span class="inset-0 absolute"></span>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section id="about" class="mx-auto px-4 max-w-xl">
-        <h2 class="text-text font-semibold text-lg">
-          <a href="/#about" class="group flex items-center space-x-2">
-            <span> About </span>
-            <span class="group-hover:opacity-100 opacity-0 transition-opacity">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="w-5 h-5"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11"
-                ></path>
-              </svg> </span
-          ></a>
-        </h2>
-        <div
-          class="text-text-subtle [&#38;_a]:font-medium [&#38;_a]:text-text [&#38;_a]:underline space-y-4 mt-4"
-        >
-          <p style="text-align: justify;">
-            The morning sun warmly greets Depok, streaming through the window of my rented room in Beji-Kukusan. I, M. Fatkhurrohman, or Fathur as I'm known, am getting ready to start my day. As a fifth-semester Information Systems student at Nurul Fikri Integrated Technology College, I've ventured to West Java to pursue my dreams. The scholarship I received has been a huge help on this journey.
-          </p>
-          <p style="text-align: justify;">
-            I've always been fascinated by technology. My insatiable curiosity drives me to constantly learn and keep up with the latest advancements. In between my busy academic schedule, I channel my creativity by crafting engaging content for social media. Instagram is my favorite platform, with a loyal following of 90,000 users eagerly awaiting my posts. On LinkedIn, I have over 400 followers, and on TikTok, I have over 3,000 followers who are always enthusiastic about my content.
-          </p>
-          <p style="text-align: justify;">
-            I believe that technology can be a powerful tool for positive change in the world, and I'm determined to keep learning, growing, and contributing to the world of technology, turning my dreams into reality.
-          </p>
-        </div>
-      </section>
-      <section id="services" class="mx-auto px-4 max-w-xl py-16">
-        <div class="flex justify-between items-center">
-          <h2 class="text-text font-semibold text-lg">
-            <a href="/#services" class="group flex items-center space-x-2">
-              <span> Services </span>
-              <span
-                class="group-hover:opacity-100 opacity-0 transition-opacity"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  class="w-5 h-5"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11"
-                  ></path>
-                </svg> </span
-            ></a>
-          </h2>
-          <p class="text-text font-semibold text-lg">$7/hour</p>
-        </div>
-        <p class="mt-4"  style="text-align: justify;">
-          I'm a frontend specialist with good knowledge in backend, UI/UX, and
-          DevOps. I'm dedicated to crafting seamless, efficient, and
-          user-friendly solutions.
-        </p>
-        <div class="mt-4 grid grid-cols-1 gap-4">
-          <div class="bg-bg-subtle border border-border py-2 px-3">
-            <h3 class="text-lg font-semibold text-text">Frontend</h3>
-            <p class="mt-1 mb-4"  style="text-align: justify;">
-              I care about creating delightful interfaces, crafting
-              pixel-perfect, responsive designs, paying attention to
-              accessibility, and optimizing performance for an exceptional user
-              experience.
-            </p>
-            <div class="flex flex-wrap mt-2 [&>*]:mr-1 [&>*]:mb-1">
-              <a
-                href="https://astro.build"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    width="85"
-                    height="107"
-                    viewBox="0 0 85 107"
-                    fill="none"
-                    class="text-black dark:text-white"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
-                      fill="currentColor"
-                    ></path>
-                    <path
-                      d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
-                      fill="url(#paint0_linear_1_59)"
-                    ></path>
-                    <path
-                      d="M0 69.5866C0 69.5866 14.3139 62.6137 28.6678 62.6137L39.4901 29.1204C39.8953 27.5007 41.0783 26.3999 42.4139 26.3999C43.7495 26.3999 44.9325 27.5007 45.3377 29.1204L56.1601 62.6137C73.1601 62.6137 84.8278 69.5866 84.8278 69.5866C84.8278 69.5866 60.5145 3.35233 60.467 3.21944C59.7692 1.2612 58.5911 0 57.0029 0H27.8274C26.2392 0 25.1087 1.2612 24.3634 3.21944C24.3108 3.34983 0 69.5866 0 69.5866Z"
-                      fill="currentColor"
-                    ></path>
-                    <defs>
-                      <linearGradient
-                        id="paint0_linear_1_59"
-                        x1="22.4702"
-                        y1="107"
-                        x2="69.1451"
-                        y2="84.9468"
-                        gradientUnits="userSpaceOnUse"
-                      >
-                        <stop stop-color="#D83333"></stop>
-                        <stop offset="1" stop-color="#F041FF"></stop>
-                      </linearGradient>
-                    </defs>
-                  </svg>
-                </span>
-                <span class="leading-5">Astro</span>
-              </a>
-              <a
-                href="https://react.dev/"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.13em"
-                    height="1em"
-                    viewBox="0 0 256 228"
-                  >
-                    <path
-                      fill="#00D8FF"
-                      d="M210.483 73.824a171.49 171.49 0 0 0-8.24-2.597c.465-1.9.893-3.777 1.273-5.621c6.238-30.281 2.16-54.676-11.769-62.708c-13.355-7.7-35.196.329-57.254 19.526a171.23 171.23 0 0 0-6.375 5.848a155.866 155.866 0 0 0-4.241-3.917C100.759 3.829 77.587-4.822 63.673 3.233C50.33 10.957 46.379 33.89 51.995 62.588a170.974 170.974 0 0 0 1.892 8.48c-3.28.932-6.445 1.924-9.474 2.98C17.309 83.498 0 98.307 0 113.668c0 15.865 18.582 31.778 46.812 41.427a145.52 145.52 0 0 0 6.921 2.165a167.467 167.467 0 0 0-2.01 9.138c-5.354 28.2-1.173 50.591 12.134 58.266c13.744 7.926 36.812-.22 59.273-19.855a145.567 145.567 0 0 0 5.342-4.923a168.064 168.064 0 0 0 6.92 6.314c21.758 18.722 43.246 26.282 56.54 18.586c13.731-7.949 18.194-32.003 12.4-61.268a145.016 145.016 0 0 0-1.535-6.842c1.62-.48 3.21-.974 4.76-1.488c29.348-9.723 48.443-25.443 48.443-41.52c0-15.417-17.868-30.326-45.517-39.844Zm-6.365 70.984c-1.4.463-2.836.91-4.3 1.345c-3.24-10.257-7.612-21.163-12.963-32.432c5.106-11 9.31-21.767 12.459-31.957c2.619.758 5.16 1.557 7.61 2.4c23.69 8.156 38.14 20.213 38.14 29.504c0 9.896-15.606 22.743-40.946 31.14Zm-10.514 20.834c2.562 12.94 2.927 24.64 1.23 33.787c-1.524 8.219-4.59 13.698-8.382 15.893c-8.067 4.67-25.32-1.4-43.927-17.412a156.726 156.726 0 0 1-6.437-5.87c7.214-7.889 14.423-17.06 21.459-27.246c12.376-1.098 24.068-2.894 34.671-5.345a134.17 134.17 0 0 1 1.386 6.193ZM87.276 214.515c-7.882 2.783-14.16 2.863-17.955.675c-8.075-4.657-11.432-22.636-6.853-46.752a156.923 156.923 0 0 1 1.869-8.499c10.486 2.32 22.093 3.988 34.498 4.994c7.084 9.967 14.501 19.128 21.976 27.15a134.668 134.668 0 0 1-4.877 4.492c-9.933 8.682-19.886 14.842-28.658 17.94ZM50.35 144.747c-12.483-4.267-22.792-9.812-29.858-15.863c-6.35-5.437-9.555-10.836-9.555-15.216c0-9.322 13.897-21.212 37.076-29.293c2.813-.98 5.757-1.905 8.812-2.773c3.204 10.42 7.406 21.315 12.477 32.332c-5.137 11.18-9.399 22.249-12.634 32.792a134.718 134.718 0 0 1-6.318-1.979Zm12.378-84.26c-4.811-24.587-1.616-43.134 6.425-47.789c8.564-4.958 27.502 2.111 47.463 19.835a144.318 144.318 0 0 1 3.841 3.545c-7.438 7.987-14.787 17.08-21.808 26.988c-12.04 1.116-23.565 2.908-34.161 5.309a160.342 160.342 0 0 1-1.76-7.887Zm110.427 27.268a347.8 347.8 0 0 0-7.785-12.803c8.168 1.033 15.994 2.404 23.343 4.08c-2.206 7.072-4.956 14.465-8.193 22.045a381.151 381.151 0 0 0-7.365-13.322Zm-45.032-43.861c5.044 5.465 10.096 11.566 15.065 18.186a322.04 322.04 0 0 0-30.257-.006c4.974-6.559 10.069-12.652 15.192-18.18ZM82.802 87.83a323.167 323.167 0 0 0-7.227 13.238c-3.184-7.553-5.909-14.98-8.134-22.152c7.304-1.634 15.093-2.97 23.209-3.984a321.524 321.524 0 0 0-7.848 12.897Zm8.081 65.352c-8.385-.936-16.291-2.203-23.593-3.793c2.26-7.3 5.045-14.885 8.298-22.6a321.187 321.187 0 0 0 7.257 13.246c2.594 4.48 5.28 8.868 8.038 13.147Zm37.542 31.03c-5.184-5.592-10.354-11.779-15.403-18.433c4.902.192 9.899.29 14.978.29c5.218 0 10.376-.117 15.453-.343c-4.985 6.774-10.018 12.97-15.028 18.486Zm52.198-57.817c3.422 7.8 6.306 15.345 8.596 22.52c-7.422 1.694-15.436 3.058-23.88 4.071a382.417 382.417 0 0 0 7.859-13.026a347.403 347.403 0 0 0 7.425-13.565Zm-16.898 8.101a358.557 358.557 0 0 1-12.281 19.815a329.4 329.4 0 0 1-23.444.823c-7.967 0-15.716-.248-23.178-.732a310.202 310.202 0 0 1-12.513-19.846h.001a307.41 307.41 0 0 1-10.923-20.627a310.278 310.278 0 0 1 10.89-20.637l-.001.001a307.318 307.318 0 0 1 12.413-19.761c7.613-.576 15.42-.876 23.31-.876H128c7.926 0 15.743.303 23.354.883a329.357 329.357 0 0 1 12.335 19.695a358.489 358.489 0 0 1 11.036 20.54a329.472 329.472 0 0 1-11 20.722Zm22.56-122.124c8.572 4.944 11.906 24.881 6.52 51.026c-.344 1.668-.73 3.367-1.15 5.09c-10.622-2.452-22.155-4.275-34.23-5.408c-7.034-10.017-14.323-19.124-21.64-27.008a160.789 160.789 0 0 1 5.888-5.4c18.9-16.447 36.564-22.941 44.612-18.3ZM128 90.808c12.625 0 22.86 10.235 22.86 22.86s-10.235 22.86-22.86 22.86s-22.86-10.235-22.86-22.86s10.235-22.86 22.86-22.86Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">React</span>
-              </a>
-              <a
-                href="https://vuejs.org"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.16em"
-                    height="1em"
-                    viewBox="0 0 256 221"
-                  >
-                    <path
-                      fill="#41B883"
-                      d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"
-                    ></path>
-                    <path
-                      fill="#41B883"
-                      d="m0 0l128 220.8L256 0h-51.2L128 132.48L50.56 0H0Z"
-                    ></path>
-                    <path
-                      fill="#35495E"
-                      d="M50.56 0L128 133.12L204.8 0h-47.36L128 51.2L97.92 0H50.56Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">Vue</span>
-              </a>
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.67em"
-                    height="1em"
-                    viewBox="0 0 256 154"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="logosTailwindcssIcon0"
-                        x1="-2.778%"
-                        x2="100%"
-                        y1="32%"
-                        y2="67.556%"
-                      >
-                        <stop offset="0%" stop-color="#2298BD"></stop>
-                        <stop offset="100%" stop-color="#0ED7B5"></stop>
-                      </linearGradient>
-                    </defs>
-                    <path
-                      fill="url(#logosTailwindcssIcon0)"
-                      d="M128 0C93.867 0 72.533 17.067 64 51.2C76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0ZM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">Tailwind</span>
-              </a>
-              <a
-                href="https://nuxt.com"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="48.77"
-                    height="32"
-                    viewBox="0 0 256 168"
-                  >
-                    <path
-                      fill="#00DC82"
-                      d="M143.618 167.029h95.166c3.023 0 5.992-.771 8.61-2.237a16.963 16.963 0 0 0 6.302-6.115a16.324 16.324 0 0 0 2.304-8.352c0-2.932-.799-5.811-2.312-8.35L189.778 34.6a16.966 16.966 0 0 0-6.301-6.113a17.626 17.626 0 0 0-8.608-2.238c-3.023 0-5.991.772-8.609 2.238a16.964 16.964 0 0 0-6.3 6.113l-16.342 27.473l-31.95-53.724a16.973 16.973 0 0 0-6.304-6.112A17.638 17.638 0 0 0 96.754 0c-3.022 0-5.992.772-8.61 2.237a16.973 16.973 0 0 0-6.303 6.112L2.31 141.975a16.302 16.302 0 0 0-2.31 8.35c0 2.932.793 5.813 2.304 8.352a16.964 16.964 0 0 0 6.302 6.115a17.628 17.628 0 0 0 8.61 2.237h59.737c23.669 0 41.123-10.084 53.134-29.758l29.159-48.983l15.618-26.215l46.874 78.742h-62.492l-15.628 26.214Zm-67.64-26.24l-41.688-.01L96.782 35.796l31.181 52.492l-20.877 35.084c-7.976 12.765-17.037 17.416-31.107 17.416Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">Nuxt</span>
-              </a>
-              <a
-                href="https://nextjs.org"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    aria-hidden="true"
-                    role="img"
-                    class="dark:[&#38;_defs_linearGradient:nth-child(1)_stop]:[stop-color:#000] dark:[&#38;_defs_linearGradient:nth-child(2)_stop]:[stop-color:#000] dark:[&#38;_g_circle]:fill-white"
-                    width="1em"
-                    height="1em"
-                    viewBox="0 0 256 256"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="iconifyReact6"
-                        x1="55.633%"
-                        x2="83.228%"
-                        y1="56.385%"
-                        y2="96.08%"
-                      >
-                        <stop offset="0%" stop-color="#FFF"></stop>
-                        <stop
-                          offset="100%"
-                          stop-color="#FFF"
-                          stop-opacity="0"
-                        ></stop>
-                      </linearGradient>
-                      <linearGradient
-                        id="iconifyReact7"
-                        x1="50%"
-                        x2="49.953%"
-                        y1="0%"
-                        y2="73.438%"
-                      >
-                        <stop offset="0%" stop-color="#FFF"></stop>
-                        <stop
-                          offset="100%"
-                          stop-color="#FFF"
-                          stop-opacity="0"
-                        ></stop>
-                      </linearGradient>
-                      <circle
-                        id="iconifyReact8"
-                        cx="128"
-                        cy="128"
-                        r="128"
-                      ></circle>
-                    </defs>
-                    <mask id="iconifyReact9" fill="#fff">
-                      <use href="#iconifyReact8"></use>
-                    </mask>
-                    <g mask="url(#iconifyReact9)">
-                      <circle cx="128" cy="128" r="128"></circle>
-                      <path
-                        fill="url(#iconifyReact6)"
-                        d="M212.634 224.028L98.335 76.8H76.8v102.357h17.228V98.68L199.11 234.446a128.433 128.433 0 0 0 13.524-10.418Z"
-                      ></path>
-                      <path
-                        fill="url(#iconifyReact7)"
-                        d="M163.556 76.8h17.067v102.4h-17.067z"
-                      ></path>
-                    </g>
-                  </svg>
-                </span>
-                <span class="leading-5">Next.js</span>
-              </a>
-              <a
-                href="https://www.typescriptlang.org"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 256 256"
-                  >
-                    <path
-                      fill="#3178C6"
-                      d="M20 0h216c11.046 0 20 8.954 20 20v216c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20V20C0 8.954 8.954 0 20 0Z"
-                    ></path>
-                    <path
-                      fill="#FFF"
-                      d="M150.518 200.475v27.62c4.492 2.302 9.805 4.028 15.938 5.179c6.133 1.151 12.597 1.726 19.393 1.726c6.622 0 12.914-.633 18.874-1.899c5.96-1.266 11.187-3.352 15.678-6.257c4.492-2.906 8.048-6.704 10.669-11.394c2.62-4.689 3.93-10.486 3.93-17.391c0-5.006-.749-9.394-2.246-13.163a30.748 30.748 0 0 0-6.479-10.055c-2.821-2.935-6.205-5.567-10.149-7.898c-3.945-2.33-8.394-4.531-13.347-6.602c-3.628-1.497-6.881-2.949-9.761-4.359c-2.879-1.41-5.327-2.848-7.342-4.316c-2.016-1.467-3.571-3.021-4.665-4.661c-1.094-1.64-1.641-3.495-1.641-5.567c0-1.899.489-3.61 1.468-5.135s2.362-2.834 4.147-3.927c1.785-1.094 3.973-1.942 6.565-2.547c2.591-.604 5.471-.906 8.638-.906c2.304 0 4.737.173 7.299.518c2.563.345 5.14.877 7.732 1.597a53.669 53.669 0 0 1 7.558 2.719a41.7 41.7 0 0 1 6.781 3.797v-25.807c-4.204-1.611-8.797-2.805-13.778-3.582c-4.981-.777-10.697-1.165-17.147-1.165c-6.565 0-12.784.705-18.658 2.115c-5.874 1.409-11.043 3.61-15.506 6.602c-4.463 2.993-7.99 6.805-10.582 11.437c-2.591 4.632-3.887 10.17-3.887 16.615c0 8.228 2.375 15.248 7.127 21.06c4.751 5.811 11.963 10.731 21.638 14.759a291.458 291.458 0 0 1 10.625 4.575c3.283 1.496 6.119 3.049 8.509 4.66c2.39 1.611 4.276 3.366 5.658 5.265c1.382 1.899 2.073 4.057 2.073 6.474a9.901 9.901 0 0 1-1.296 4.963c-.863 1.524-2.174 2.848-3.93 3.97c-1.756 1.122-3.945 1.999-6.565 2.632c-2.62.633-5.687.95-9.2.95c-5.989 0-11.92-1.05-17.794-3.151c-5.875-2.1-11.317-5.25-16.327-9.451Zm-46.036-68.733H140V109H41v22.742h35.345V233h28.137V131.742Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">TypeScript</span>
-              </a>
-              <a
-                href="https://stately.ai/docs/xstate"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="32"
-                    height="32"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      fill="currentColor"
-                      d="M15.891 0h6.023l-6.085 10.563A10.653 10.653 0 0 1 15.891 0m6.055 23.999L8.078.001H2.055l6.919 12.015L2.055 24h6.023L12 17.236L15.892 24z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">XState</span>
-              </a>
-            </div>
-          </div>
-          <div class="bg-bg-subtle border border-border py-2 px-3">
-            <h3 class="text-lg font-semibold text-text">UI/UX</h3>
-            <p class="mt-1 mb-4" style="text-align: justify;">
-              I specialize in UI/UX, crafting efficient and intuitive interfaces
-              that prioritize a seamless user experience, blending functionality
-              with aesthetic appeal.
-            </p>
-            <div class="flex flex-wrap mt-2 [&>*]:mr-1 [&>*]:mb-1">
-              <a
-                href="https://www.figma.com"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="21.34"
-                    height="32"
-                    viewBox="0 0 256 384"
-                  >
-                    <path
-                      fill="#0ACF83"
-                      d="M64 384c35.328 0 64-28.672 64-64v-64H64c-35.328 0-64 28.672-64 64s28.672 64 64 64Z"
-                    ></path>
-                    <path
-                      fill="#A259FF"
-                      d="M0 192c0-35.328 28.672-64 64-64h64v128H64c-35.328 0-64-28.672-64-64Z"
-                    ></path>
-                    <path
-                      fill="#F24E1E"
-                      d="M0 64C0 28.672 28.672 0 64 0h64v128H64C28.672 128 0 99.328 0 64Z"
-                    ></path>
-                    <path
-                      fill="#FF7262"
-                      d="M128 0h64c35.328 0 64 28.672 64 64s-28.672 64-64 64h-64V0Z"
-                    ></path>
-                    <path
-                      fill="#1ABCFE"
-                      d="M256 192c0 35.328-28.672 64-64 64s-64-28.672-64-64s28.672-64 64-64s64 28.672 64 64Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">Figma</span>
-              </a>
-              <a
-                href="https://tailwindcss.com"
-                target="_blank"
-                class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-              >
-                <span class="mr-1 h-4 w-4">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="1.67em"
-                    height="1em"
-                    viewBox="0 0 256 154"
-                  >
-                    <defs>
-                      <linearGradient
-                        id="logosTailwindcssIcon0"
-                        x1="-2.778%"
-                        x2="100%"
-                        y1="32%"
-                        y2="67.556%"
-                      >
-                        <stop offset="0%" stop-color="#2298BD"></stop>
-                        <stop offset="100%" stop-color="#0ED7B5"></stop>
-                      </linearGradient>
-                    </defs>
-                    <path
-                      fill="url(#logosTailwindcssIcon0)"
-                      d="M128 0C93.867 0 72.533 17.067 64 51.2C76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0ZM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8Z"
-                    ></path>
-                  </svg>
-                </span>
-                <span class="leading-5">Tailwind</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="more-projects" class="mx-auto px-4 max-w-xl">
-        <h2 class="text-text font-semibold text-lg">
-          <a href="/#more-projects" class="group flex items-center space-x-2">
-            <span> More projects </span>
-            <span class="group-hover:opacity-100 opacity-0 transition-opacity">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                class="w-5 h-5"
-              >
-                <path
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11"
-                ></path>
-              </svg> </span
-          ></a>
-        </h2>
-        <div class="grid grid-cols-1 mt-4 gap-10">
-          <div class="">
-            <div class="relative bg-bg border border-border aspect-video">
-              <img
-                src="https://florian-lefebvre.dev/_astro/ynotes.CqmGAt2b_1AXXzI.webp"
-                alt="yNotes running on mobile, tablet and desktop"
-                class="object-cover object-center"
-                width="576"
-                height="407"
-                loading="lazy"
-                decoding="async"
-              />
-              <div
-                class="absolute top-0 bg-bg-subtle px-2 py-1 text-sm flex items-center justify-between border-r border-b border-border"
-              >
-                <div>Oct 2023 - Mar 2024</div>
-              </div>
-              <div class="bg-bg-subtle p-2 border-t border-border">
-                <div class="flex items-center justify-between">
-                  <div class="text-text font-semibold">yNotes</div>
-                  <div
-                    class="flex items-center justify-center space-x-2 text-sm"
-                  >
-                  <a
-                      href="https://github.com/fatkhurrhn?tab=repositories"
-                      target="_blank"
-                      class="underline hover:text-text transition-colors"
-                    >
-                      Repository
-                    </a>
-                  </div>
-                </div>
-                <div class="text-text-subtle text-sm mt-0.5">
-                  Unofficial client for French schools apps
-                </div>
-                <div
-                  class="mt-3 [&_code]:bg-bg [&_code]:p-0.5 [&_code]:border [&_code]:border-border"
-                >
-                  <p style="text-align: justify;">
-                    I did a lot of things for this project: from the website
-                    with
-                    <a
-                      href="https://nuxt.com"
-                      target="_blank"
-                      class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-                    >
-                      <span class="mr-1 h-4 w-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="48.77"
-                          height="32"
-                          viewBox="0 0 256 168"
-                        >
-                          <path
-                            fill="#00DC82"
-                            d="M143.618 167.029h95.166c3.023 0 5.992-.771 8.61-2.237a16.963 16.963 0 0 0 6.302-6.115a16.324 16.324 0 0 0 2.304-8.352c0-2.932-.799-5.811-2.312-8.35L189.778 34.6a16.966 16.966 0 0 0-6.301-6.113a17.626 17.626 0 0 0-8.608-2.238c-3.023 0-5.991.772-8.609 2.238a16.964 16.964 0 0 0-6.3 6.113l-16.342 27.473l-31.95-53.724a16.973 16.973 0 0 0-6.304-6.112A17.638 17.638 0 0 0 96.754 0c-3.022 0-5.992.772-8.61 2.237a16.973 16.973 0 0 0-6.303 6.112L2.31 141.975a16.302 16.302 0 0 0-2.31 8.35c0 2.932.793 5.813 2.304 8.352a16.964 16.964 0 0 0 6.302 6.115a17.628 17.628 0 0 0 8.61 2.237h59.737c23.669 0 41.123-10.084 53.134-29.758l29.159-48.983l15.618-26.215l46.874 78.742h-62.492l-15.628 26.214Zm-67.64-26.24l-41.688-.01L96.782 35.796l31.181 52.492l-20.877 35.084c-7.976 12.765-17.037 17.416-31.107 17.416Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="leading-5">Nuxt</span>
-                    </a>
-                    and
-                    <a
-                      href="https://tailwindcss.com"
-                      target="_blank"
-                      class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-                    >
-                      <span class="mr-1 h-4 w-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="1.67em"
-                          height="1em"
-                          viewBox="0 0 256 154"
-                        >
-                          <defs>
-                            <linearGradient
-                              id="logosTailwindcssIcon0"
-                              x1="-2.778%"
-                              x2="100%"
-                              y1="32%"
-                              y2="67.556%"
-                            >
-                              <stop offset="0%" stop-color="#2298BD"></stop>
-                              <stop offset="100%" stop-color="#0ED7B5"></stop>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            fill="url(#logosTailwindcssIcon0)"
-                            d="M128 0C93.867 0 72.533 17.067 64 51.2C76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0ZM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="leading-5">Tailwind</span>
-                    </a>
-                    , via mobile app mockups with
-                    <a
-                      href="https://www.figma.com"
-                      target="_blank"
-                      class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-                    >
-                      <span class="mr-1 h-4 w-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="21.34"
-                          height="32"
-                          viewBox="0 0 256 384"
-                        >
-                          <path
-                            fill="#0ACF83"
-                            d="M64 384c35.328 0 64-28.672 64-64v-64H64c-35.328 0-64 28.672-64 64s28.672 64 64 64Z"
-                          ></path>
-                          <path
-                            fill="#A259FF"
-                            d="M0 192c0-35.328 28.672-64 64-64h64v128H64c-35.328 0-64-28.672-64-64Z"
-                          ></path>
-                          <path
-                            fill="#F24E1E"
-                            d="M0 64C0 28.672 28.672 0 64 0h64v128H64C28.672 128 0 99.328 0 64Z"
-                          ></path>
-                          <path
-                            fill="#FF7262"
-                            d="M128 0h64c35.328 0 64 28.672 64 64s-28.672 64-64 64h-64V0Z"
-                          ></path>
-                          <path
-                            fill="#1ABCFE"
-                            d="M256 192c0 35.328-28.672 64-64 64s-64-28.672-64-64s28.672-64 64-64s64 28.672 64 64Z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="leading-5">Figma</span>
-                    </a>
-                    , to maintainer with
-                    <a
-                      href="https://flutter.dev/"
-                      target="_blank"
-                      class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-                    >
-                      <span class="mr-1 h-4 w-4">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="25.85"
-                          height="32"
-                          viewBox="0 0 256 317"
-                        >
-                          <defs>
-                            <linearGradient
-                              id="logosFlutter0"
-                              x1="3.952%"
-                              x2="75.897%"
-                              y1="26.993%"
-                              y2="52.919%"
-                            >
-                              <stop offset="0%"></stop>
-                              <stop offset="100%" stop-opacity="0"></stop>
-                            </linearGradient>
-                          </defs>
-                          <path
-                            fill="#47C5FB"
-                            d="M157.666.001L.001 157.666l48.8 48.8L255.268.001zm-1.099 145.396l-84.418 84.418l48.984 49.716l48.71-48.71l85.425-85.424z"
-                          ></path>
-                          <path
-                            fill="#00569E"
-                            d="m121.133 279.531l37.082 37.082h97.052l-85.425-85.792z"
-                          ></path>
-                          <path
-                            fill="#00B5F8"
-                            d="m71.6 230.364l48.801-48.801l49.441 49.258l-48.709 48.71z"
-                          ></path>
-                          <path
-                            fill="url(#logosFlutter0)"
-                            fill-opacity=".8"
-                            d="m121.133 279.531l40.56-13.459l4.029-31.131z"
-                          ></path>
-                        </svg>
-                      </span>
-                      <span class="leading-5">Flutter</span>
-                    </a>
-                    !
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="contact" class="mx-auto px-4 max-w-xl py-16 pb-0">
-        <div class="flex items-center justify-between">
-          <h2 class="text-text font-semibold text-lg">
-            <a href="/#contact" class="group flex items-center space-x-2">
-              <span> Contact </span>
-              <span
-                class="group-hover:opacity-100 opacity-0 transition-opacity"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  class="w-5 h-5"
-                >
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="m9 15l6-6m-4-3l.463-.536a5 5 0 0 1 7.071 7.072L18 13m-5 5l-.397.534a5.068 5.068 0 0 1-7.127 0a4.972 4.972 0 0 1 0-7.071L6 11"
-                  ></path>
-                </svg> </span
-            ></a>
-          </h2>
-          <a
-            href="/#services"
-            class="bg-bg-subtle py-1.5 px-3 inline-flex items-center hover:bg-border transition-colors border border-border select-none"
-          >
-            <span class="relative flex h-3 w-3 mr-2">
-              <span
-                class="relative inline-flex rounded-full h-3 w-3 bg-red-500"
-              ></span>
-            </span>
-            <span>Full</span>
-          </a>
-        </div>
-        <p class="mt-4">
-          Feel free to reach out if you're looking for a developer, have a
-          question or just want to connect. I may be able to take new missions
-          depending on my availability (top-right indicator).
-        </p>
-        <a
-          href="mailto:contact@muhammadthursina123@gmail.com"
-          class="mt-4 block underline transition-colors hover:text-text"
-          >contact@xythur@gmail.com</a
-        >
-        <div class="mt-4">
-          <div class="flex space-x-2">
-            <!-- sosmed -->
-            <!-- Instagram -->
-            <a
-            href="https://instagram.com/story.thur"
-            target="_blank"
-            class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-          >
-            <span class="sr-only">Instagram</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path fill="currentColor" d="M13.0281 2.00073C14.1535 2.00259 14.7238 2.00855 15.2166 2.02322L15.4107 2.02956C15.6349 2.03753 15.8561 2.04753 16.1228 2.06003C17.1869 2.1092 17.9128 2.27753 18.5503 2.52503C19.2094 2.7792 19.7661 3.12253 20.3219 3.67837C20.8769 4.2342 21.2203 4.79253 21.4753 5.45003C21.7219 6.0867 21.8903 6.81337 21.9403 7.87753C21.9522 8.1442 21.9618 8.3654 21.9697 8.58964L21.976 8.78373C21.9906 9.27647 21.9973 9.84686 21.9994 10.9723L22.0002 11.7179C22.0003 11.809 22.0003 11.903 22.0003 12L22.0002 12.2821L21.9996 13.0278C21.9977 14.1532 21.9918 14.7236 21.9771 15.2163L21.9707 15.4104C21.9628 15.6347 21.9528 15.8559 21.9403 16.1225C21.8911 17.1867 21.7219 17.9125 21.4753 18.55C21.2211 19.2092 20.8769 19.7659 20.3219 20.3217C19.7661 20.8767 19.2069 21.22 18.5503 21.475C17.9128 21.7217 17.1869 21.89 16.1228 21.94C15.8561 21.9519 15.6349 21.9616 15.4107 21.9694L15.2166 21.9757C14.7238 21.9904 14.1535 21.997 13.0281 21.9992L12.2824 22C12.1913 22 12.0973 22 12.0003 22L11.7182 22L10.9725 21.9993C9.8471 21.9975 9.27672 21.9915 8.78397 21.9768L8.58989 21.9705C8.36564 21.9625 8.14444 21.9525 7.87778 21.94C6.81361 21.8909 6.08861 21.7217 5.45028 21.475C4.79194 21.2209 4.23444 20.8767 3.67861 20.3217C3.12278 19.7659 2.78028 19.2067 2.52528 18.55C2.27778 17.9125 2.11028 17.1867 2.06028 16.1225C2.0484 15.8559 2.03871 15.6347 2.03086 15.4104L2.02457 15.2163C2.00994 14.7236 2.00327 14.1532 2.00111 13.0278L2.00098 10.9723C2.00284 9.84686 2.00879 9.27647 2.02346 8.78373L2.02981 8.58964C2.03778 8.3654 2.04778 8.1442 2.06028 7.87753C2.10944 6.81253 2.27778 6.08753 2.52528 5.45003C2.77944 4.7917 3.12278 4.2342 3.67861 3.67837C4.23444 3.12253 4.79278 2.78003 5.45028 2.52503C6.08778 2.27753 6.81278 2.11003 7.87778 2.06003C8.14444 2.04816 8.36564 2.03847 8.58989 2.03062L8.78397 2.02433C9.27672 2.00969 9.8471 2.00302 10.9725 2.00086L13.0281 2.00073ZM12.0003 7.00003C9.23738 7.00003 7.00028 9.23956 7.00028 12C7.00028 14.7629 9.23981 17 12.0003 17C14.7632 17 17.0003 14.7605 17.0003 12C17.0003 9.23713 14.7607 7.00003 12.0003 7.00003ZM12.0003 9.00003C13.6572 9.00003 15.0003 10.3427 15.0003 12C15.0003 13.6569 13.6576 15 12.0003 15C10.3434 15 9.00028 13.6574 9.00028 12C9.00028 10.3431 10.3429 9.00003 12.0003 9.00003ZM17.2503 5.50003C16.561 5.50003 16.0003 6.05994 16.0003 6.74918C16.0003 7.43843 16.5602 7.9992 17.2503 7.9992C17.9395 7.9992 18.5003 7.4393 18.5003 6.74918C18.5003 6.05994 17.9386 5.49917 17.2503 5.50003Z"></path>
-            </svg>
-          </a>
-            <!-- Linkedin -->
-            <a
-            href="https://www.linkedin.com/in/fatkhurrhn"
-            target="_blank"
-            class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-          >
-            <span class="sr-only">LinkedIn</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
-              ></path>
-            </svg>
-          </a>
-            <!-- Github -->
-            <a
-            href="https://github.com/fatkhurrhn"
-            target="_blank"
-            class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-          >
-            <span class="sr-only">GitHub</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <path
-                fill="currentColor"
-                d="M12 .297c-6.63 0-12 5.373-12 12c0 5.303 3.438 9.8 8.205 11.385c.6.113.82-.258.82-.577c0-.285-.01-1.04-.015-2.04c-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729c1.205.084 1.838 1.236 1.838 1.236c1.07 1.835 2.809 1.305 3.495.998c.108-.776.417-1.305.76-1.605c-2.665-.3-5.466-1.332-5.466-5.93c0-1.31.465-2.38 1.235-3.22c-.135-.303-.54-1.523.105-3.176c0 0 1.005-.322 3.3 1.23c.96-.267 1.98-.399 3-.405c1.02.006 2.04.138 3 .405c2.28-1.552 3.285-1.23 3.285-1.23c.645 1.653.24 2.873.12 3.176c.765.84 1.23 1.91 1.23 3.22c0 4.61-2.805 5.625-5.475 5.92c.42.36.81 1.096.81 2.22c0 1.606-.015 2.896-.015 3.286c0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
-              ></path>
-            </svg>
-          </a>
-            <!-- Email -->
-            <a
-            href="mailto:contact@muhammadthursina123@gmail.com"
-            target="_blank"
-            class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-          >
-            <span class="sr-only">Email</span>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-              <g
-                fill="none"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-              >
-                <path d="M0 0h24v24H0z"></path>
-                <path
-                  fill="currentColor"
-                  d="M22 7.535V17a3 3 0 0 1-2.824 2.995L19 20H5a3 3 0 0 1-2.995-2.824L2 17V7.535l9.445 6.297l.116.066a1 1 0 0 0 .878 0l.116-.066L22 7.535z"
-                ></path>
-                <path
-                  fill="currentColor"
-                  d="M19 4c1.08 0 2.027.57 2.555 1.427L12 11.797l-9.555-6.37a2.999 2.999 0 0 1 2.354-1.42L5 4h14z"
-                ></path>
-              </g>
-            </svg>
-          </a>
-            <!-- Discord -->
-            <a
-            href="#"
-            target="_blank"
-            class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-          >
-            <span class="sr-only">Fathur Discord Server</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="currentColor"
-                d="M20.317 4.37a19.8 19.8 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.3 18.3 0 0 0-5.487 0a13 13 0 0 0-.617-1.25a.08.08 0 0 0-.079-.037A19.7 19.7 0 0 0 3.677 4.37a.1.1 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.08.08 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.08.08 0 0 0 .084-.028a14 14 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13 13 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10 10 0 0 0 .372-.292a.07.07 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.07.07 0 0 1 .078.01q.181.149.373.292a.077.077 0 0 1-.006.127a12.3 12.3 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.08.08 0 0 0 .084.028a19.8 19.8 0 0 0 6.002-3.03a.08.08 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.06.06 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418"
-              ></path>
-            </svg>
-          </a>
-            <!-- Whatsapp -->
-            <a
-              href="#"
-              target="_blank"
-              class="p-1.5 sm:p-2.5 rounded-full bg-bg-subtle border border-border social-link transition-colors hover:bg-border"
-            >
-              <span class="sr-only">Whatsapp</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
-                viewBox="0 0 24 24"
-              >
-                <path fill="currentColor" d="M12.001 2C17.5238 2 22.001 6.47715 22.001 12C22.001 17.5228 17.5238 22 12.001 22C10.1671 22 8.44851 21.5064 6.97086 20.6447L2.00516 22L3.35712 17.0315C2.49494 15.5536 2.00098 13.8345 2.00098 12C2.00098 6.47715 6.47813 2 12.001 2ZM8.59339 7.30019L8.39232 7.30833C8.26293 7.31742 8.13607 7.34902 8.02057 7.40811C7.93392 7.45244 7.85348 7.51651 7.72709 7.63586C7.60774 7.74855 7.53857 7.84697 7.46569 7.94186C7.09599 8.4232 6.89729 9.01405 6.90098 9.62098C6.90299 10.1116 7.03043 10.5884 7.23169 11.0336C7.63982 11.9364 8.31288 12.8908 9.20194 13.7759C9.4155 13.9885 9.62473 14.2034 9.85034 14.402C10.9538 15.3736 12.2688 16.0742 13.6907 16.4482C13.6907 16.4482 14.2507 16.5342 14.2589 16.5347C14.4444 16.5447 14.6296 16.5313 14.8153 16.5218C15.1066 16.5068 15.391 16.428 15.6484 16.2909C15.8139 16.2028 15.8922 16.159 16.0311 16.0714C16.0311 16.0714 16.0737 16.0426 16.1559 15.9814C16.2909 15.8808 16.3743 15.81 16.4866 15.6934C16.5694 15.6074 16.6406 15.5058 16.6956 15.3913C16.7738 15.2281 16.8525 14.9166 16.8838 14.6579C16.9077 14.4603 16.9005 14.3523 16.8979 14.2854C16.8936 14.1778 16.8047 14.0671 16.7073 14.0201L16.1258 13.7587C16.1258 13.7587 15.2563 13.3803 14.7245 13.1377C14.6691 13.1124 14.6085 13.1007 14.5476 13.097C14.4142 13.0888 14.2647 13.1236 14.1696 13.2238C14.1646 13.2218 14.0984 13.279 13.3749 14.1555C13.335 14.2032 13.2415 14.3069 13.0798 14.2972C13.0554 14.2955 13.0311 14.292 13.0074 14.2858C12.9419 14.2685 12.8781 14.2457 12.8157 14.2193C12.692 14.1668 12.6486 14.1469 12.5641 14.1105C11.9868 13.8583 11.457 13.5209 10.9887 13.108C10.8631 12.9974 10.7463 12.8783 10.6259 12.7616C10.2057 12.3543 9.86169 11.9211 9.60577 11.4938C9.5918 11.4705 9.57027 11.4368 9.54708 11.3991C9.50521 11.331 9.45903 11.25 9.44455 11.1944C9.40738 11.0473 9.50599 10.9291 9.50599 10.9291C9.50599 10.9291 9.74939 10.663 9.86248 10.5183C9.97128 10.379 10.0652 10.2428 10.125 10.1457C10.2428 9.95633 10.2801 9.76062 10.2182 9.60963C9.93764 8.92565 9.64818 8.24536 9.34986 7.56894C9.29098 7.43545 9.11585 7.33846 8.95659 7.32007C8.90265 7.31384 8.84875 7.30758 8.79459 7.30402C8.66053 7.29748 8.5262 7.29892 8.39232 7.30833L8.59339 7.30019Z"></path>
-              </svg>
-            </a>
-          </div>
-        </div>
-      </section>
-    </main>
-    <div
-      class="bg-gradient-to-t from-bg to-bg/0 sticky bottom-0 h-24 z-10 pointer-events-none"
-    ></div>
-    <footer
-      class="mt-auto mx-auto px-4 max-w-xl py-4 w-full border-t border-border text-sm"
-    >
-      <div
-        class="flex max-sm:flex-col items-start sm:items-center justify-between gap-4"
-      >
-        <span>&copy; <span id="footer-year"></span> - Fatkhurrhn</span>
-        <div>
-          Made with
-          <a
-            href="https://astro.build"
-            target="_blank"
-            class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-          >
-            <span class="mr-1 h-4 w-4">
-              <svg
-                width="85"
-                height="107"
-                viewBox="0 0 85 107"
-                fill="none"
-                class="text-black dark:text-white"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
-                  fill="currentColor"
-                ></path>
-                <path
-                  d="M27.5894 91.1365C22.7555 86.7178 21.3444 77.4335 23.3583 70.7072C26.8503 74.948 31.6888 76.2914 36.7005 77.0497C44.4375 78.2199 52.0359 77.7822 59.2232 74.2459C60.0454 73.841 60.8052 73.3027 61.7036 72.7574C62.378 74.714 62.5535 76.6892 62.318 78.6996C61.7452 83.5957 59.3086 87.3778 55.4332 90.2448C53.8835 91.3916 52.2437 92.4167 50.6432 93.4979C45.7262 96.8213 44.3959 100.718 46.2435 106.386C46.2874 106.525 46.3267 106.663 46.426 107C43.9155 105.876 42.0817 104.24 40.6845 102.089C39.2087 99.8193 38.5066 97.3081 38.4696 94.5909C38.4511 93.2686 38.4511 91.9345 38.2733 90.6309C37.8391 87.4527 36.3471 86.0297 33.5364 85.9478C30.6518 85.8636 28.37 87.6469 27.7649 90.4554C27.7187 90.6707 27.6517 90.8837 27.5847 91.1341L27.5894 91.1365Z"
-                  fill="url(#paint0_linear_1_59)"
-                ></path>
-                <path
-                  d="M0 69.5866C0 69.5866 14.3139 62.6137 28.6678 62.6137L39.4901 29.1204C39.8953 27.5007 41.0783 26.3999 42.4139 26.3999C43.7495 26.3999 44.9325 27.5007 45.3377 29.1204L56.1601 62.6137C73.1601 62.6137 84.8278 69.5866 84.8278 69.5866C84.8278 69.5866 60.5145 3.35233 60.467 3.21944C59.7692 1.2612 58.5911 0 57.0029 0H27.8274C26.2392 0 25.1087 1.2612 24.3634 3.21944C24.3108 3.34983 0 69.5866 0 69.5866Z"
-                  fill="currentColor"
-                ></path>
-                <defs>
-                  <linearGradient
-                    id="paint0_linear_1_59"
-                    x1="22.4702"
-                    y1="107"
-                    x2="69.1451"
-                    y2="84.9468"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stop-color="#D83333"></stop>
-                    <stop offset="1" stop-color="#F041FF"></stop>
-                  </linearGradient>
-                </defs>
-              </svg>
-            </span>
-            <span class="leading-5">Astro</span>
-          </a>
-          and
-          <a
-            href="https://tailwindcss.com"
-            target="_blank"
-            class="bg-bg border align-middle border-border px-1.5 py-0.5 select-none inline-flex items-center tech-pill hover:underline hover:text-text transition-colors underline-offset-2"
-          >
-            <span class="mr-1 h-4 w-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="1.67em"
-                height="1em"
-                viewBox="0 0 256 154"
-              >
-                <defs>
-                  <linearGradient
-                    id="logosTailwindcssIcon0"
-                    x1="-2.778%"
-                    x2="100%"
-                    y1="32%"
-                    y2="67.556%"
-                  >
-                    <stop offset="0%" stop-color="#2298BD"></stop>
-                    <stop offset="100%" stop-color="#0ED7B5"></stop>
-                  </linearGradient>
-                </defs>
-                <path
-                  fill="url(#logosTailwindcssIcon0)"
-                  d="M128 0C93.867 0 72.533 17.067 64 51.2C76.8 34.133 91.733 27.733 108.8 32c9.737 2.434 16.697 9.499 24.401 17.318C145.751 62.057 160.275 76.8 192 76.8c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C174.249 14.743 159.725 0 128 0ZM64 76.8C29.867 76.8 8.533 93.867 0 128c12.8-17.067 27.733-23.467 44.8-19.2c9.737 2.434 16.697 9.499 24.401 17.318C81.751 138.857 96.275 153.6 128 153.6c34.133 0 55.467-17.067 64-51.2c-12.8 17.067-27.733 23.467-44.8 19.2c-9.737-2.434-16.697-9.499-24.401-17.318C110.249 91.543 95.725 76.8 64 76.8Z"
-                ></path>
-              </svg>
-            </span>
-            <span class="leading-5">Tailwind</span>
-          </a>
-        </div>
-      </div>
-      <script>
-        const handleDate = () => {
-          document.getElementById("footer-year").innerText =
-            new Date().getFullYear();
-        };
 
-        handleDate();
-        document.addEventListener("astro:after-swap", () => handleDate());
-      </script>
-    </footer>
-    <script>
-      const handleProgress = () => {
-        // get elements
-        const body = document.querySelector("body");
-        const progressBar = document.getElementById("page-progress");
-
-        // this function increase or decrease the percentage of the element to stretch
-        function stretch() {
-          const pixelScrolled = window.scrollY;
-          const viewportHeight = window.innerHeight;
-          const totalHeightScrollable = body.scrollHeight;
-
-          /**
-           *
-           * @param {number} min
-           * @param {number} n
-           * @param {number} max
-           */
-          const clamp = (min, n, max) => Math.min(max, Math.max(min, n));
-
-          // convert pixels to percentage
-          const pixelsToPercentage = clamp(
-            0,
-            (pixelScrolled / (totalHeightScrollable - viewportHeight)) * 100,
-            100
-          );
-
-          // set the width of the fluid element.
-          progressBar.style.width = Math.round(pixelsToPercentage) + "%";
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* Make sure popup is on top */
+            width: 300px;
         }
 
-        // append a scroll event listener to the window object
-        window.addEventListener("scroll", stretch);
-      };
+        .popup-content {
+            text-align: center;
+        }
 
-      handleProgress();
-      document.addEventListener("astro:after-swap", () => handleProgress());
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Style for the background overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with 80% opacity */
+            z-index: 999;
+            /* Ensure it's behind the popup */
+        }
+    </style>
+
+</head>
+
+<body class="inter-body learning-color">
+    <main class="position-relative">
+        <!-- header start -->
+        <header class="main-header learning-header">
+            <div class="custom-container">
+                <div class="top-header">
+                    <div class="header-left">
+                        <a class="text-white" data-bs-toggle="offcanvas" role="button">
+                            <i class="ri-menu-2-fill"></i>
+                        </a>
+                        <h2 style="color: white;">FaCodes 👨🏻‍💻</h2>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="notification-box">
+                            <a class="text-white" href="https://github.com/fatkhurrhn" target="_blank">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-bottom">
+                    <div class="customer-name">
+                        <h2>Hello Guys </h2>
+                        <img src="assets/img/hand.png" alt="">
+                    </div>
+                    <h5>welcome to my little website hhe</h5>
+                </div>
+
+                <div class="search-box index-search">
+                    <div class="position-relative">
+                        <input type="search" class="form-control" placeholder="Search">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- Mobile Section Start -->
+        <div class="mobile-style-1">
+            <ul>
+                <li class="active">
+                    <a href="index.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-home-5-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Home</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/islamic.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-moon-clear-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Islamic</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/templates.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-news-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Templates</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/code.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-code-s-slash-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Repo</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/hack.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-chat-voice-ai-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Hack</h5>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Mobile Section End -->
+
+        <!-- Category Section Start -->
+        <div class="category-section section-t-space">
+            <div class="title px-15">
+                <h4>Category AI</h4>
+            </div>
+
+            <ul class="category-box overflow-auto px-15">
+                <li>
+                    <ul class="category-list">
+                        <li class="active">
+                            <a href="assets/category-ai/education.html">Education</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/marketing.html">Marketing</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/codeit.html">code & IT</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/detector.html">Ai Detactor</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/text.html">Text & Writing</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Category Section End -->
+
+        <section class="section-t-space continue-reading-section">
+            <div class="">
+                <div class="title px-15">
+                    <h4>Latest Repos History</h4>
+                </div>
+
+                <div class="swiper slider-1 px-15 reading-slider">
+                    <div id="repos" class="swiper-wrapper" style="gap: 2px;">
+                        <!-- Repositori akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Templates Start -->
+        <section class="section-t-space feature-course-section popular-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Popular Templates</h4>
+                </div>
+                <ul class="feature-course-list">
+                    <li>
+                        <div class="feature-box">
+                            <div class="feature-image">
+                                <div class="image-container">
+                                    <img src="https://themewagon.com/wp-content/uploads/2021/11/patrix-1.png"
+                                        class="img-fluid" alt="">
+                                    <a href="assets/category-templates/portfolio.html">
+                                        <div class="category-text">portfolio</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="feature-detail">
+                                <a href="assets/detail-templates/partix.html">
+                                    <h6>Patrix – <font style="color: #939fa4;">Free Responsive Bootstrap 5 Landing Page
+                                            Template</font>
+                                    </h6>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="feature-image">
+                                <div class="image-container">
+                                    <img src="https://pustakakoding.com/images/template/pustakakoding-template-website-company-profile-digital-creative.jpg"
+                                        class="img-fluid" alt="">
+                                    <a href="assets/category-templates/portfolio.html">
+                                        <div class="category-text">company-profile</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="feature-detail">
+                                <a href="assets/detail-templates/digital.html">
+                                    <h6>Digital Creative – <font style="color: #939fa4;">Digital company profile website
+                                            template with a modern and professional appearance.</font>
+                                    </h6>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Templates End -->
+
+        <!-- Poster Section Start -->
+        <section class="section-t-space poster-section">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="poster-box">
+                            <img src="assets/img/b1.png" class="img-fluid w-100" alt="">
+                            <div class="poster-detail p-center">
+                                <div>
+                                    <h3 class="text-white">Come on guys, follow my social media, hhe</h3>
+                                    <a href=""></a>
+                                    <!-- <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-white">Follow Me</button> -->
+                                    <button id="openModalBtn" class="btn btn-sm btn-white">Follow Me</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Poster Section End -->
+
+        <!-- Modal Sosmed -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Follow My Sosial Media :v</h2><br>
+                <form class="form-style-1">
+                    <a href="https://www.instagram.com/story.thur/" class="btn btn-gradient mb-4">Instagram</a>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="btn btn-gradient mb-4">Linkedin</a>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="btn btn-gradient mb-4">Tiktok</a>
+                    <a href="https://www.fatkhurrhn.my.id/" class="btn btn-gradient mb-4">Blog Web</a>
+                    <a href="https://github.com/fatkhurrhn" class="btn btn-gradient mb-4">Github</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Popular Course Start -->
+        <section class="section-t-space popular-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Popular Repository</h4>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/nextjs.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">
+                                    <h5>Belajar Membuat Portfolio Menggunakan Next.js <h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>on progress</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Oct 2024</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/portfolio-next.js"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/shopthur.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">
+                                    <h5>Belajar Membuat Project Ecommerce ShopThur dengan PHP Native<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">May 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/Project_ShopThur"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/ecarrental.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank">
+                                    <h5>Membuat Project UAS 2023 E-CarRental V2 dengan Javascript<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Jan 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/E-CarRental-v2"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- Popular Course End -->
+
+        <!-- space box start -->
+        <div class="learning-box"></div>
+        <!-- space box end -->
+
+        <!-- Theme Option Setting Box Start -->
+        <div class="theme-setting-box">
+            <div class="theme-box">
+                <button class="theme-icon text-white">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <ul class="theme-option">
+                    <li>
+                        <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                            <i class="ri-tiktok-fill"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                            <i class="ri-linkedin-line"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Theme Option Setting Box End -->
+
+        <!-- popup -->
+        <!-- <div class="popup">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <div class="popup-content">
+                <h2>Masyaallah, Ahlan!</h2>
+                <p>btw kamu sudah baca quran hari ini?</p>
+                <form class="form-style-1">
+                    <a href="assets/islamic/quran/index.html" class="btn btn-gradient mb-4">Yuk baca quran</a>
+                </form>
+            </div>
+        </div>
+        <div class="popup-overlay"></div> -->
+
+    </main>
+
+    <script>
+        function openPopup() {
+            document.querySelector(".popup").style.display = "block";
+            document.querySelector(".popup-overlay").style.display = "block";
+        }
+
+        function closePopup() {
+            document.querySelector(".popup").style.display = "none";
+            document.querySelector(".popup-overlay").style.display = "none";
+        }
+
+        window.onload = openPopup;
     </script>
-  </body>
+
+    <!-- Bootstrap js-->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- swiper js -->
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/custom_swiper.js"></script>
+    <!-- Theme js-->
+    <script src="assets/js/script.js"></script>
+    <!-- Theme Settings js-->
+    <script src="xtheme-setting.js"></script>
+
+    <script>
+        // Get elements
+        const modal = document.getElementById("modal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.querySelector(".close-btn");
+
+        // Open modal when button is clicked
+        openModalBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Close modal when the close button is clicked
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside of modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+
+            const repoContainer = document.getElementById(
+                'repo-container'); // Pilih kontainer untuk menampilkan repositori
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide'; // Sesuaikan dengan class yang digunakan pada HTML
+
+                // Template yang disesuaikan untuk hanya menampilkan nama dan URL repositori
+                repoElement.innerHTML = `
+                <a href="${repo.html_url}" target="_blank" class="reading-list">
+                    <div class="reading-box">
+                        <div class="reading-detail">
+                            <div class="reading-name">
+                                <h5>${repo.name}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+
+                repoContainer.appendChild(repoElement);
+            });
+        }
+
+        // Mengambil repositori dari GitHub
+        fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
+            .then(response => response.json())
+            .then(data => displayRepositories(data))
+            .catch(error => console.error('Error fetching repositories:', error));
+    </script>
+
+    <script>
+        const username = 'fatkhurrhn';
+        const repoContainer = document.getElementById('repos');
+
+        // Fungsi untuk mengambil semua halaman repository
+        async function fetchAllRepositories() {
+            let page = 1;
+            let repos = [];
+            let fetchMore = true;
+
+            while (fetchMore) {
+                try {
+                    const response = await fetch(
+                        `https://api.github.com/users/${username}/repos?page=${page}&per_page=100&sort=updated`);
+                    const data = await response.json();
+
+                    // Jika data kosong, maka semua repositori sudah diambil
+                    if (data.length === 0) {
+                        fetchMore = false;
+                    } else {
+                        repos = repos.concat(data);
+                        page++;
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    fetchMore = false;
+                }
+            }
+
+            return repos;
+        }
+
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide';
+
+                repoElement.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" class="reading-list">
+                <div class="reading-box">
+                    <div class="reading-detail">
+                        <div class="reading-image">
+                            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="reading-name">
+                            <h5>${repo.name} - <font style="color: #939fa4;">${repo.description || 'No description'}</font></h5>
+                        </div>
+                    </div>
+                    <div class="reading-view">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                        <h6 class="theme-color">Updated at: ${new Date(repo.updated_at).toLocaleString()}</h6>
+                    </div>
+                </div>
+            </a>
+        `;
+
+                repoContainer.appendChild(repoElement);
+            });
+        }
+
+        // Fungsi utama untuk mengambil dan menampilkan repositori
+        async function loadRepositories() {
+            const repos = await fetchAllRepositories();
+            displayRepositories(repos);
+        }
+
+        // Memanggil loadRepositories() secara berkala untuk update real-time
+        loadRepositories();
+        setInterval(loadRepositories, 60000); // Update setiap 60 detik
+    </script>
+</body>
+
 </html>
