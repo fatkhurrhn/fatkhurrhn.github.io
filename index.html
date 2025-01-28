@@ -509,7 +509,6 @@
             </div>
         </div>
         <!-- Theme Option Setting Box End -->
-
         <!-- popup -->
         <!-- <div class="popup">
             <span class="close-button" onclick="closePopup()">&times;</span>
@@ -522,31 +521,23 @@
             </div>
         </div>
         <div class="popup-overlay"></div> -->
-
     </main>
-
     <script>
         function openPopup() {
             document.querySelector(".popup").style.display = "block";
             document.querySelector(".popup-overlay").style.display = "block";
         }
-
         function closePopup() {
             document.querySelector(".popup").style.display = "none";
             document.querySelector(".popup-overlay").style.display = "none";
         }
-
         window.onload = openPopup;
     </script>
 
-    <!-- Bootstrap js-->
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <!-- swiper js -->
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/custom_swiper.js"></script>
-    <!-- Theme js-->
     <script src="assets/js/script.js"></script>
-    <!-- Theme Settings js-->
     <script src="xtheme-setting.js"></script>
 
     <script>
@@ -601,11 +592,9 @@
                     </div>
                 </a>
             `;
-
                 repoContainer.appendChild(repoElement);
             });
         }
-
         // Mengambil repositori dari GitHub
         fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
             .then(response => response.json())
@@ -616,13 +605,11 @@
     <script>
         const username = 'fatkhurrhn';
         const repoContainer = document.getElementById('repos');
-
         // Fungsi untuk mengambil semua halaman repository
         async function fetchAllRepositories() {
             let page = 1;
             let repos = [];
             let fetchMore = true;
-
             while (fetchMore) {
                 try {
                     const response = await fetch(
@@ -641,10 +628,8 @@
                     fetchMore = false;
                 }
             }
-
             return repos;
         }
-
         // Fungsi untuk menampilkan repositori di HTML
         function displayRepositories(repos) {
             // Sortir repositori berdasarkan waktu pembaruan terbaru
@@ -652,7 +637,6 @@
 
             // Ambil hanya 2 repositori terbaru
             repos = repos.slice(0, 2);
-
             repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
             repos.forEach(repo => {
                 const repoElement = document.createElement('div');
@@ -678,21 +662,17 @@
                 </div>
             </a>
         `;
-
                 repoContainer.appendChild(repoElement);
             });
         }
-
         // Fungsi utama untuk mengambil dan menampilkan repositori
         async function loadRepositories() {
             const repos = await fetchAllRepositories();
             displayRepositories(repos);
         }
-
         // Memanggil loadRepositories() secara berkala untuk update real-time
         loadRepositories();
         setInterval(loadRepositories, 60000); // Update setiap 60 detik
     </script>
 </body>
-
 </html>

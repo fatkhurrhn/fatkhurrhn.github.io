@@ -157,7 +157,7 @@
             </li>
 
             <li class="">
-                <a href="index.html" class="mobile-box">
+                <a href="../quran/" class="mobile-box">
                     <div class="mobile-icon">
                         <i class="ri-book-2-line"></i>
                     </div>
@@ -217,9 +217,7 @@
         <div class=" text-date">
             <div id="realtime-date-time"></div>
         </div>
-        
         <div class="card mt-2">
-            
             <ul class="list-group table">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     Imsak
@@ -262,18 +260,18 @@
             </button>
             <ul class="theme-option">
                 <li>
-                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                    <a href="https://www.tiktok.com/@fatkhurrhnn" class="button theme-setting-button" id="rtl-btn">
                         <i class="ri-tiktok-fill"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                    <a href="https://www.instagram.com/fatkhurrhn" class="theme-setting-button">
                         <i class="ri-instagram-line"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
-                        <i class="ri-linkedin-line"></i>
+                    <a href="https://www.youtube.com/@fatkhurrhnn" class="theme-setting-button">
+                        <i class="ri-youtube-line"></i>
                     </a>
                 </li>
             </ul>
@@ -283,27 +281,29 @@
 
     <script>
         function updateDateTime() {
-        const now = new Date();
-        const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
-        const day = days[now.getDay()];
-        const date = now.getDate();
-        const month = now.getMonth() + 1; // Bulan dimulai dari 0
-        const year = now.getFullYear();
-        const hours = now.getHours().toString().padStart(2, '0');
-        const minutes = now.getMinutes().toString().padStart(2, '0');
-        const seconds = now.getSeconds().toString().padStart(2, '0');
-
-        const dateTimeString = `${day}, ${date}/${month}/${year} | ${hours}:${minutes}:${seconds}`;
-
-        document.getElementById("realtime-date-time").textContent = dateTimeString;
+            const now = new Date();
+            const days = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+            const months = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+            const day = days[now.getDay()];
+            const date = now.getDate();
+            const month = months[now.getMonth()]; // Nama bulan dari array
+            const year = now.getFullYear();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+    
+            const dateTimeString = `${day}, ${date} ${month} ${year} | ${hours}:${minutes}:${seconds}`;
+    
+            document.getElementById("realtime-date-time").textContent = dateTimeString;
         }
-
+    
         // Panggil fungsi updateDateTime setiap detik
         setInterval(updateDateTime, 1000);
-
+    
         // Panggil fungsi updateDateTime saat halaman dimuat
         updateDateTime();
     </script>
+    
 
      <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
