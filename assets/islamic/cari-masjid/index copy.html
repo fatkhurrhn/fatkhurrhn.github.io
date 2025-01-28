@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Masjid</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="search-section">
+        <h2>Cari Masjid Terdekat</h2>
+        <div class="search-form">
+            <label for="province">Provinsi</label>
+            <select id="province">
+                <option value="">Pilih Provinsi</option>
+                <option value="Aceh">Aceh</option>
+                <option value="SUMUT">Sumatera Utara</option>
+                <option value="SUMBAR">Sumatera Barat</option>
+                <option value="JAWA_BARAT">Jawa Barat</option>
+            </select>
+    
+            <label for="city">Kabupaten/Kota</label>
+            <select id="city">
+                <option value="">Pilih Kabupaten/Kota</option>
+            </select>
+    
+            <label for="district">Kecamatan</label>
+            <select id="district">
+                <option value="">Pilih Kecamatan</option>
+            </select>
+        </div>
+    </div>
+    
+    <div id="mosque-results" class="mosque-results">
+        <h2>Hasil Pencarian Masjid</h2>
+        <div id="mosque-list" class="mosque-list">
+            <!-- Hasil pencarian masjid akan ditampilkan di sini -->
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

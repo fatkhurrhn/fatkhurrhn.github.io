@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>FaCodes👨🏻‍💻</title>
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="img/favicon2.png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="../../css/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        #noResult {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 40%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+
+        #noResulttext {
+            width: 285px;
+            color: #164150;
+            text-align: center;
+            /* Rata tengah teks */
+            margin-top: 20px;
+            /* Ruang di atas */
+            font-size: 20px;
+            /* Ukuran font */
+            position: fixed;
+            /* Posisi tetap */
+            top: 60%;
+            /* Setengah dari tinggi viewport */
+            left: 50%;
+            /* Setengah dari lebar viewport */
+            transform: translate(-50%, -50%);
+            /* Pindahkan kembali setengah dari lebar dan tinggi elemen itu sendiri */
+        }
+    </style>
+</head>
+
+<body class="inter-body learning-color">
+    <!-- header start -->
+   <header class="main-header learning-header h-102">
+    <div class="custom-container">
+        <div class="top-header">
+            <div class="header-left">
+                <a class="text-white" href="../../islamic.html">
+                    <i class="ri-arrow-left-line"></i>
+                </a>
+            </div>
+
+            <div class="header-right">
+                <div class="notification-box">
+                    <a class="text-white" href="https://github.com/fatkhurrhn">
+                        <i class="ri-github-fill"></i>
+                    </a>
+                </div>
+            </div>
+        </div> 
+
+        <div class="header-bottom header-bottom-2">
+            <h2 class="fw-500 text-white">Search Mosque by FaCodes👨🏻‍💻</h2>
+        </div>
+    </div>
+</header>
+<!-- header end -->
+
+    <!-- Mobile Section Start -->
+    <div class="mobile-style-1">
+        <ul>
+            <li class="">
+                <a href="../../../index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-home-5-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Home</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="../../islamic.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-moon-clear-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Islamic</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../quran/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-book-2-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Quran</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li>
+                <a href="../dzikir/" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-donut-chart-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Dzikir</h5>
+                    </div>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="index.html" class="mobile-box">
+                    <div class="mobile-icon">
+                        <i class="ri-community-line"></i>
+                    </div>
+                    <div class="mobile-name">
+                        <h5>Mosque</h5>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- Mobile Section End -->
+
+    <section>
+        <style>
+            .search-section {
+    padding: 20px;
+}
+
+.search-form {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;  /* Membuat elemen responsif pada layar kecil */
+}
+
+.search-input {
+    flex: 1 1 30%;  /* Membuat setiap input bisa memakan 30% dari lebar */
+    min-width: 200px;  /* Menentukan lebar minimum tiap input */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+/* Responsif: ketika layar lebih kecil dari 768px */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;  /* Mengubah menjadi vertikal */
+        align-items: stretch;  /* Memastikan lebar 100% pada input */
+    }
+
+    .search-input {
+        flex: 1 1 100%;  /* Setiap input mengisi lebar penuh */
+        margin-bottom: 10px;  /* Menambahkan jarak antar elemen */
+    }
+}
+
+        </style>
+        <div class="search-section">
+            <div class="search-form">
+                <div class="search-input">
+                    <label for="province">Provinsi</label>
+                    <select id="province">
+                        <option value="">Pilih Provinsi</option>
+                        <option value="Aceh">Aceh</option>
+                        <option value="SUMUT">Sumatera Utara</option>
+                        <option value="SUMBAR">Sumatera Barat</option>
+                        <option value="JAWA_BARAT">Jawa Barat</option>
+                        <!-- Tambahkan pilihan provinsi lainnya -->
+                    </select>
+                </div>
+        
+                <div class="search-input">
+                    <label for="city">Kabupaten/Kota</label>
+                    <select id="city">
+                        <option value="">Pilih Kabupaten/Kota</option>
+                    </select>
+                </div>
+        
+                <div class="search-input">
+                    <label for="district">Kecamatan</label>
+                    <select id="district">
+                        <option value="">Pilih Kecamatan</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div id="mosque-results" class="mosque-results">
+            <h2>Hasil Pencarian Masjid</h2>
+            <br>
+            <div id="mosque-list" class="mosque-list">
+                <!-- Hasil pencarian masjid akan ditampilkan di sini -->
+            </div>
+        </div>
+    </section>
+    <br><br><br><br><br>
+
+    <section class="section-t-space feature-course-section">
+        <div class="custom-container">
+            <ul class="feature-course-list">
+                <li>
+                    <div class="feature-box">
+                        <a href="#" class="feature-image">
+                            <img src="https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" class="img-fluid" alt="">
+                        </a>
+                        <div class="feature-detail">
+                            <a href="#">
+                                <h3>nama masjid</h3>
+                            </a>
+                            <ul class="rate-course">
+                                <li>kecamatan</li>
+                                <li class="fw-500">maps</li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <br><br><br><br><br>
+    <!-- Theme Option Setting Box Start -->
+    <div class="theme-setting-box">
+        <div class="theme-box">
+            <button class="theme-icon text-white">
+                <i class="ri-menu-line"></i>
+            </button>
+            <ul class="theme-option">
+                <li>
+                    <a href="https://www.tiktok.com/@fathur.tech" class="button theme-setting-button" id="rtl-btn">
+                        <i class="ri-tiktok-fill"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/story.thur" class="theme-setting-button">
+                        <i class="ri-instagram-line"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="theme-setting-button">
+                        <i class="ri-linkedin-line"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- Theme Option Setting Box End -->
+
+    <!-- Bootstrap js-->
+    <script src="../ ../js/bootstrap.bundle.min.js"></script>
+
+    <!-- swiper js -->
+    <script src="../../js/swiper-bundle.min.js"></script>
+    <script src="../js/custom_swiper.js"></script>
+
+    <!-- Theme js-->
+    <script src="../../js/script.js"></script>
+    <script src="script.js"></script>
+
+
+    <script>
+        function searchFunction() {
+            // Ambil input pencarian
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const ul = document.getElementById("title");
+            const li = ul.getElementsByTagName("li");
+            const noResult = document.getElementById("noResult"); // Pesan "tidak ada hasil"
+
+            let found = false; // Penanda jika ada hasil yang sesuai
+
+            // Loop melalui semua item, dan sembunyikan yang tidak sesuai dengan pencarian
+            for (let i = 0; i < li.length; i++) {
+                const item = li[i].textContent || li[i].innerText;
+                if (item.toLowerCase().includes(filter)) {
+                    li[i].style.display = "";
+                    found = true; // Ada hasil yang sesuai
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+
+            // Tampilkan pesan jika tidak ada hasil
+            if (!found) {
+                noResult.style.display = "block";
+            } else {
+                noResult.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

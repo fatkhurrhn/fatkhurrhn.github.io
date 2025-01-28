@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Masjid</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.search-section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-form select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.mosque-results {
+    margin: 20px;
+}
+
+.mosque-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.mosque-card {
+    width: 48%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.mosque-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.mosque-card .card-body {
+    padding: 20px;
+}
+
+.mosque-card .card-body h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.mosque-card .card-body p {
+    font-size: 14px;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.mosque-card:hover {
+    transform: translateY(-5px);
+}
+
+    </style>
+</head>
+<body>
+    <div class="search-section">
+        <h2>Cari Masjid Terdekat</h2>
+        <div class="search-form">
+            <label for="province">Provinsi</label>
+            <select id="province">
+                <option value="">Pilih Provinsi</option>
+                <option value="Aceh">Aceh</option>
+                <option value="SUMUT">Sumatera Utara</option>
+                <option value="SUMBAR">Sumatera Barat</option>
+                <!-- Tambahkan pilihan provinsi lainnya -->
+            </select>
+    
+            <label for="city">Kabupaten/Kota</label>
+            <select id="city">
+                <option value="">Pilih Kabupaten/Kota</option>
+                <!-- Opsi kabupaten/kota akan ditampilkan dinamis setelah provinsi dipilih -->
+            </select>
+        </div>
+    </div>
+    
+    <div id="mosque-results" class="mosque-results">
+        <h2>Hasil Pencarian Masjid</h2>
+        <div id="mosque-list" class="mosque-list">
+            <!-- Hasil pencarian masjid akan ditampilkan di sini -->
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+    <script>
+        const provinces = {
+    "Aceh": [
+        "Kabupaten Aceh Barat",
+        "Kabupaten Aceh Barat Daya",
+        "Kabupaten Aceh Besar"
+    ],
+    "SUMUT": [
+        "Kabupaten Asahan",
+        "Kabupaten Batubara",
+        "Kabupaten Dairi",
+        "Kabupaten Deli Serdang"
+    ],
+    "SUMBAR": [
+        "Kabupaten Agam",
+        "Kabupaten Dharmasraya",
+        "Kabupaten Kepulauan Mentawai",
+        "Kabupaten Lima Puluh Kota",
+        "Kabupaten Padang Pariaman"
+    ]
+};
+
+const mosques = {
+    "Aceh": {
+        "Kabupaten Aceh Barat": [
+            { name: "Masjid Baitul A'la", address: "Jl. Raya Aceh Barat", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Aceh+Barat" },
+            { name: "Masjid Al-Mustafa", address: "Jl. Al-Mustafa Aceh Barat", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Masjid+Al-Mustafa+Aceh+Barat" }
+        ],
+        "Kabupaten Aceh Barat Daya": [
+            { name: "Masjid Al-Hidayah", address: "Jl. Raya Aceh Barat Daya", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Masjid+Al-Hidayah+Aceh+Barat+Daya" },
+            { name: "Masjid Al-Firdaus", address: "Jl. Al-Firdaus Aceh Barat Daya", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Masjid+Al-Firdaus+Aceh+Barat+Daya" }
+        ],
+        "Kabupaten Aceh Besar": [
+            { name: "Masjid Baiturrahman", address: "Jl. Raya Aceh Besar", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Masjid+Baiturrahman+Aceh+Besar" },
+            { name: "Masjid Nurul Iman", address: "Jl. Nurul Iman Aceh Besar", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg", mapLink: "https://www.google.com/maps?q=Masjid+Nurul+Iman+Aceh+Besar" }
+        ]
+    },
+    "SUMUT": {
+        "Kabupaten Asahan": [
+            { name: "Masjid Al-Muhajirin", address: "Jl. Raya Asahan", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Al-Baitul Aman", address: "Jl. Al-Baitul Asahan", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Batubara": [
+            { name: "Masjid Al-Muhajir", address: "Jl. Raya Batubara", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Sabilul Huda", address: "Jl. Sabilul Batubara", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Dairi": [
+            { name: "Masjid Al-Falah", address: "Jl. Raya Dairi", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Miftahul Jannah", address: "Jl. Miftahul Dairi", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Deli Serdang": [
+            { name: "Masjid Al-Amin", address: "Jl. Raya Deli Serdang", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Al-Furqan", address: "Jl. Al-Furqan Deli Serdang", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ]
+    },
+    "SUMBAR": {
+        "Kabupaten Agam": [
+            { name: "Masjid Raya Agam", address: "Jl. Raya Agam", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Al-Kamil", address: "Jl. Al-Kamil Agam", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Dharmasraya": [
+            { name: "Masjid Al-Ikhlas", address: "Jl. Raya Dharmasraya", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Siti Khadijah", address: "Jl. Siti Dharmasraya", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Kepulauan Mentawai": [
+            { name: "Masjid Al-Mumtaz", address: "Jl. Raya Mentawai", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Rahmatan Lil-Alamin", address: "Jl. Rahmatan Mentawai", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ],
+        "Kabupaten Lima Puluh Kota": [
+            { name: "Masjid Al-Fattah", address: "Jl. Raya Lima Puluh", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" },
+            { name: "Masjid Darussalam", address: "Jl. Darussalam Lima Puluh", image: "https://radarlampung.disway.id/upload/84c539eb6f736b3badbbd3a7c6bfaa24.jpg" }
+        ]
+    }
+};
+
+document.getElementById("province").addEventListener("change", function() {
+    const province = this.value;
+    const citySelect = document.getElementById("city");
+    citySelect.innerHTML = '<option value="">Pilih Kabupaten/Kota</option>'; // Reset city dropdown
+
+    if (province && mosques[province]) {
+        const cities = Object.keys(mosques[province]);
+        cities.forEach(city => {
+            const option = document.createElement("option");
+            option.value = city;
+            option.textContent = city;
+            citySelect.appendChild(option);
+        });
+    }
+});
+
+document.getElementById("city").addEventListener("change", function() {
+    const province = document.getElementById("province").value;
+    const city = this.value;
+    const mosqueList = document.getElementById("mosque-list");
+
+    // Clear previous mosque list
+    mosqueList.innerHTML = '';
+
+    if (province && city && mosques[province] && mosques[province][city]) {
+        mosques[province][city].forEach(mosque => {
+            const mosqueCard = document.createElement("div");
+            mosqueCard.classList.add("mosque-card");
+            mosqueCard.innerHTML = `
+                <img src="${mosque.image}" alt="Masjid Image">
+                <div class="card-body">
+                    <h3>${mosque.name}</h3>
+                    <p>${mosque.address}</p>
+                    <a href="${mosque.mapLink}" class="cta-button" target="_blank">Lihat di Google Maps</a>
+                </div>
+            `;
+            mosqueList.appendChild(mosqueCard);
+        });
+    }
+});
+
+
+    </script>
+</body>
+</html>
