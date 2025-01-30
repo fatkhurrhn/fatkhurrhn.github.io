@@ -1694,7 +1694,7 @@ const mosques = {
                 { name: "example of a mosque", address: "#", image: "https://images.tokopedia.net/img/KRMmCm/2024/4/25/18537d69-a2e0-4dc2-a144-57dde0f359b5.jpg", mapLink: "#" }
             ],
             "Cigalontang": [
-                { name: "example of a mosque", address: "#", image: "https://images.tokopedia.net/img/KRMmCm/2024/4/25/18537d69-a2e0-4dc2-a144-57dde0f359b5.jpg", mapLink: "#" }
+                { name: "example of a mosquee", address: "#", image: "https://images.tokopedia.net/img/KRMmCm/2024/4/25/18537d69-a2e0-4dc2-a144-57dde0f359b5.jpg", mapLink: "#" }
             ]
         }
     },
