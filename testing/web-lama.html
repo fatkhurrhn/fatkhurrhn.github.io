@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="fatkhurrhn">
+    <meta name="keywords" content="fatkhurrhn">
+    <title>FaCodes👨🏻‍💻</title>
+    <meta name="theme-color" content="#ff8d2f">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="fatkhurrhn">
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" type="image/x-icon" href="assets/img/favicon2.png">
+
+    <!--Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap css -->
+    <link id="rtl-link" rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+
+    <!-- Swiper css -->
+    <link rel="stylesheet" type="text/css" href="assets/css/swiper-bundle.min.css">
+
+    <!-- Remix Icon css -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+    <!-- Style css -->
+    <link id="change-link" rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <style>
+        /* Style for Modal */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .close-btn {
+            display: none;
+            /* float: right;
+            font-size: 24px;
+            cursor: pointer; */
+
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .category-text {
+            position: absolute;
+            bottom: 4px;
+            left: 4px;
+            /* background-color: rgba(0, 0, 0, 0.6); */
+            background-color: rgba(22, 65, 80, 0.7);
+            /* Menggunakan RGBA untuk transparansi */
+            color: white;
+            padding: 2px 6px;
+            /* Kurangi padding untuk mengurangi ukuran latar belakang */
+            font-size: 10px;
+            /* Ukuran font tetap kecil */
+            border-radius: 3px;
+            /* Kurangi border-radius untuk sudut lebih tajam */
+        }
+
+        .feature-box .feature-detail {
+            padding: 10px;
+        }
+    </style>
+
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            /* Make sure popup is on top */
+            width: 300px;
+        }
+
+        .popup-content {
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        /* Style for the background overlay */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black with 80% opacity */
+            z-index: 999;
+            /* Ensure it's behind the popup */
+        }
+    </style>
+
+</head>
+
+<body class="inter-body learning-color">
+    <main class="position-relative">
+        <!-- header start -->
+        <header class="main-header learning-header">
+            <div class="custom-container">
+                <div class="top-header">
+                    <div class="header-left">
+                        <a class="text-white" data-bs-toggle="offcanvas" role="button">
+                            <i class="ri-menu-2-fill"></i>
+                        </a>
+                        <h2 style="color: white;">FaCodes 👨🏻‍💻</h2>
+                    </div>
+
+                    <div class="header-right">
+                        <div class="notification-box">
+                            <a class="text-white" href="https://github.com/fatkhurrhn" target="_blank">
+                                <i class="ri-github-fill"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-bottom">
+                    <div class="customer-name">
+                        <h2>Hello Guys </h2>
+                        <img src="assets/img/hand.png" alt="">
+                    </div>
+                    <h5>welcome to my little website hhe</h5>
+                </div>
+
+                <div class="search-box index-search">
+                    <div class="position-relative">
+                        <input type="search" class="form-control" placeholder="Search">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header end -->
+
+        <!-- Mobile Section Start -->
+        <div class="mobile-style-1">
+            <ul>
+                <li class="active">
+                    <a href="index.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-home-5-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Home</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/islamic.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-moon-clear-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Islamic</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/hack.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-chat-voice-ai-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Hack</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/templates.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-pages-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Templates</h5>
+                        </div>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="assets/blog.html" class="mobile-box">
+                        <div class="mobile-icon">
+                            <i class="ri-file-list-3-line"></i>
+                        </div>
+                        <div class="mobile-name">
+                            <h5>Blog</h5>
+                        </div>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- Mobile Section End -->
+
+        <!-- Category Section Start -->
+        <div class="category-section section-t-space">
+            <div class="title px-15">
+                <h4>Category AI</h4>
+            </div>
+
+            <ul class="category-box overflow-auto px-15">
+                <li>
+                    <ul class="category-list">
+                        <li class="active">
+                            <a href="assets/category-ai/education.html">Education</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/marketing.html">Marketing</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/codeit.html">code & IT</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/detector.html">Ai Detactor</a>
+                        </li>
+                        <li>
+                            <a href="assets/category-ai/text.html">Text & Writing</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- Category Section End -->
+
+        <section class="section-t-space continue-reading-section">
+            <div class="">
+                <div class="title px-15">
+                    <h4>Latest Repos History</h4>
+                </div>
+
+                <div class="swiper slider-1 px-15 reading-slider">
+                    <div id="repos" class="swiper-wrapper" style="gap: 2px;">
+                        <!-- Repositori akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--Templates Start -->
+        <section class="section-t-space feature-course-section popular-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Popular Templates</h4>
+                </div>
+                <ul class="feature-course-list">
+                    <li>
+                        <div class="feature-box">
+                            <div class="feature-image">
+                                <div class="image-container">
+                                    <img src="https://themewagon.com/wp-content/uploads/2021/11/patrix-1.png"
+                                        class="img-fluid" alt="">
+                                    <a href="assets/category-templates/portfolio.html">
+                                        <div class="category-text">portfolio</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="feature-detail">
+                                <a href="assets/detail-templates/partix.html">
+                                    <h6>Patrix – <font style="color: #939fa4;">Free Responsive Bootstrap 5 Landing Page
+                                            Template</font>
+                                    </h6>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="feature-box">
+                            <div class="feature-image">
+                                <div class="image-container">
+                                    <img src="https://pustakakoding.com/images/template/pustakakoding-template-website-company-profile-digital-creative.jpg"
+                                        class="img-fluid" alt="">
+                                    <a href="assets/category-templates/portfolio.html">
+                                        <div class="category-text">company-profile</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="feature-detail">
+                                <a href="assets/detail-templates/digital.html">
+                                    <h6>Digital Creative – <font style="color: #939fa4;">Digital company profile website
+                                            template with a modern and professional appearance.</font>
+                                    </h6>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--Templates End -->
+
+        <!-- Poster Section Start -->
+        <section class="section-t-space poster-section">
+            <div class="custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="poster-box">
+                            <img src="assets/img/b1.png" class="img-fluid w-100" alt="">
+                            <div class="poster-detail p-center">
+                                <div>
+                                    <h3 class="text-white">Come on guys, follow my social media, hhe</h3>
+                                    <a href=""></a>
+                                    <!-- <button onclick="location.href = 'linktree.html';" class="btn btn-sm btn-white">Follow Me</button> -->
+                                    <button id="openModalBtn" class="btn btn-sm btn-white">Follow Me</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Poster Section End -->
+
+        <!-- Modal Sosmed -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <h2>Follow My Sosial Media :v</h2><br>
+                <form class="form-style-1">
+                    <a href="https://www.youtube.com/@fatkhurrhn" class="btn btn-gradient mb-4">YouTube</a>
+                    <a href="https://www.tiktok.com/@fatkhurrhnn" class="btn btn-gradient mb-4">Tiktok</a>
+                    <a href="https://www.instagram.com/fatkhurrhn/" class="btn btn-gradient mb-4">Instagram</a>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="btn btn-gradient mb-4">Linkedin</a>
+                    <a href="https://github.com/fatkhurrhn" class="btn btn-gradient mb-4">Github</a>
+                </form>
+            </div>
+        </div>
+
+        <!-- Popular Course Start -->
+        <section class="section-t-space popular-course-section">
+            <div class="custom-container">
+                <div class="title">
+                    <h4>Popular Repository</h4>
+                </div>
+                <div class="row g-4">
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/nextjs.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/portfolio-next.js" target="_blank">
+                                    <h5>Belajar Membuat Portfolio Menggunakan Next.js <h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>on progress</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Oct 2024</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/portfolio-next.js"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/shopthur.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/Project_ShopThur" target="_blank">
+                                    <h5>Belajar Membuat Project Ecommerce ShopThur dengan PHP Native<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">May 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/Project_ShopThur"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="popular-box">
+                            <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank"
+                                class="popular-image">
+                                <img src="assets/img/ecarrental.png" class="img-fluid w-100" alt="">
+                            </a>
+                            <div class="popular-detail">
+                                <a href="https://github.com/fatkhurrhn/E-CarRental-v2" target="_blank">
+                                    <h5>Membuat Project UAS 2023 E-CarRental V2 dengan Javascript<h5>
+                                </a>
+                                <div class="video-play">
+                                    <i class="ri-play-circle-line"></i>
+                                    <span>completed</span>
+                                </div>
+                                <ul class="rating-box">
+                                    <li>
+                                        <ul class="rating">
+                                            <li>
+                                                <i class="ri-calendar-fill"></i>
+                                            </li>
+                                            <li class="title-color">Jan 2023</li>
+                                            <!-- <li class="content-color">(250 ratings)</li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="fw-500 theme-color"><a
+                                            href="https://github.com/fatkhurrhn/E-CarRental-v2"
+                                            target="_blank">Detail</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+        <!-- Popular Course End -->
+
+        <!-- space box start -->
+        <div class="learning-box"></div>
+        <!-- space box end -->
+
+        <!-- Theme Option Setting Box Start -->
+        <div class="theme-setting-box">
+            <div class="theme-box">
+                <button class="theme-icon text-white">
+                    <i class="ri-menu-line"></i>
+                </button>
+                <ul class="theme-option">
+                    <li>
+                        <a href="https://www.tiktok.com/@fatkhurrhnn" class="button theme-setting-button" id="rtl-btn">
+                            <i class="ri-tiktok-fill"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/fatkhurrhn" class="theme-setting-button">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@fatkhurrhnn" class="theme-setting-button">
+                            <i class="ri-youtube-line"></i>
+                        </a>
+                    </li>
+                </ul>
+    
+            </div>
+        </div>
+        <!-- Theme Option Setting Box End -->
+        <!-- popup -->
+        <div class="popup">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <div class="popup-content">
+                <h2>Masyaallah, Ahlan!</h2>
+                <p>btw kamu sudah baca quran hari ini?</p>
+                <form class="form-style-1">
+                    <a href="#" class="btn btn-gradient mb-4">Yuk baca quran</a>
+                </form>
+            </div>
+        </div>
+        <div class="popup-overlay"></div>
+    </main>
+    <script>
+        function openPopup() {
+            document.querySelector(".popup").style.display = "block";
+            document.querySelector(".popup-overlay").style.display = "block";
+        }
+        function closePopup() {
+            document.querySelector(".popup").style.display = "none";
+            document.querySelector(".popup-overlay").style.display = "none";
+        }
+        window.onload = openPopup;
+    </script>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/custom_swiper.js"></script>
+    <script src="assets/js/script.js"></script>
+    <script src="xtheme-setting.js"></script>
+
+    <script>
+        // Get elements
+        const modal = document.getElementById("modal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeModalBtn = document.querySelector(".close-btn");
+
+        // Open modal when button is clicked
+        openModalBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        // Close modal when the close button is clicked
+        closeModalBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside of modal content
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+
+            const repoContainer = document.getElementById(
+                'repo-container'); // Pilih kontainer untuk menampilkan repositori
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide'; // Sesuaikan dengan class yang digunakan pada HTML
+
+                // Template yang disesuaikan untuk hanya menampilkan nama dan URL repositori
+                repoElement.innerHTML = `
+                <a href="${repo.html_url}" target="_blank" class="reading-list">
+                    <div class="reading-box">
+                        <div class="reading-detail">
+                            <div class="reading-name">
+                                <h5>${repo.name}</h5>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            `;
+                repoContainer.appendChild(repoElement);
+            });
+        }
+        // Mengambil repositori dari GitHub
+        fetch('https://api.github.com/users/USERNAME/repos') // Ganti USERNAME dengan nama pengguna GitHub Anda
+            .then(response => response.json())
+            .then(data => displayRepositories(data))
+            .catch(error => console.error('Error fetching repositories:', error));
+    </script>
+
+    <script>
+        const username = 'fatkhurrhn';
+        const repoContainer = document.getElementById('repos');
+        // Fungsi untuk mengambil semua halaman repository
+        async function fetchAllRepositories() {
+            let page = 1;
+            let repos = [];
+            let fetchMore = true;
+            while (fetchMore) {
+                try {
+                    const response = await fetch(
+                        `https://api.github.com/users/${username}/repos?page=${page}&per_page=100&sort=updated`);
+                    const data = await response.json();
+
+                    // Jika data kosong, maka semua repositori sudah diambil
+                    if (data.length === 0) {
+                        fetchMore = false;
+                    } else {
+                        repos = repos.concat(data);
+                        page++;
+                    }
+                } catch (error) {
+                    console.error('Fetch error:', error);
+                    fetchMore = false;
+                }
+            }
+            return repos;
+        }
+        // Fungsi untuk menampilkan repositori di HTML
+        function displayRepositories(repos) {
+            // Sortir repositori berdasarkan waktu pembaruan terbaru
+            repos.sort((a, b) => new Date(b.updated_at) - new Date(a.updated_at));
+
+            // Ambil hanya 2 repositori terbaru
+            repos = repos.slice(0, 2);
+            repoContainer.innerHTML = ''; // Kosongkan kontainer sebelum menampilkan data baru
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'swiper-slide';
+
+                repoElement.innerHTML = `
+            <a href="${repo.html_url}" target="_blank" class="reading-list">
+                <div class="reading-box">
+                    <div class="reading-detail">
+                        <div class="reading-image">
+                            <img src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="reading-name">
+                            <h5>${repo.name} - <font style="color: #939fa4;">${repo.description || 'No description'}</font></h5>
+                        </div>
+                    </div>
+                    <div class="reading-view">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar"></div>
+                        </div>
+                        <h6 class="theme-color">Updated at: ${new Date(repo.updated_at).toLocaleString()}</h6>
+                    </div>
+                </div>
+            </a>
+        `;
+                repoContainer.appendChild(repoElement);
+            });
+        }
+        // Fungsi utama untuk mengambil dan menampilkan repositori
+        async function loadRepositories() {
+            const repos = await fetchAllRepositories();
+            displayRepositories(repos);
+        }
+        // Memanggil loadRepositories() secara berkala untuk update real-time
+        loadRepositories();
+        setInterval(loadRepositories, 60000); // Update setiap 60 detik
+    </script>
+</body>
+</html>
