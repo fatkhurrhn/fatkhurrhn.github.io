@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Linktree</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 24px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .link:hover {
+            background-color: #45a049;
+        }
+
+        .contact-button {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #007B9E;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Nama Anda</h1>
+            <p>Deskripsi singkat tentang diri Anda.</p>
+        </div>
+        <div class="links">
+            <a href="https://example.com" class="link">Link 1</a>
+            <a href="https://example.com" class="link">Link 2</a>
+            <a href="https://example.com" class="link">Link 3</a>
+            <a href="https://example.com" class="link">Link 4</a>
+        </div>
+        <button id="contactButton" class="contact-button">Kontak Saya</button>
+    </div>
+
+    <script>
+        document.getElementById('contactButton').addEventListener('click', function() {
+            alert('Terima kasih telah menghubungi saya!');
+        });
+    </script>
+</body>
+</html>

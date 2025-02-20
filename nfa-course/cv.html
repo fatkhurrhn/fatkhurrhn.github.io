@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Web Profile</title>
+    <style>
+        
+
+.social-links {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .social-link:last-child {
+            border-bottom: none;
+        }
+
+        .social-link i {
+            width: 30px;
+            color: #666;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 20px;
+        }
+
+        .profile-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 15px;
+        }
+
+        .profile-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1c1e21;
+        }
+
+        .profile-subtitle {
+            color: #65676b;
+            margin-bottom: 5px;
+        }
+
+        .profile-location {
+            color: #65676b;
+            margin-bottom: 20px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 8px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #0095f6;
+            color: white;
+            border: none;
+        }
+
+        .btn-outline {
+            border: 1px solid #0095f6;
+            color: #0095f6;
+            background-color: transparent;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            border-top: 1px solid #e4e6eb;
+            padding: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            color: #050505;
+            text-decoration: none;
+        }
+
+        .social-link img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .details-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .detail-row {
+            display: flex;
+            padding: 12px 0;
+            border-bottom: 1px solid #e4e6eb;
+        }
+
+        .detail-label {
+            width: 120px;
+            font-weight: bold;
+        }
+
+        .detail-value {
+            color: #666;
+        }
+
+        .edit-btn {
+            background: #20c997;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+
+        .project-status {
+            margin-top: 20px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+            overflow: hidden;
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 160px;
+            background-color: #e4e6eb;
+        }
+
+        .portfolio-content {
+            padding: 15px;
+        }
+
+        .portfolio-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #1c1e21;
+        }
+
+        .portfolio-description {
+            font-size: 14px;
+            color: #65676b;
+            line-height: 1.4;
+        }
+
+        .status-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 20px;
+            color: #1c1e21;
+        }
+
+        .status-title span {
+            color: #00b894;
+            font-weight: normal;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-column">
+            <div class="profile-card">
+                <div class="profile-image">
+                    <img src="https://i.ibb.co.com/KcSvZcm5/pp-1.png" alt="Profile Picture" style="width: 100%">
+                </div>
+                <h1 class="profile-title">Fatkhurrhn</h1>
+                <div class="profile-subtitle">Information System Student</div>
+                <div class="profile-location">Beji, Kukusan, Depok</div>
+                <div class="button-group">
+                    <button onclick="location.href = 'https://www.linkedin.com/in/fatkhurrhn/';" class="btn btn-primary">Follow</button>
+                    <button onclick="location.href = 'https://wa.me/6282285512813'" class="btn btn-outline">Message</button>
+                </div>
+            </div>
+            <div class="profile-card" style="margin-top: 20px; text-align: left; padding: 0;">
+                <div class="social-links">
+                    <a href="https://github.com/fatkhurrhn" class="social-link"><i class="fab fa-github"></i> Fatkhurrhn</a>
+                    <a href="https://www.linkedin.com/in/fatkhurrhn/" class="social-link"><i class="fab fa-linkedin"></i> Fatkhurrhn</a>
+                    <a href="https://www.instagram.com/story.thur/" class="social-link"><i class="fab fa-instagram"></i> Story Thur</a>
+                    <a href="#" class="social-link"><i class="fab fa-youtube"></i> Fatkhurrhn</a>
+                    <a href="#" class="social-link"><i class="fab fa-facebook"></i> Fatkhurrhn</a>
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="details-card">
+                <div class="detail-row">
+                    <div class="detail-label">Full Name</div>
+                    <div class="detail-value">&nbsp; &nbsp; M. Fatkhurrohman</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Campus</div>
+                    <div class="detail-value">&nbsp; &nbsp; Sekolah Tinggi Teknologi Terpadu Nurul Fikri </div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Mitra</div>
+                    <div class="detail-value">&nbsp; &nbsp; NF Academy</div>
+                </div>
+                <div class="detail-row">
+                    <div class="detail-label">Learning paths</div>
+                    <div class="detail-value">&nbsp; &nbsp; Fullstack Web Developer</div>
+                </div>
+            </div>
+            <br>
+            <div class="details-card">
+                <h2 class="status-title">About Me</h2>
+                <p style="text-align: justify;">The morning sun streams through my window in Beji-Kukusan, Depok, as I, M. Fatkhurrohman, or Fathur, prepare for another day. As a fifth-semester Information Systems student at Nurul Fikri Integrated Technology College, I'm pursuing my dreams in West Java, fueled by a scholarship that has been a tremendous help. My passion for technology drives me to constantly learn and share my insights through engaging social media content. With 90,000 followers on Instagram, over 400 on LinkedIn, and over 3,000 on TikTok, I believe that technology can be a powerful force for good in the world. I'm determined to continue learning, growing, and contributing to this field, turning my aspirations into reality.
+                </p>
+            </div>
+            <div class="project-status">
+                <h2 class="status-title">My Project</h2>
+                <div class="portfolio-grid">
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://i.ibb.co.com/9kxLfjsd/ukk22.png" width="250px" height="160px" alt="">
+                        </div>
+                        <a href="https://github.com/fatkhurrhn/ukk22-PeduliDiri-TanpaDatabase" style="text-decoration: none;">
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Project One</h3>
+                                <p class="portfolio-description">UKK project in 2022 at SMK Thursina YBM PLN</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://i.ibb.co.com/ks4cFYWs/dreamlms.png" width="250px" height="160px" alt="">
+                        </div>
+                        <a href="https://github.com/fatkhurrhn/Projek_UAS_DreamsLMS" style="text-decoration: none;">
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Project Two</h3>
+                                <p class="portfolio-description">The DreamLMS (Learning Management System) application...
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="portfolio-card">
+                        <div class="portfolio-image">
+                            <img src="https://i.ibb.co.com/v6LWsytn/ecarrental.png" width="250px" height="160px" alt="">
+                        </div>
+                        <a href="https://github.com/fatkhurrhn/E-CarRental-v2" style="text-decoration: none;">
+                            <div class="portfolio-content">
+                                <h3 class="portfolio-title">Project Three</h3>
+                                <p class="portfolio-description">Project2UAS at Nurul Fikri Integrated STT - ECarRental v2
+                                </p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
