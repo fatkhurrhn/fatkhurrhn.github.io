@@ -50,65 +50,64 @@
             </a>
         </div>
 
-        
-
         <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
-            <!-- Card 1: NF Academy Course -->
-            <div style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); cursor: pointer;" onclick="toggleDropdown('dropdown1')">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #4A4A4A; color: white;">
-                  <i class="fas fa-layer-group"></i>
+            <a href="#" id="openPopup" style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #4A4A4A; color: white;">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div style="font-weight: 600; font-size: 15px; color: #333;">NF Academy Course - Fullstack</div>
                 </div>
-                <div style="font-weight: 600; font-size: 15px; color: #333;">NF Academy Course - Fullstack</div>
-              </div>
-              <div style="font-size: 18px; color: #777; transition: transform 0.2s;">
-                <i class="fas fa-arrow-right"></i>
-              </div>
-            </div>
-          
-            <!-- Dropdown untuk Card 1 -->
-            <div id="dropdown1" style="display: none; margin-top: 10px; background-color: white; border-radius: 12px; padding: 10px; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
-              <a href="https://github.com/fatkhurrhn/nfa-course" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">GitHub NFA Course</a>
-              <a href="https://fatkhurrhn.github.io/nfa-course/cv.html" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Tugas Pertemuan 1 - CV [html]</a>
-              <a href="https://fatkhurrhn.github.io/nfa-course/jadwal-tabel.html" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Tugas Pertemuan 2 - Jadwal [tabel]</a>
-            </div>
-          
-            <!-- Card 2: Dicoding | Bangkit - Cloud Computing -->
-            <div style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); cursor: pointer;" onclick="toggleDropdown('dropdown2')">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #FF6D42; color: white;">
-                  <i class="fas fa-cloud"></i>
+                <div style="font-size: 18px; color: #777;">
+                    <i class="fas fa-arrow-right"></i>
                 </div>
-                <div style="font-weight: 600; font-size: 15px; color: #333;">Dicoding | Bangkit - Cloud Computing</div>
-              </div>
-              <div style="font-size: 18px; color: #777; transition: transform 0.2s;">
-                <i class="fas fa-arrow-right"></i>
-              </div>
+            </a>
+
+            <div id="popupContainer" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center;">
+                <div id="popup" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); border: 1px solid #EAEAEA; width: 320px; text-align: center; position: relative;">
+                    <span id="closePopup" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 20px; color: #777; font-weight: bold;">&times;</span>
+                    <h3 style="margin: 0 0 10px; color: #333; font-size: 18px;">Link Penting</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="padding: 8px 0;"><a href="#" style="text-decoration: none; color: #007BFF; font-size: 16px;">Dashboard</a></li>
+                        <li style="padding: 8px 0;"><a href="#" style="text-decoration: none; color: #007BFF; font-size: 16px;">Course Materials</a></li>
+                        <li style="padding: 8px 0;"><a href="#" style="text-decoration: none; color: #007BFF; font-size: 16px;">Community Forum</a></li>
+                    </ul>
+                </div>
             </div>
-          
-            <!-- Dropdown untuk Card 2 -->
-            <div id="dropdown2" style="display: none; margin-top: 10px; background-color: white; border-radius: 12px; padding: 10px; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
-              <a href="https://www.dicoding.com/users/fatkhurrhn/academies" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Profil Dicoding</a>
-              <a href="https://www.cloudskillsboost.google/public_profiles/a0413875-4f2d-4c72-b551-524e6cffb45d" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Profil GCSB</a>
-              <a href="https://github.com/fatkhurrhn/dicoding-course" target="_blank" style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Dicoding Course | Github</a>
-            </div>
-          </div>
-          
+        
+            <a href="#" style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #FF6D42; color: white;">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div style="font-weight: 600; font-size: 15px; color: #333;">Dicoding | Bangkit - Cloud Computing</div>
+                </div>
+                <div style="font-size: 18px; color: #777;">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+        </div>
         
     </div>
 
     <script>
-        function toggleDropdown(id) {
-    const dropdown = document.getElementById(id);
-    const arrow = dropdown.previousElementSibling.querySelector('.fa-arrow-right');
-    if (dropdown.style.display === 'block') {
-      dropdown.style.display = 'none';
-      arrow.style.transform = 'rotate(0deg)';
-    } else {
-      dropdown.style.display = 'block';
-      arrow.style.transform = 'rotate(90deg)';
-    }
-  }
+        // popup
+        document.getElementById('openPopup').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('popupContainer').style.display = 'flex';
+        });
+
+        document.getElementById('closePopup').addEventListener('click', function() {
+            document.getElementById('popupContainer').style.display = 'none';
+        });
+
+        document.getElementById('popupContainer').addEventListener('click', function(event) {
+            let popup = document.getElementById('popup');
+            if (!popup.contains(event.target)) {
+                document.getElementById('popupContainer').style.display = 'none';
+            }
+        });
+        
         // Efek hover lebih halus
         document.querySelectorAll("a").forEach(link => {
                 link.addEventListener("mouseenter", () => {
