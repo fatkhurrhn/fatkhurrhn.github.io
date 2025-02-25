@@ -1,0 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #ecf0f1; 
+}
+.gallery {
+    text-align: center;
+}
+.gallery img {
+    width: 200px;
+    height: 150px;
+    margin: 10px;
+    border: 2px solid #1e1e2e;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+.gallery img:hover {
+    transform: scale(1.1);
+}
+marquee {
+    margin: 20px 0;
+}
