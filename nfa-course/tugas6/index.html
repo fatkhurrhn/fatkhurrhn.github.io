@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio Website - Tugas 6</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col p-0">
+                <div id="carouselHeader" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="img/4.png" class="d-block w-100" alt="Banner 1">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/5.png" class="d-block w-100" alt="Banner 2">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/6.png" class="d-block w-100" alt="Banner 3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselHeader" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselHeader" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="https://flowbite.com/docs/images/logo.svg" alt="Logo" width="50" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link" href="home.html" target="mainContent">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="study.html" target="mainContent">MyStudy</a></li>
+                        <li class="nav-item"><a class="nav-link" href="gallery.html" target="mainContent">Gallery</a></li>
+                        <li class="nav-item"><a class="nav-link" href="datatables.html" target="mainContent">Datatable</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login.html" target="mainContent">Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+                <div class="row">
+            <div class="col-md-3 bg-light p-3">
+                <h5>External Links</h5>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="https://nfacademy.id" target="_blank">NF Academy</a></li>
+                    <li class="list-group-item"><a href="https://nurulfikri.ac.id" target="_blank">Nurul Fikri</a></li>
+                    <li class="list-group-item"><a href="https://www.google.com" target="_blank">Google</a></li>
+                    <li class="list-group-item"><a href="https://www.wikipedia.org" target="_blank">Wikipedia</a></li>
+                    <li class="list-group-item"><a href="https://www.github.com" target="_blank">GitHub</a></li>
+                </ul>
+            </div>
+                        <div class="col-md-9 p-3" id="mainContent">
+                <iframe src="home.html" name="mainContent" width="100%" height="500px" frameborder="0"></iframe>
+            </div>
+        </div>
+        
+        <footer class="bg-dark text-white text-center py-3 w-100">
+            <div class="container">
+                <p class="mb-0">&copy; 2025 Fatkhurrhn. All Rights Reserved.</p>
+            </div>
+        </footer>
+        
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
