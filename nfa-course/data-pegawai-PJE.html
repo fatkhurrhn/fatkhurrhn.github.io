@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJE Tugas2 - Data Pegawai</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        thead {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tfoot {
+            background-color: #e9e9e9;
+            font-weight: bold;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .form-group label {
+            width: 120px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .form-group input, .form-group select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            flex: 1;
+            min-width: 150px;
+            margin-right: 10px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h2>Data Pegawai dengan Form Input</h2>
+    
+    <div class="form-container">
+        <h3>Tambah Data Pegawai</h3>
+        <form id="employeeForm">
+            <div class="form-group">
+                <label for="nama">Nama Pegawai:</label>
+                <input type="text" id="nama" name="nama" required>
+            </div>
+            <div class="form-group">
+                <label for="umur">Umur:</label>
+                <input type="number" id="umur" name="umur" required min="18" max="100">
+            </div>
+            <div class="form-group">
+                <label for="jabatan">Jabatan:</label>
+                <select id="jabatan" name="jabatan" required>
+                    <option value="Manajer">Manajer</option>
+                    <option value="Asisten Manajer">Asisten Manajer</option>
+                    <option value="Staff">Staff</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Menikah">Menikah</option>
+                    <option value="Belum Menikah">Belum Menikah</option>
+                </select>
+            </div>
+            <button type="submit">Tambah Pegawai</button>
+        </form>
+    </div>
+
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>Nama Pegawai</th>
+                <th>Umur</th>
+                <th>Jabatan</th>
+                <th>Status</th>
+                <th>Gaji Pokok</th>
+                <th>Tunjangan Jabatan</th>
+                <th>BPJS</th>
+                <th>Tunjangan Keluarga</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+        <tfoot id="tableFoot">
+        </tfoot>
+    </table>
+
+    <script>
+        const daftarPegawai = [];
+        
+        // ini data pegawai default (pak dodi)
+        const dodiPegawai = {
+            nama: "Dodi Prayodi",
+            umur: 25,
+            jabatan: "Manajer",
+            status: "Menikah"
+        };
+        
+        daftarPegawai.push(dodiPegawai);
+        
+        // Format angka sebagai mata uang Rupiah
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                minimumFractionDigits: 0
+            }).format(angka);
+        }
+        
+        // menentukan gaji pokok sesuai jabatan
+        function hitungGajiPokok(jabatan) {
+            if (jabatan === "Manajer") {
+                return 15000000;
+            } else if (jabatan === "Asisten Manajer") {
+                return 10000000;
+            } else if (jabatan === "Staff") {
+                return 5000000;
+            }
+            return 0;
+        }
+        
+        // hitung total gaji seluruh pegawai
+        function hitungTotalGajiSeluruh() {
+            let total = 0;
+            daftarPegawai.forEach(pegawai => {
+                const gajiPokok = hitungGajiPokok(pegawai.jabatan);
+                const tunjanganJabatan = gajiPokok * 0.15;
+                const bpjs = gajiPokok * 0.10;
+                const tunjanganKeluarga = pegawai.status === "Menikah" ? gajiPokok * 0.20 : 0;
+                total += gajiPokok + tunjanganJabatan + tunjanganKeluarga - bpjs;
+            });
+            return total;
+        }
+        
+        function renderTabel() {
+            const tbody = document.getElementById("tableBody");
+            tbody.innerHTML = "";
+            
+            daftarPegawai.forEach(pegawai => {
+                const gajiPokok = hitungGajiPokok(pegawai.jabatan);
+                const tunjanganJabatan = gajiPokok * 0.15;
+                const bpjs = gajiPokok * 0.10;
+                const tunjanganKeluarga = pegawai.status === "Menikah" ? gajiPokok * 0.20 : 0;
+                
+                const row = document.createElement("tr");
+                row.innerHTML = `
+                    <td>${pegawai.nama}</td>
+                    <td>${pegawai.umur} tahun</td>
+                    <td>${pegawai.jabatan}</td>
+                    <td>${pegawai.status}</td>
+                    <td>${formatRupiah(gajiPokok)}</td>
+                    <td>${formatRupiah(tunjanganJabatan)}</td>
+                    <td>${formatRupiah(bpjs)}</td>
+                    <td>${formatRupiah(tunjanganKeluarga)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+            
+            const totalGaji = hitungTotalGajiSeluruh();
+            document.getElementById("tableFoot").innerHTML = `
+                <tr>
+                    <td colspan="4">Total Gaji Seluruh Pegawai</td>
+                    <td colspan="4">${formatRupiah(totalGaji)}</td>
+                </tr>
+            `;
+        }
+        
+        document.getElementById("employeeForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            
+            const namaBaru = document.getElementById("nama").value;
+            const umurBaru = parseInt(document.getElementById("umur").value);
+            const jabatanBaru = document.getElementById("jabatan").value;
+            const statusBaru = document.getElementById("status").value;
+            
+            const pegawaiBaru = {
+                nama: namaBaru,
+                umur: umurBaru,
+                jabatan: jabatanBaru,
+                status: statusBaru
+            };
+            
+            daftarPegawai.push(pegawaiBaru);
+            renderTabel();
+            
+            this.reset();
+        });
+        
+        window.onload = function() {
+            renderTabel();
+        };
+    </script>
+</body>
+</html>
