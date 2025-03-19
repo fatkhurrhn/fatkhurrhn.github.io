@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJE Tugas 3</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+    <style>
+        .header {
+            background-color: #f8f9fa;
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+
+        .table {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+        }
+
+        .card {
+            border-radius: 10px;
+        }
+
+        .card-header {
+            font-weight: bold;
+            padding: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center">PJE Tugas 3 - Sistem Manajemen Toko Online</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card mb-3">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Tambah Produk Baru</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="formTambahProduk">
+                            <div class="mb-3">
+                                <label for="namaProduk" class="form-label">Nama Produk</label>
+                                <input type="text" class="form-control" id="namaProduk" required>
+                            </div>
+                            <div class="row mb-3 gap">
+                                <div class="col-md-6">
+                                    <label for="hargaProduk" class="form-label">Harga (Rp)</label>
+                                    <input type="number" class="form-control" id="hargaProduk" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="stokProduk" class="form-label">Stok</label>
+                                    <input type="number" class="form-control" id="stokProduk" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Tambah Produk</button>
+                        </form>
+                    </div>
+                </div>
+                <form id="formHapusProduk">
+                    <label for="idProduk" class="form-label">Hapus Lewat ID Produk</label>
+                    <div class="d-flex gap-2">
+                        <input type="number" class="form-control" id="idProduk" required>
+                        <button type="submit" class="btn btn-danger flex-grow-1">Hapus</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <div class="card shadow-lg border-0">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">Daftar Produk</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="dataTable" class="table table-bordered table-striped table-hover">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th style="width: 10%;">ID</th>
+                                        <th>Nama Produk</th>
+                                        <th>Harga (Rp)</th>
+                                        <th>Stok</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tabelProduk">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Notifikasi -->
+        <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+            <div id="notifikasi" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto" id="notifikasiJudul">Notifikasi</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body" id="notifikasiPesan">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+
+    <script>
+        let produkToko = [
+            { id: 1, nama: "Laptop", harga: 7000000, stok: 5 },
+            { id: 2, nama: "Mouse", harga: 200000, stok: 10 },
+            { id: 3, nama: "Keyboard", harga: 350000, stok: 7 }
+        ];
+
+        const tabelProduk = document.getElementById('tabelProduk');
+        const formTambahProduk = document.getElementById('formTambahProduk');
+        const formHapusProduk = document.getElementById('formHapusProduk');
+        const notifikasi = document.getElementById('notifikasi');
+        const notifikasiJudul = document.getElementById('notifikasiJudul');
+        const notifikasiPesan = document.getElementById('notifikasiPesan');
+
+        function tampilkanNotifikasi(judul, pesan, tipe) {
+            notifikasiJudul.textContent = judul;
+            notifikasiPesan.textContent = pesan;
+
+            const headerNotifikasi = notifikasi.querySelector('.toast-header');
+            headerNotifikasi.className = 'toast-header';
+            if (tipe === 'sukses') {
+                headerNotifikasi.classList.add('bg-success', 'text-white');
+            } else if (tipe === 'error') {
+                headerNotifikasi.classList.add('bg-danger', 'text-white');
+            } else {
+                headerNotifikasi.classList.add('bg-info', 'text-white');
+            }
+
+            const toast = new bootstrap.Toast(notifikasi);
+            toast.show();
+        }
+        function tambahProduk(nama, harga, stok) {
+            let idTertinggi = 0;
+            for (let i = 0; i < produkToko.length; i++) {
+                if (produkToko[i].id > idTertinggi) {
+                    idTertinggi = produkToko[i].id;
+                }
+            }
+            
+            const idBaru = idTertinggi + 1;
+
+            const produkBaru = { id: idBaru, nama: nama, harga: parseInt(harga), stok: parseInt(stok) };
+            produkToko.push(produkBaru);
+            tampilkanNotifikasi('Berhasil', `Produk ${nama} berhasil ditambahkan dengan ID: ${idBaru}`, 'sukses');
+            tampilkanProduk();
+        }
+        function hapusProduk(id) {
+            id = parseInt(id);
+            let indeksProduk = -1;
+            for (let i = 0; i < produkToko.length; i++) {
+                if (produkToko[i].id === id) {
+                    indeksProduk = i;
+                    break;
+                }
+            }
+
+            if (indeksProduk !== -1) {
+                const namaProduk = produkToko[indeksProduk].nama;
+                produkToko.splice(indeksProduk, 1);
+
+                tampilkanNotifikasi('Berhasil', `Produk ${namaProduk} dengan ID: ${id} berhasil dihapus`, 'sukses');
+            } else {
+                tampilkanNotifikasi('Error', `Produk dengan ID: ${id} tidak ditemukan`, 'error');
+            }
+
+            tampilkanProduk();
+        }
+        function tampilkanProduk() {
+            tabelProduk.innerHTML = '';
+            for (let i = 0; i < produkToko.length; i++) {
+                const produk = produkToko[i];
+                const barisBaru = document.createElement('tr');
+                const hargaFormatted = produk.harga.toLocaleString('id-ID');
+                barisBaru.innerHTML = `
+                    <td>${produk.id}</td>
+                    <td>${produk.nama}</td>
+                    <td>${hargaFormatted}</td>
+                    <td>${produk.stok}</td>
+                `;
+                tabelProduk.appendChild(barisBaru);
+            }
+        }
+
+        formTambahProduk.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const namaProduk = document.getElementById('namaProduk').value;
+            const hargaProduk = document.getElementById('hargaProduk').value;
+            const stokProduk = document.getElementById('stokProduk').value;
+            tambahProduk(namaProduk, hargaProduk, stokProduk);
+            this.reset();
+        });
+        formHapusProduk.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const idProduk = document.getElementById('idProduk').value;
+            hapusProduk(idProduk);
+            this.reset();
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            tampilkanProduk();
+        });
+    </script>
+</body>
+
+</html>
