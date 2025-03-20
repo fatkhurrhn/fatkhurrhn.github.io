@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PJE Tugas4 - Sistem Manajemen Transportasi</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        .header {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+.card {
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1 class="text-center">Sistem Manajemen Transportasi</h1>
+            <hr>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0" style="font-size: 20px;">Form Penyewaan</h3>
+                    </div>
+                    <div class="card-body">
+                        <form id="formPenyewaan">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Pelanggan</label>
+                                <input type="text" class="form-control" id="nama" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="nomorTelepon" class="form-label">Nomor Telepon</label>
+                                <input type="number" class="form-control" id="nomorTelepon" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="kendaraan" class="form-label">Kendaraan</label>
+                                <select class="form-control" id="kendaraan" required>
+                                    <option value="">Pilih Kendaraan</option>
+                                    <option value="Mobil - Toyota Avanza">Mobil - Toyota Avanza</option>
+                                    <option value="Mobil - Honda Brio">Mobil - Honda Brio</option>
+                                    <option value="Mobil - Mitsubishi Xpander">Mobil - Mitsubishi Xpander</option>
+                                    <option value="Motor - Honda Beat">Motor - Honda Beat</option>
+                                    <option value="Motor - Yamaha NMAX">Motor - Yamaha NMAX</option>
+                                    <option value="Bus - Mercedes Benz">Bus - Mercedes Benz</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Tambah Penyewaan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h3 class="card-title mb-0" style="font-size: 20px;">Daftar Penyewaan</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="tabelPenyewaan" class="table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>Nama</th>
+                                        <th>Nomor Telepon</th>
+                                        <th>Kendaraan</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="daftarPenyewaan">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+           class Kendaraan {
+       constructor(nama) {
+           this.nama = nama;
+           this.tersedia = true;
+       }
+
+       sewa() {
+           this.tersedia = false;
+       }
+
+       kembalikan() {
+           this.tersedia = true;
+       }
+   }
+
+   class Pelanggan {
+       constructor(nama, nomorTelepon, kendaraanDisewa) {
+           this.nama = nama;
+           this.nomorTelepon = nomorTelepon;
+           this.kendaraanDisewa = kendaraanDisewa;
+       }
+
+       getInfo() {
+           return {
+               nama: this.nama,
+               nomorTelepon: this.nomorTelepon,
+               kendaraanDisewa: this.kendaraanDisewa
+           };
+       }
+   }
+
+   class SistemPenyewaan {
+       constructor() {
+           this.daftarPelanggan = [];
+           this.idCounter = 1;
+       }
+
+       tambahPenyewaan(nama, nomorTelepon, kendaraan) {
+           const pelanggan = new Pelanggan(nama, nomorTelepon, kendaraan);
+           const kendaraanObj = new Kendaraan(kendaraan);
+           kendaraanObj.sewa();
+
+           const id = this.idCounter++;
+           this.daftarPelanggan.push({
+               id: id,
+               pelanggan: pelanggan
+           });
+
+           return id;
+       }
+
+       getDaftarPelanggan() {
+           return this.daftarPelanggan;
+       }
+
+       hapusPenyewaan(id) {
+           const index = this.daftarPelanggan.findIndex(item => item.id === id);
+           if (index !== -1) {
+               const pelanggan = this.daftarPelanggan[index].pelanggan;
+               const kendaraanObj = new Kendaraan(pelanggan.kendaraanDisewa);
+               kendaraanObj.kembalikan();
+
+               this.daftarPelanggan.splice(index, 1);
+               return true;
+           }
+           return false;
+       }
+   }
+
+   const sistemPenyewaan = new SistemPenyewaan();
+   let dataTable;
+
+   function renderDaftarPenyewaan() {
+       const daftarPelanggan = sistemPenyewaan.getDaftarPelanggan();
+       const tbody = document.getElementById('daftarPenyewaan');
+
+       if (dataTable) {
+           dataTable.destroy();
+       }
+
+       tbody.innerHTML = '';
+
+       daftarPelanggan.forEach((item, index) => {
+           const pelanggan = item.pelanggan;
+           const info = pelanggan.getInfo();
+
+           const row = document.createElement('tr');
+           row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${info.nama}</td>
+                <td>${info.nomorTelepon}</td>
+                <td>${info.kendaraanDisewa}</td>
+                <td>
+                    <button class="btn btn-danger btn-sm" onclick="hapusPenyewaan(${item.id})">
+                        Kembalikan
+                    </button>
+                </td>
+            `;
+
+           tbody.appendChild(row);
+       });
+
+       dataTable = $('#tabelPenyewaan').DataTable({
+           language: {
+               url: 'https://cdn.datatables.net/plug-ins/1.13.4/i18n/id.json'
+           },
+           responsive: true
+       });
+   }
+
+   function tambahPenyewaan(event) {
+       event.preventDefault();
+
+       const nama = document.getElementById('nama').value;
+       const nomorTelepon = document.getElementById('nomorTelepon').value;
+       const kendaraan = document.getElementById('kendaraan').value;
+
+       if (nama && nomorTelepon && kendaraan) {
+           sistemPenyewaan.tambahPenyewaan(nama, nomorTelepon, kendaraan);
+           renderDaftarPenyewaan();
+
+           document.getElementById('formPenyewaan').reset();
+
+           alert('Penyewaan berhasil ditambahkan!');
+       }
+   }
+
+   function hapusPenyewaan(id) {
+       if (confirm('Apakah Anda yakin ingin mengembalikan kendaraan ini?')) {
+           sistemPenyewaan.hapusPenyewaan(id);
+           renderDaftarPenyewaan();
+           alert('Kendaraan berhasil dikembalikan!');
+       }
+   }
+
+   document.getElementById('formPenyewaan').addEventListener('submit', tambahPenyewaan);
+
+   window.onload = function () {
+       sistemPenyewaan.tambahPenyewaan('Fathur Ar-Rahman', '081234567890', 'Mobil - Honda Brio');
+       sistemPenyewaan.tambahPenyewaan('Salman Al-Farisi ', '087654321098', 'Motor - Yamaha NMAX');
+       sistemPenyewaan.tambahPenyewaan('Rizky Saputra Aji', '089876543210', 'Mobil - Mitsubishi Xpander');
+
+       renderDaftarPenyewaan();
+   };
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+ 
+</body>
+</html>
