@@ -1,69 +1,233 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="id">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Fatkhurrhn</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFA Academy - Fatkhurrhn</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<script>
-        // JavaScript untuk redirect
-        window.onload = function () {
-            window.location.href = "https://fatkhurrhn.vercel.app/";
-        };
-</script>
-<body>
-  <div class="flex justify-center relative mt-44">
-  <!-- This is an example component -->
-  <div class="relative grid grid-cols-1 gap-4 p-4 mb-8 border rounded-lg bg-white shadow-lg">
-      <div class="relative flex gap-4">
-          <img src="https://media.licdn.com/dms/image/v2/D5603AQFSeewLSkNWqw/profile-displayphoto-shrink_400_400/B56ZOsnbZfGgAo-/0/1733767838340?e=1744243200&v=beta&t=UxHXMMALF5Qc2QZ4dhi3Ers-M-nP6NjBjaPPcrgHLY8" class="relative rounded-lg -top-8 -mb-4 bg-white border h-20 w-20" alt="" loading="lazy">
-          <div class="flex flex-col w-full">
-              <div class="flex flex-row justify-between">
-                  <p class="relative text-xl whitespace-nowrap truncate overflow-hidden">Fatkhurrhn</p>
-              </div>
-              <p class="text-gray-500 text-sm" id="now"></p>
-          </div>
+
+<body
+  style="margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; position: relative;">
+
+  <div
+    style="width: 100%; max-width: 700px; display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 20px;">
+    <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 50px;">
+      <div style="position: relative; width: 180px; height: 180px;">
+        <img src="pp.png" alt="Fatkhurrhn's profile"
+          style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 5px solid #4c9aff;">
+        <div class="dark-mode-toggle"
+          style="position: absolute; bottom: 15px; right: 5px; background-color: black; color: white; border: 2px solid white; border-radius: 50%; width: 30px; height: 30px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+          <i class="fas fa-moon"></i>
+        </div>
       </div>
-      <p class="-mt-4 text-gray-600">Selengkapnya ada di website sebelah yaa!</p>
-    <a class="text-gray-500 text-sm flex flex-row-reverse mt-2" href="https://fatkhurrhn.vercel.app/"><svg class='fill-none stroke-black stroke-1 w-6 h-6' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><g transform='translate(12.000000, 12.000000) rotate(-90.000000) translate(-12.000000, -12.000000) translate(5.000000, 8.500000)'><path d='M14,0 C14,0 9.856,7 7,7 C4.145,7 0,0 0,0'></path></g></svg>
-      <span class="text-black mr-1">Kunjungi</span>
-    </a>
-  </div>
+      <div class="profile-name"
+        style="display: flex; align-items: center; gap: 10px; font-size: 28px; font-weight: bold; margin-bottom: -12px;">
+        Fatkhurrhn
+        <span style="color: #4c9aff; font-size: 24px;">
+          <i class="fas fa-check-circle"></i>
+        </span>
+      </div>
+      <a href="https://fatkhurrhn.vercel.app/"
+        style="color: #4c9aff; text-decoration: none; font-size: 16px;">https://fatkhurrhn.vercel.app/</a>
+      <div class="bio-text" style="text-align: center; font-size: 16px; margin-bottom: 1px;">
+        Pengen jago ngoding kaya panutan, pak dika hhe
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px;">
+      <a href="https://fatkhurrhn.vercel.app/"
+        style="display: flex; align-items: center; gap: 6px; background-color: #f3f4f6; color: #333; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s;">
+        <i class="fas fa-globe"></i> Website
+      </a>
+      <a href="https://github.com/fatkhurrhn"
+        style="display: flex; align-items: center; gap: 6px; background-color: #f3f4f6; color: #333; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s;">
+        <i class="fab fa-github"></i> Github
+      </a>
+      <a href="http://instagram.com/story.thur"
+        style="display: flex; align-items: center; gap: 6px; background-color: #f3f4f6; color: #333; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s;">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+      <a href="https://www.tiktok.com/@fatkhurrhnn"
+        style="display: flex; align-items: center; gap: 6px; background-color: #f3f4f6; color: #333; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s;">
+        <i class="fab fa-tiktok"></i> Tiktok
+      </a>
+      <a href="https://www.linkedin.com/in/fatkhurrhn/"
+        style="display: flex; align-items: center; gap: 6px; background-color: #f3f4f6; color: #333; padding: 6px 12px; border-radius: 15px; text-decoration: none; font-size: 13px; font-weight: 500; transition: background 0.2s, box-shadow 0.2s;">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+
+
+
+    <div style="width: 100%; display: flex; flex-direction: column; gap: 12px;">
+      <!-- Card 1: NF Academy Course -->
+      <div
+        style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); cursor: pointer;"
+        onclick="toggleDropdown('dropdown1')">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div
+            style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #4A4A4A; color: white;">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <div style="font-weight: 600; font-size: 15px; color: #333;">NF Academy Course - Fullstack</div>
+        </div>
+        <div style="font-size: 18px; color: #777; transition: transform 0.2s;">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <!-- Dropdown untuk Card 1 -->
+      <div id="dropdown1"
+        style="display: none; margin-top: 10px; background-color: white; border-radius: 12px; padding: 10px; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
+        <a href="https://fatkhurrhn.github.io/nfa-course/cv.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas1</a>
+        <a href="https://fatkhurrhn.github.io/nfa-course/jadwal-tabel.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas2</a>
+        <a href="https://fatkhurrhn.github.io/nfa-course/tugas3" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas3</a>
+        <a href="https://fatkhurrhn.github.io/nfa-course/tugas4" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas4</a>
+        <a href="tugas5/" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas5</a>
+        <a href="tugas6/" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> DW 2024221 - Tugas6</a>
+
+        <!-- Live demo Materi JavaScript -->
+        <a href="luas-bangun-datar.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> PJE 2024223 - Tugas1</a>
+        <a href="data-pegawai-PJE.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> PJE 2024223 - Tugas2</a>
+        <a href="manajemen-toko-online.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> PJE 2024223 - Tugas3</a>
+        <a href="sistem-manajemen-kendaraan.html" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;"><b>[live
+            demo]</b> PJE 2024223 - Tugas4</a>
+
+        <!-- Other -->
+        <a href="https://github.com/fatkhurrhn/nfa-course" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Other</a>
+      </div>
+
+      <!-- Card 2: Dicoding | Bangkit - Cloud Computing -->
+      <div
+        style="display: flex; align-items: center; justify-content: space-between; background-color: #FAFAFA; border-radius: 12px; padding: 14px 18px; text-decoration: none; color: #222; transition: all 0.2s; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05); cursor: pointer;"
+        onclick="toggleDropdown('dropdown2')">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div
+            style="width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 10px; font-size: 18px; background-color: #FF6D42; color: white;">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <div style="font-weight: 600; font-size: 15px; color: #333;">Dicoding | Bangkit - Cloud Computing</div>
+        </div>
+        <div style="font-size: 18px; color: #777; transition: transform 0.2s;">
+          <i class="fas fa-arrow-right"></i>
+        </div>
+      </div>
+
+      <!-- Dropdown untuk Card 2 -->
+      <div id="dropdown2"
+        style="display: none; margin-top: 10px; background-color: white; border-radius: 12px; padding: 10px; border: 1px solid #EAEAEA; box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);">
+        <a href="https://www.dicoding.com/users/fatkhurrhn/academies" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Profil
+          Dicoding</a>
+        <a href="https://www.cloudskillsboost.google/public_profiles/a0413875-4f2d-4c72-b551-524e6cffb45d"
+          target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Profil
+          GCSB</a>
+        <a href="https://github.com/fatkhurrhn/dicoding-course" target="_blank"
+          style="display: block; padding: 10px; text-decoration: none; color: #333; transition: background-color 0.2s;">Dicoding
+          Course | Github</a>
+      </div>
+    </div>
+
 
   </div>
+
   <script>
-    // Daftar hari dalam bahasa Indonesia
-    const days = [
-      'Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'
-    ];
+    function toggleDropdown(id) {
+      const dropdown = document.getElementById(id);
+      const arrow = dropdown.previousElementSibling.querySelector('.fa-arrow-right');
+      if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+        arrow.style.transform = 'rotate(0deg)';
+      } else {
+        dropdown.style.display = 'block';
+        arrow.style.transform = 'rotate(90deg)';
+      }
+    }
+    // Efek hover lebih halus
+    document.querySelectorAll("a").forEach(link => {
+      link.addEventListener("mouseenter", () => {
+        link.style.background = "#e5e7eb";
+        link.style.boxShadow = "0px 2px 5px rgba(0, 0, 0, 0.1)";
+      });
+      link.addEventListener("mouseleave", () => {
+        link.style.background = "#f3f4f6";
+        link.style.boxShadow = "none";
+      });
+    });
 
-    // Daftar bulan dalam bahasa Indonesia
-    const months = [
-      'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni',
-      'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'
-    ];
+    // Dark mode toggle functionality
+    const darkModeToggle = document.querySelector('.dark-mode-toggle');
+    const body = document.body;
+    const gradientDiv = document.querySelector('.gradient-bg'); // Gunakan class yang lebih aman
 
-    // Mendapatkan elemen dengan ID "now"
-    const nowElement = document.getElementById('now');
+    // Cek apakah user pernah menyimpan preferensi dark mode
+    let isDarkMode = localStorage.getItem('darkMode') === 'enabled';
 
-    // Mendapatkan tanggal saat ini
-    const currentDate = new Date();
+    function applyDarkMode() {
+      body.classList.add('dark-mode');
+      if (gradientDiv) gradientDiv.style.opacity = '0.3';
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+      localStorage.setItem('darkMode', 'enabled');
+    }
 
-    // Mendapatkan hari, tanggal, bulan, dan tahun
-    const day = days[currentDate.getDay()];
-    const date = currentDate.getDate();
-    const month = months[currentDate.getMonth()];
-    const year = currentDate.getFullYear();
+    function removeDarkMode() {
+      body.classList.remove('dark-mode');
+      if (gradientDiv) gradientDiv.style.opacity = '1';
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+      localStorage.setItem('darkMode', 'disabled');
+    }
 
-    // Membuat format tanggal yang diinginkan
-    const formattedDate = `${day}, ${date} ${month} ${year}`;
+    // Terapkan mode berdasarkan preferensi yang tersimpan
+    if (isDarkMode) {
+      applyDarkMode();
+    }
 
-    // Mengisi elemen HTML dengan tanggal yang diformat
-    nowElement.textContent = formattedDate;
+    darkModeToggle.addEventListener('click', () => {
+      isDarkMode = !isDarkMode;
+      isDarkMode ? applyDarkMode() : removeDarkMode();
+    });
+
+    // Ganti gambar profil jika tersedia
+    document.addEventListener('DOMContentLoaded', () => {
+      const profileImg = document.querySelector('img[alt="Fatkhurrhn\'s profile"]');
+      if (profileImg) {
+        profileImg.src = "pp.png"; // Perbaikan URL
+        profileImg.onerror = () => {
+          profileImg.src = "pp.png";
+        };
+      }
+    });
   </script>
+
+  <style>
+    /* Tambahkan class dark-mode */
+    .dark-mode {
+      background: #121212 !important;
+      color: #fff;
+    }
+  </style>
 
 </body>
 

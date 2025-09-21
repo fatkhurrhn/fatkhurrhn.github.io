@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Produk Toko Online</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .product-card {
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .price {
+            font-weight: bold;
+            color: #198754;
+        }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Toko Online</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="text-center mb-4">Manajemen Produk</h1>
+        
+        <!-- Form Tambah Produk -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">Tambah Produk Baru</h5>
+            </div>
+            <div class="card-body">
+                <form id="productForm">
+                    <div class="row g-3">
+                        <div class="col-md-2">
+                            <label for="productId" class="form-label">ID</label>
+                            <input type="number" class="form-control" id="productId" required>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="productName" class="form-label">Nama Produk</label>
+                            <input type="text" class="form-control" id="productName" required>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="productPrice" class="form-label">Harga (Rp)</label>
+                            <input type="number" class="form-control" id="productPrice" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="productImage" class="form-label">Gambar</label>
+                            <select class="form-select" id="productImage">
+                                <option value="default" selected>Default</option>
+                                <option value="custom">URL Kustom</option>
+                            </select>
+                        </div>
+                        <div class="col-md-12 d-none" id="customImageInput">
+                            <label for="productImageUrl" class="form-label">URL Gambar</label>
+                            <input type="text" class="form-control" id="productImageUrl" placeholder="Masukkan URL gambar">
+                        </div>
+                    </div>
+                    <div class="mt-3">
+                        <button type="submit" class="btn btn-success">
+                            <i class="bi bi-plus-circle me-2"></i>Tambah Produk
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Form Hapus Produk -->
+        <div class="card mb-4 shadow-sm">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">Hapus Produk</h5>
+            </div>
+            <div class="card-body">
+                <form id="deleteForm">
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="deleteId" class="form-label">ID Produk yang Akan Dihapus</label>
+                            <input type="number" class="form-control" id="deleteId" required>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button type="submit" class="btn btn-danger">
+                                <i class="bi bi-trash me-2"></i>Hapus Produk
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Daftar Produk -->
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Daftar Produk</h5>
+            </div>
+            <div class="card-body">
+                <div id="productCount" class="mb-3 text-muted"></div>
+                <div id="productList" class="row g-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript Kode -->
+    <script>
+        // **Data Produk**
+        let produktList = [
+            { 
+                id: 1, 
+                nama: "Laptop", 
+                harga: 12000000,
+                gambar: "https://assets-us-01.kc-usercontent.com/a7507759-f4f5-0038-8fff-c1db251108c1/d3623658-3947-4bd0-a9ad-35b24abf4c27/rekomendasi-20-laptop-anak-sekolah-kuliah_lenovo-ideapad-gaming-3.webp"
+            },
+            { 
+                id: 2, 
+                nama: "Smartphone", 
+                harga: 5000000,
+                gambar: "https://image.made-in-china.com/2f0j00uaivzrwCfBqJ/Hot-Sales-X500-6-5-Inch-Android-Smartphone-3GB-RAM-32GB-ROM-Android-10-4G-Quad-Mobile-Phone.webp"
+            },
+            { 
+                id: 3, 
+                nama: "Headphone", 
+                harga: 1500000,
+                gambar: "https://thumb.viva.id/vivabanyuwangi/665x374/2024/09/04/66d8219e1284c-redmi-note-12-pro-5g_banyuwangi.jpg"
+            },
+            { 
+                id: 4, 
+                nama: "Monitor", 
+                harga: 3000000,
+                gambar: "https://misura.s11.cdn-upgates.com/_cache/c/1/c15cd65eecf37eef2e0f6214a1658d3e-eg34rwa-foto05.jpg"
+            },
+            { 
+                id: 5, 
+                nama: "Keyboard", 
+                harga: 800000,
+                gambar: "https://upload.jaknot.com/2024/10/images/products/561006/original/ziyoulang-keyboard-gaming-mechanical-wireless-bluetooth-24g-k68.JPG"
+            }
+        ];
+        
+        // Default image untuk produk baru
+        const defaultImage = "https://www.kliknusae.com/img/404.jpg";
+
+        // Event Handler
+        const eventHandler = {
+            tambah: function(id, nama, harga, gambar) {
+                tambahProduk(id, nama, harga, gambar);
+                tampilkanProduk();
+            },
+            hapus: function(id) {
+                hapusProduk(id);
+                tampilkanProduk();
+            },
+            tampilkan: function() {
+                tampilkanProduk();
+            }
+        };
+
+        // **Menampilkan Produk dengan Destructuring**
+        function tampilkanProduk() {
+            const productListElement = document.getElementById('productList');
+            const productCountElement = document.getElementById('productCount');
+            
+            // Perbarui jumlah produk
+            productCountElement.textContent = `Total: ${produktList.length} produk`;
+            
+            // Kosongkan daftar produk
+            productListElement.innerHTML = '';
+            
+            // Tampilkan setiap produk
+            produktList.forEach(produk => {
+                const { id, nama, harga, gambar } = produk; // Destructuring
+                
+                // Buat card untuk setiap produk
+                const productCard = document.createElement('div');
+                productCard.className = 'col-md-4 mb-4';
+                productCard.innerHTML = `
+                    <div class="card h-100 product-card">
+                        <img src="${gambar}" class="card-img-top product-img" alt="${nama}" onerror="this.src='${defaultImage}'">
+                        <div class="card-body">
+                            <h5 class="card-title">${nama}</h5>
+                            <p class="card-text">ID: ${id}</p>
+                            <p class="card-text price">Rp ${harga.toLocaleString()}</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0">
+                            <button class="btn btn-sm btn-outline-danger delete-btn" data-id="${id}">
+                                Hapus
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                productListElement.appendChild(productCard);
+            });
+            
+            // Tambahkan event listener untuk tombol hapus pada card
+            document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const id = parseInt(this.getAttribute('data-id'));
+                    eventHandler.hapus(id);
+                });
+            });
+        }
+
+        // **Menambahkan Produk dengan Spread Operator**
+        function tambahProduk(id, nama, harga, gambar) {
+            // Cek apakah ID sudah ada
+            if (produktList.some(produk => produk.id === id)) {
+                alert(`Produk dengan ID ${id} sudah ada. Gunakan ID lain.`);
+                return;
+            }
+            
+            const newProduk = { id, nama, harga, gambar };
+            produktList = [...produktList, newProduk]; // Spread Operator
+            
+            // Tampilkan notifikasi
+            alert(`Produk baru berhasil ditambahkan: ${nama}`);
+        }
+
+        // **Menghapus Produk dengan Rest Parameter**
+        function hapusProduk(id) {
+            const index = produktList.findIndex(produk => produk.id === id);
+            
+            if (index !== -1) {
+                const [deletedProduk, ...sisaProduk] = [
+                    ...produktList.slice(0, index), 
+                    ...produktList.slice(index + 1)
+                ]; // Rest Parameter
+                
+                produktList = sisaProduk;
+                alert(`Produk dengan ID ${id} berhasil dihapus`);
+            } else {
+                alert(`Produk dengan ID ${id} tidak ditemukan`);
+            }
+        }
+
+        // Event Listener untuk menampilkan/menyembunyikan input URL kustom
+        document.getElementById('productImage').addEventListener('change', function() {
+            const customImageInput = document.getElementById('customImageInput');
+            if (this.value === 'custom') {
+                customImageInput.classList.remove('d-none');
+            } else {
+                customImageInput.classList.add('d-none');
+            }
+        });
+
+        // Event Listeners untuk Form
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const id = parseInt(document.getElementById('productId').value);
+            const nama = document.getElementById('productName').value;
+            const harga = parseInt(document.getElementById('productPrice').value);
+            
+            let gambar = defaultImage;
+            const imageOption = document.getElementById('productImage').value;
+            if (imageOption === 'custom') {
+                const customUrl = document.getElementById('productImageUrl').value;
+                if (customUrl.trim() !== '') {
+                    gambar = customUrl;
+                }
+            }
+            
+            eventHandler.tambah(id, nama, harga, gambar);
+            
+            // Reset form
+            this.reset();
+            document.getElementById('customImageInput').classList.add('d-none');
+        });
+
+        document.getElementById('deleteForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const id = parseInt(document.getElementById('deleteId').value);
+            eventHandler.hapus(id);
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Tampilkan produk saat halaman dimuat
+        document.addEventListener('DOMContentLoaded', function() {
+            eventHandler.tampilkan();
+        });
+    </script>
+</body>
+</html>
